@@ -1,3 +1,5 @@
+import { Box, Heading, Text } from "@chakra-ui/react";
+
 function App() {
   return (
     <div>
