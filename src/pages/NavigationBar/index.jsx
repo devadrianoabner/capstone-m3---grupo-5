@@ -8,8 +8,7 @@ const Logo = () => {
   return (
     <Flex>
       <Text
-        fontFamily
-        base={"Poppins"}
+        fontFamily={"Poppins"}
         p={"2px"}
         color={"black"}
         fontSize={"20px"}
@@ -17,7 +16,6 @@ const Logo = () => {
       >
         Hora do
       </Text>
-
       <Text p={"2px"} fontSize={"20px"} fontWeight={"bold"} color={"yellow"}>
         rango
       </Text>
@@ -54,7 +52,7 @@ const MenuIcon = () => (
     width="24px"
     viewBox="0 0 20 20"
     xmlns="http://www.w3.org/2000/svg"
-    fill="white"
+    fill="#FFFF"
   >
     <title>Menu</title>
     <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
@@ -75,7 +73,7 @@ const NavigationBar = (props) => {
       w="100%"
       mb={8}
       p={8}
-      bg={"white"}
+      bg={"#FFFF"}
       color={"black"}
       {...props}
     >
@@ -99,7 +97,7 @@ const NavigationBar = (props) => {
             "flex-end",
             "flex-end",
             "flex-end",
-            "flx-end",
+            "flex-end",
           ]}
           direction={["column", "row", "row", "row", "row", "row"]}
           pt={[4, 4, 0, 0, 0, 0]}
@@ -124,7 +122,7 @@ const NavigationBar = (props) => {
               p={"2"}
               size="20px"
               rounded="md"
-              color={"white"}
+              color={"#FFFF"}
               bg={"#F0DC5B"}
             >
               <Avatar bg="#A69C5D" />

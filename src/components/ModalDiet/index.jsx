@@ -45,7 +45,7 @@ const ModalDiet = () => {
   };
   return (
     <>
-      <Button colorScheme="orange" onClick={onOpen}>
+      <Button w={"100px"} bg="#F0DC5B" onClick={onOpen}>
         Enviar dieta!
       </Button>
       <Modal
@@ -81,27 +81,30 @@ const ModalDiet = () => {
               flexWrap={"wrap"}
             >
               <Textarea
-                w={"85%"}
-                bg={"white"}
+                w={"95%"}
+                bg={"#FFFF"}
                 name={"dieta"}
                 textarea={"textarea"}
                 placeholder="Digitar aqui sua dieta"
                 label="Plano alimentar"
                 register={register}
+                fontSize={"sm"}
               />
               <Input
                 color={"black"}
                 name={"proposta"}
-                placeholder="Faça uma proposta de valor"
+                placeholder="O valor disposto a pagar"
                 label="Valor da proposta"
                 register={register}
                 errors={errors.proposta?.message}
+                fontSize={"sm"}
               />
               <Select
                 label=" Opções para dietas restritas"
                 placeholder="Escolha o seu combo"
                 register={register}
                 name={"combo"}
+                fontSize={"sm"}
               />
             </ModalBody>
             <ModalFooter
@@ -115,7 +118,6 @@ const ModalDiet = () => {
                 bg="#A69C5D"
                 color={"black"}
                 type="submit"
-                mr={3}
               >
                 Enviar sua dieta!
               </Button>

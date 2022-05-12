@@ -45,7 +45,7 @@ const ModalEdit = () => {
   };
   return (
     <>
-      <Button ml={4} colorScheme="orange" onClick={onOpen}>
+      <Button w={"100px"} bg="#F0DC5B" onClick={onOpen}>
         Editar dieta!
       </Button>
       <Modal
@@ -57,8 +57,8 @@ const ModalEdit = () => {
         borderRadius={"8px"}
       >
         <ModalOverlay borderRadius={"8px"} />
-        <form id="new-form" onSubmit={handleSubmit(handleLogin)}>
-          <ModalContent borderRadius={"8px"} bgColor={"#A69C5D"}>
+        <form w={"100%"} id="new-form" onSubmit={handleSubmit(handleLogin)}>
+          <ModalContent maxW={"400px"} borderRadius={"8px"} bgColor={"#A69C5D"}>
             <ModalHeader
               color={"black"}
               fontWeight={"bold"}
@@ -81,26 +81,29 @@ const ModalEdit = () => {
               flexWrap={"wrap"}
             >
               <Textarea
-                w={"85%"}
-                bg={"white"}
+                w={"95%"}
+                bg={"#FFFF"}
                 name={"dieta"}
                 textarea={"textarea"}
                 placeholder="Digitar aqui sua dieta"
                 label="Plano alimentar"
                 register={register}
+                fontSize={"sm"}
               />
               <Input
                 name={"proposta"}
-                placeholder="Faça uma proposta de valor"
+                placeholder="O valor disposto a pagar"
                 label="Valor da proposta"
                 register={register}
                 errors={errors.proposta?.message}
+                fontSize={"sm"}
               />
               <Select
                 label=" Opções para dietas restritas"
                 placeholder="Escolha o seu combo"
                 register={register}
                 name={"combo"}
+                fontSize={"sm"}
               />
             </ModalBody>
             <ModalFooter>
@@ -110,7 +113,6 @@ const ModalEdit = () => {
                 bg="#F0DC5B"
                 color={"black"}
                 type="submit"
-                mr={3}
               >
                 Editar dieta
               </Button>
@@ -119,7 +121,6 @@ const ModalEdit = () => {
                 form="new-form"
                 bg="#f55aaa"
                 type="submit"
-                mr={3}
                 color={"black"}
               >
                 Deletar dieta
