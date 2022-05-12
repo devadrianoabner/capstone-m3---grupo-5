@@ -12,6 +12,7 @@ import {
   Heading,
   useToast,
 } from "@chakra-ui/react";
+import { InputDiv } from "../../components/inputDiv";
 
 const Login = ({ authenticated, setAuthenticated }) => {
   const schema = yup.object().shape({
@@ -49,8 +50,8 @@ const Login = ({ authenticated, setAuthenticated }) => {
 
   //     return history.push("/dashboard");
   //   });
-    // .catch((err) => toast.error("E-mail ou senha inválidos!"));
-  };
+  // .catch((err) => toast.error("E-mail ou senha inválidos!"));
+  //};
 
   if (authenticated) {
     // return <Redirect to="/dashboard" />;
@@ -60,7 +61,7 @@ const Login = ({ authenticated, setAuthenticated }) => {
     <Flex>
       <VStack>
         <Heading>Seja bem-vindo(a) novamente!</Heading>
-        <form onSubmit={handleSubmit(onSubmitFunction)}>
+        <form onSubmit={handleSubmit(() => {})}>
           <InputDiv
             label="E-mail"
             type="text"
