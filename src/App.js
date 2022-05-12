@@ -1,7 +1,7 @@
 //import { Box, Heading, Text } from "@chakra-ui/react";
-import Routes from "./routes";
+
 function App() {
-  return <Routes />;
+  <h1>Hora do rango</h1>;
 }
 
 export default App;

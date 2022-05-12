@@ -1,5 +1,5 @@
-import Input from "../../components/Input";
-import Select from "../../components/Select";
+import input from "../input";
+import select from "../select/index";
 import { useToast } from "@chakra-ui/react";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -89,6 +89,7 @@ const ModalEdit = () => {
                 label="Plano alimentar"
                 register={register}
                 fontSize={"sm"}
+                mb={"2"}
               />
               <Input
                 name={"proposta"}
@@ -97,6 +98,7 @@ const ModalEdit = () => {
                 register={register}
                 errors={errors.proposta?.message}
                 fontSize={"sm"}
+                mb={"2"}
               />
               <Select
                 label=" Opções para dietas restritas"
@@ -104,6 +106,7 @@ const ModalEdit = () => {
                 register={register}
                 name={"combo"}
                 fontSize={"sm"}
+                mb={"2"}
               />
             </ModalBody>
             <ModalFooter>

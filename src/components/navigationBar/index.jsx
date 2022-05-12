@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Box, Flex, Text, Button, Avatar } from "@chakra-ui/react";
-import ModalDiet from "../../components/ModalDiet/index";
-import ModalEdit from "../../components/ModalEdit/index";
+import ModalDiet from "../modalDiet";
+import ModalEdit from "../modalEdit";
+import logoImage from "../../assets/logo-hr.svg";
 
 const Logo = () => {
   return (
@@ -16,9 +17,11 @@ const Logo = () => {
       >
         Hora do
       </Text>
-      <Text p={"2px"} fontSize={"20px"} fontWeight={"bold"} color={"yellow"}>
+
+      <Text p={"2px"} fontSize={"20px"} fontWeight={"bold"} color={"#F0DC5B"}>
         rango
       </Text>
+      <Image src={logoImage} />
     </Flex>
   );
 };

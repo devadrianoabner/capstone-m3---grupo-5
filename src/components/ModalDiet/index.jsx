@@ -1,5 +1,5 @@
-import Input from "../Input";
-import Select from "../Select";
+import Input from "../input";
+import Select from "../select";
 import { useToast } from "@chakra-ui/react";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -57,7 +57,7 @@ const ModalDiet = () => {
         textAlign={"center"}
       >
         <ModalOverlay borderRadius={"8px"} />
-        <form id="new-form" onSubmit={handleSubmit(handleLogin)}>
+        <form w={"100%"} id="new-form" onSubmit={handleSubmit(handleLogin)}>
           <ModalContent borderRadius={"8px"} bgColor={"#F0DC5B"}>
             <ModalHeader
               color={"black"}
@@ -89,6 +89,7 @@ const ModalDiet = () => {
                 label="Plano alimentar"
                 register={register}
                 fontSize={"sm"}
+                mb={"2"}
               />
               <Input
                 color={"black"}
@@ -98,6 +99,7 @@ const ModalDiet = () => {
                 register={register}
                 errors={errors.proposta?.message}
                 fontSize={"sm"}
+                mb={"2"}
               />
               <Select
                 label=" Opções para dietas restritas"
@@ -105,6 +107,7 @@ const ModalDiet = () => {
                 register={register}
                 name={"combo"}
                 fontSize={"sm"}
+                mb={"2"}
               />
             </ModalBody>
             <ModalFooter
