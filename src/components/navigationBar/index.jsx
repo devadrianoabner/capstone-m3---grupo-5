@@ -1,8 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Box, Flex, Text, Button, Avatar } from "@chakra-ui/react";
-import ModalDiet from "../modalDiet";
-import ModalEdit from "../modalEdit";
+import { Box, Flex, Text, Button, Avatar, Image } from "@chakra-ui/react";
 import logoImage from "../../assets/logo-hr.svg";
 
 const Logo = () => {
@@ -115,10 +113,7 @@ const NavigationBar = (props) => {
             justifyContent={"center"}
             alignItems={"center"}
             flexWrap={"wrap"}
-          >
-            <ModalDiet>Enviar sua dieta </ModalDiet>
-            <ModalEdit>Editar sua dieta</ModalEdit>
-          </Flex>
+          ></Flex>
 
           <MenuItem to="/login" isLast>
             <Button
