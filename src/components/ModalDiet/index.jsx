@@ -1,5 +1,5 @@
-import Input from "../input";
-import Select from "../select";
+import Input from "../Input";
+import Select from "../Select";
 import { useToast } from "@chakra-ui/react";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
