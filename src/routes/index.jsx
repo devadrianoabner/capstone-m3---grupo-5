@@ -1,31 +1,23 @@
-import { useEffect, useState } from "react";
+import { Components } from "../pages/Components";
 import { Route, Switch } from "react-router-dom";
 import Login from "../pages/login";
 import Signup from "../pages/register";
-const Routes = () => {
-  const [authenticated, setAuthenticated] = useState(false);
 
-  useEffect(() => {
-    const token = JSON.parse(localStorage.getItem("token"));
-
-    if (token) {
-      return setAuthenticated(true);
-    }
-  }, [authenticated]);
-
+export const Routes = () => {
   return (
     <Switch>
       {/* <Route exact path="/">
         <Home authenticated={authenticated} />
       </Route> */}
-      <Route path="/">
-        <Signup authenticated={authenticated} />
+      <Route path="/register">
+        <Signup />
       </Route>
-      <Route exact path="/login">
-        <Login
-          authenticated={authenticated}
-          setAuthenticated={setAuthenticated}
-        />
+
+      <Route path="/login">
+        <Login />
+      </Route>
+      <Route path="/teste">
+        <Components />
       </Route>
       {/*
       <Route path="/dashboard">
@@ -34,5 +26,3 @@ const Routes = () => {
     </Switch>
   );
 };
-
-export default Routes;

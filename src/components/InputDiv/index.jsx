@@ -9,7 +9,7 @@ import {
 export const InputDiv = ({ name, label, register, error = "", ...rest }) => {
   return (
     <FormControl isInvalid={error}>
-      <Box w="100%" mt="20px">
+      <Box w="100%" mt="10px">
         <FormLabel color="#000" fontSize="xs" htmlFor={name}>
           {label}
         </FormLabel>

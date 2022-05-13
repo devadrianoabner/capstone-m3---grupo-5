@@ -6,8 +6,10 @@ import { extendTheme, theme as base } from "@chakra-ui/react";
 export const HDRTheme = extendTheme({
   colors: {
     primary: "#F0DC5B",
-    secundary: "#A69C5D",
+    secondary: "#A69C5D", // mudança de nome pois ocorreu um erro de digitação rs
     warning: "#f55aaa",
+    footerDashboard: "#E1E1E1",
+    tertiary: "#FFE32F",
   },
   fonts: {
     heading: `Inter, ${base.fonts?.heading}`,
