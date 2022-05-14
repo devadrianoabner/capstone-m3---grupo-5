@@ -9,6 +9,7 @@ export const HDRTheme = extendTheme({
     secondary: "#A69C5D", // mudança de nome pois ocorreu um erro de digitação rs
     warning: "#f55aaa",
     footerDashboard: "#E1E1E1",
+    tertiary: "#FFE32F",
   },
   fonts: {
     heading: `Inter, ${base.fonts?.heading}`,

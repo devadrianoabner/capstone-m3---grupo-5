@@ -1,17 +1,32 @@
-import { Route, Switch } from "react-router-dom";
 import { Components } from "../pages/Components";
 import { DashboardPrestador } from "../pages/dashboardPrestador";
+import { Route, Switch } from "react-router-dom";
+import Login from "../pages/login";
+import Signup from "../pages/register";
 
 export const Routes = () => {
   return (
     <Switch>
-      <Route exact path="/">
-        <Components />
+      {/* <Route exact path="/">
+        <Home authenticated={authenticated} />
+      </Route> */}
+    
+      <Route path="/register">
+        <Signup />
       </Route>
 
-      <Route exact path="/admin">
+      <Route path="/login">
+        <Login />
+      </Route>
+    
+      <Route path="/teste">
+        <Components />
+      </Route>
+    
+      <Route path="/admin">
         <DashboardPrestador />
       </Route>
+
     </Switch>
   );
 };
