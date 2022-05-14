@@ -1,4 +1,5 @@
 import { Components } from "../pages/Components";
+import { DashboardPrestador } from "../pages/dashboardPrestador";
 import { Route, Switch } from "react-router-dom";
 import Login from "../pages/login";
 import Signup from "../pages/register";
@@ -9,6 +10,7 @@ export const Routes = () => {
       {/* <Route exact path="/">
         <Home authenticated={authenticated} />
       </Route> */}
+    
       <Route path="/register">
         <Signup />
       </Route>
@@ -16,13 +18,15 @@ export const Routes = () => {
       <Route path="/login">
         <Login />
       </Route>
+    
       <Route path="/teste">
         <Components />
       </Route>
-      {/*
-      <Route path="/dashboard">
-        <Dashboard authenticated={authenticated} />
-      </Route> */}
+    
+      <Route path="/admin">
+        <DashboardPrestador />
+      </Route>
+
     </Switch>
   );
 };

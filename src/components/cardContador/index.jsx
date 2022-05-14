@@ -1,13 +1,6 @@
 import { Flex, Image, Heading, Text, Button } from "@chakra-ui/react";
 
-export const CardDashboard = ({
-  bg,
-  title,
-  decpripTion,
-  buttonText,
-  buttonColor,
-  img,
-}) => {
+export const CardContador = ({ bg, title, decpripTion, img, bgCount }) => {
   return (
     <>
       <Flex
@@ -36,27 +29,16 @@ export const CardDashboard = ({
               {title}
             </Heading>
             <Text
+              bg={bgCount}
               color="#12120E"
-              mt={["2", "5", "5", "5"]}
-              mb={["2", "5", "5", "5"]}
-              w={["100px", "120px", "180px", "250px", "360px"]}
-              fontSize={["8px", "10px", "12px", "15px"]}
+              pt="8px"
+              pb="8px"
+              borderRadius="10px"
+              fontSize={["8px", "10px", "12px", "25px"]}
               fontWeight="500"
             >
               {decpripTion}
             </Text>
-
-            <Button
-              width={["74px", "100px", "147px"]}
-              height={["22px", "30px", "39px"]}
-              px="5"
-              bg={buttonColor}
-              color="#fff"
-              fontSize={["8px", "12px", "15px", "15px"]}
-              fontWeight="500"
-            >
-              {buttonText}
-            </Button>
           </div>
           <Image
             src={img}
