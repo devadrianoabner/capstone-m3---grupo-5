@@ -1,7 +1,7 @@
 import { Text, VStack, SimpleGrid, Center } from "@chakra-ui/react";
 import CardProposal from "../cardProposal";
 
-const MainAreaProposal = () => {
+export const MainAreaProposal = () => {
   return (
     <Center w={["100vw"]} h={["auto"]}>
       <VStack w={["90%", "auto"]}>
@@ -32,4 +32,3 @@ const MainAreaProposal = () => {
     </Center>
   );
 };
-export default MainAreaProposal;
