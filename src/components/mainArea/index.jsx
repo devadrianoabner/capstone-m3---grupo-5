@@ -6,12 +6,7 @@ const MainArea = () => {
   return (
     <>
       <Flex flexDirection="column" maxW="1440" align="center" justify="center">
-        <Banner
-          bg=""
-          title=""
-          decpripTion=""
-          img={""}
-        />
+        <Banner bg="" title="" decpripTion="" img={""} />
 
         <Flex w="100%" flexWrap="wrap" justify="center">
           <CardDashboard

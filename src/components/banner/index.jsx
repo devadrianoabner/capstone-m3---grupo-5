@@ -6,7 +6,7 @@ const Banner = ({ bg, title, decpripTion, img }) => {
       <Flex
         w={"100%"}
         h={["160px", "187px", "220px", "368px"]}
-        m={["5px", "8px", "11px", "16px", "27px"]}
+        // m={["5px", "8px", "11px", "16px", "27px"]}
         px="1"
       >
         <Flex
