@@ -1,9 +1,11 @@
 import { Components } from "../pages/Components";
 import { DashboardPrestador } from "../pages/dashboardPrestador";
 import { Route, Switch } from "react-router-dom";
+import { IndexProposalClients } from "../components/indexProposalClients";
+import { IndexProposalCookers } from "../components/indexProposalCooker";
+
 import Login from "../pages/login";
 import Signup from "../pages/register";
-import { IndexProposalClients } from "../components/indexProposalClients";
 
 export const Routes = () => {
   return (
@@ -28,8 +30,12 @@ export const Routes = () => {
         <DashboardPrestador />
       </Route>
 
-      <Route path="/proposals">
+      <Route path="/proposals-clients">
         <IndexProposalClients />
+      </Route>
+
+      <Route path="/proposals-cookers">
+        <IndexProposalCookers />
       </Route>
     </Switch>
   );
