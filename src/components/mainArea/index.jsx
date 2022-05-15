@@ -13,8 +13,7 @@ export const MainArea = () => {
   return (
     <>
       <Flex flexDirection="column" maxW="1440" align="center" justify="center">
-        <Banner bg="" title="" decpripTion="" img="" />
-
+        <Banner bg="" title="" decpripTion="" img={""} />
         <Flex w="100%" flexWrap="nowrap" justify="center">
           <CardContador bg="" title="" decpripTion="" bgCount="" img="" />
           <CardContador bg="" title="" decpripTion="" bgCount="" img="" />
