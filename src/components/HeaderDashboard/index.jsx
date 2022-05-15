@@ -1,13 +1,13 @@
 import { Box, Flex, Input } from "@chakra-ui/react";
 import { Logo } from "../Logo";
 
-import { Icon } from "@chakra-ui/react";
+import { Icon, Button } from "@chakra-ui/react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { BsFillGearFill } from "react-icons/bs";
 import { BiLogOut } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
 
-export const Header = () => {
+export const Header = ({ onOpen }) => {
   return (
     <Flex
       w="100%"
@@ -17,7 +17,9 @@ export const Header = () => {
       mt={["8px", "8px", "0px"]}
     >
       <Box p="8px" ml="10px" display={["block", "block", "none", "none"]}>
-        <Icon as={GiHamburgerMenu} w={[5, 6]} h={[5, 6]} />
+        <Button bg="#0000" onClick={onOpen}>
+          <Icon as={GiHamburgerMenu} w={[5, 6]} h={[5, 6]} />
+        </Button>
       </Box>
       <Logo
         color={"#000"}
