@@ -3,6 +3,7 @@ import { DashboardPrestador } from "../pages/dashboardPrestador";
 import { Route, Switch } from "react-router-dom";
 import { IndexProposalClients } from "../components/indexProposalClients";
 import { IndexProposalCookers } from "../components/indexProposalCooker";
+import { IndexAllProposals } from "../components/indexAllProposals";
 
 import Login from "../pages/login";
 import Signup from "../pages/register";
@@ -36,6 +37,10 @@ export const Routes = () => {
 
       <Route path="/proposals-cookers">
         <IndexProposalCookers />
+      </Route>
+
+      <Route path="/all-proposals">
+        <IndexAllProposals />
       </Route>
     </Switch>
   );
