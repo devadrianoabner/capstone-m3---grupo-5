@@ -24,7 +24,7 @@ export const IndexProposalClients = () => {
           <AsideDashboard
             corBody="#A69C5D"
             fotoUser={imgPerfil}
-            nomeUser="Alysson Colombo"
+            nomeUser="Alysson M."
             icon1={icon1}
             icon2={icon2}
             icon3={icon3}
