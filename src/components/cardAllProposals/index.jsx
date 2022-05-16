@@ -8,7 +8,7 @@ export const CardAllProposals = () => {
           <Flex alignItems="center">
             <Text fontSize="20px">Título:</Text>
             <Text fontSize="15px" ml="5px">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Lorem ipsum dolor sit amet consectetur, adipisicing elite.
             </Text>
           </Flex>
         </Box>
