@@ -36,6 +36,7 @@ export const Routes = () => {
 
       <Route path="/diets">
         <Diets />
+      </Route>
 
       <Route path="/proposals-clients">
         <IndexProposalClients />
@@ -47,7 +48,6 @@ export const Routes = () => {
 
       <Route path="/all-proposals">
         <IndexAllProposals />
-
       </Route>
     </Switch>
   );

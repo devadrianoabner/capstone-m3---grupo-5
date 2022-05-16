@@ -1,5 +1,5 @@
 import Banner from "../banner";
-import CardDashboard from "../cardDashboard";
+import { CardDashboard } from "../cardDashboard";
 import { Flex } from "@chakra-ui/react";
 import BannerImg from "../../assets/img/client/imgBannerCliente.png";
 import DuboutsImg from "../../assets/img/client/imgDoubtsCliente.png";
