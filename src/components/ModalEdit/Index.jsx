@@ -1,6 +1,9 @@
+import Select from "../../components/Select";
+import Textarea from "../../components/textarea";
 import { useToast } from "@chakra-ui/react";
 import Select from "../Select";
 import Textarea from "../Textarea";
+
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
@@ -14,10 +17,10 @@ import {
   ModalCloseButton,
   useDisclosure,
   Button,
-  Textarea,
 } from "@chakra-ui/react";
+import { useDiets } from "../../providers/diets";
 
-const ModalEdit = () => {
+const ModalEdit = ({ dietId }) => {
   const formSchema = Yup.object().shape({
     dieta: Yup.string()
       .required("Campo obrigatório")
@@ -35,39 +38,49 @@ const ModalEdit = () => {
     resolver: yupResolver(formSchema),
   });
   const toast = useToast();
+  const { modifyDiet } = useDiets();
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const handleLogin = (data) => {
+  const handleDiet = (data) => {
     toast({
       title: "Dieta enviada!",
       description: "Agora cuidaremos disso para você!",
       status: "success",
-      duration: 5000,
       isClosable: true,
     });
     console.log(data);
+    modifyDiet(data, dietId);
+    onClose();
   };
   return (
     <>
-      <Button w={"100px"} bg="#F0DC5B" onClick={onOpen}>
-        Editar dieta!
+      <Button
+        fontSize={"sm"}
+        borderRadius="8px"
+        maxH={"30px"}
+        bg={"#A69C5D"}
+        _focus={{
+          bg: "gray.200",
+        }}
+        onClick={onOpen}
+      >
+        Editar dieta
       </Button>
       <Modal
         w={"100vw"}
         h={"100vh"}
         isOpen={isOpen}
         onClose={onClose}
-        isCentered
         borderRadius={"8px"}
       >
         <ModalOverlay borderRadius={"8px"} />
-        <form w={"95%"} id="new-form" onSubmit={handleSubmit(handleLogin)}>
+        <form w={"95%"} id="new-form" onSubmit={handleSubmit(handleDiet)}>
           <ModalContent maxW={"350px"} borderRadius={"8px"} bgColor={"#D9D9D9"}>
             <ModalHeader
               color={"black"}
               fontWeight={"bold"}
-              bgColor={"#F0DC5B"}
+              bgColor={"#A69C5D"}
               textAlign={"center"}
               borderRadius={"8px"}
             >
@@ -77,7 +90,7 @@ const ModalEdit = () => {
             <ModalBody
               m={"6"}
               isCentered
-              bgColor={"#F0DC5B"}
+              bgColor={"#A69C5D"}
               borderRadius={"8px"}
               display={"flex"}
               justifyContent={"center"}
@@ -85,8 +98,8 @@ const ModalEdit = () => {
               flexWrap={"wrap"}
             >
               <Textarea
-                bg={"#FFFF"}
-                name={"dieta"}
+                bg={"white"}
+                name={"description"}
                 textarea={"textarea"}
                 placeholder="Digitar aqui sua dieta"
                 label="Plano alimentar"
@@ -116,9 +129,9 @@ const ModalEdit = () => {
                 form="new-form"
                 bg="#A69C5D"
                 color={"black"}
-                type="submit"
+                onClick={onClose}
               >
-                Editar dieta
+                Cancelar
               </Button>
               <Button
                 alignContent={"center"}
@@ -127,7 +140,7 @@ const ModalEdit = () => {
                 type="submit"
                 color={"black"}
               >
-                Deletar dieta
+                Editar dieta
               </Button>
             </ModalFooter>
           </ModalContent>
