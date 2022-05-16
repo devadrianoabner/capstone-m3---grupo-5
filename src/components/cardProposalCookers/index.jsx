@@ -1,4 +1,12 @@
-import { Button, Center, VStack, Image, Text, HStack } from "@chakra-ui/react";
+import {
+  Button,
+  Center,
+  VStack,
+  Image,
+  Text,
+  HStack,
+  Box,
+} from "@chakra-ui/react";
 
 export const CardProposalCookers = () => {
   return (

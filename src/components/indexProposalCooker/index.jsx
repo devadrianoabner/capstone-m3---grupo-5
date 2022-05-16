@@ -1,6 +1,7 @@
 import { MainAreaProposalCookers } from "../mainAreaProposalCookers";
 import { Header } from "../../components/HeaderDashboard";
 import { AsideDashboard } from "../../components/asideDashboard";
+import { Footer } from "../../components/Footer";
 
 import { Flex, Box, useDisclosure } from "@chakra-ui/react";
 
@@ -16,35 +17,49 @@ export const IndexProposalCookers = () => {
 
   return (
     <Box>
-      <Box>
+      <Box h="10vh">
         <Header onOpen={onOpen} />
       </Box>
       <Box>
-        <Flex>
-          <AsideDashboard
-            corBody="#A69C5D"
-            fotoUser={imgPerfil}
-            nomeUser="Alysson Colombo"
-            icon1={icon1}
-            icon2={icon2}
-            icon3={icon3}
-            icon4={icon4}
-            icon5={icon5}
-            textIcon1="Dashboard"
-            textIcon2="Buscar novas propostas"
-            textIcon3="Ver propostas aceitas"
-            textIcon4="Perguntas frequentes"
-            textIcon5="Fale com a central"
-            baseColor="#12120E"
-            isOpen={isOpen}
-            onOpen={onOpen}
-            onClose={onClose}
-            link1="/admin"
-            link2="/proposals-cookers"
-            link3="/all-proposals"
-          />
-          <MainAreaProposalCookers />
+        <Flex h="90vh">
+          <Box w={["0vw", "0vw", "0vw", "0vw", "20vw", "15vw"]}>
+            <AsideDashboard
+              corBody="#A69C5D"
+              fotoUser={imgPerfil}
+              nomeUser="Alysson Colombo"
+              icon1={icon1}
+              icon2={icon2}
+              icon3={icon3}
+              icon4={icon4}
+              icon5={icon5}
+              textIcon1="Dashboard"
+              textIcon2="Buscar novas propostas"
+              textIcon3="Ver propostas aceitas"
+              textIcon4="Perguntas frequentes"
+              textIcon5="Fale com a central"
+              baseColor="#12120E"
+              isOpen={isOpen}
+              onOpen={onOpen}
+              onClose={onClose}
+              link1="/admin"
+              link2="/proposals-cookers"
+              link3="/all-proposals"
+              link4="/questions-cookers"
+              link5="/support"
+            />
+          </Box>
+
+          <Box
+            w={["100vw", "100vw", "100vw", "100vw", "80vw", "85vw"]}
+            ml={["10px", "10px", "15px", "25px", "37px"]}
+            mr={["10px", "10px", "15px", "25px", "37px"]}
+          >
+            <MainAreaProposalCookers />
+          </Box>
         </Flex>
+      </Box>
+      <Box>
+        <Footer />
       </Box>
     </Box>
   );
