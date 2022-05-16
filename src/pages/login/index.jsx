@@ -21,7 +21,7 @@ import { Footer } from "../../components/Footer";
 import { InputDiv } from "../../components/InputDiv";
 import { Logo } from "../../components/Logo";
 import { useToken } from "../../providers/token";
-import api from "../../services/api";
+import api from "../../services";
 
 const Signup = () => {
   const schema = yup.object().shape({

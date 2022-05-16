@@ -10,7 +10,6 @@ import Signup from "../pages/register";
 import { Diets } from "../pages/diets";
 import { DashBoardClient } from "../pages/dashboardClient";
 
-
 export const Routes = () => {
   return (
     <Switch>
@@ -36,6 +35,7 @@ export const Routes = () => {
 
       <Route path="/diets">
         <Diets />
+      </Route>
 
       <Route path="/proposals-clients">
         <IndexProposalClients />
@@ -47,7 +47,6 @@ export const Routes = () => {
 
       <Route path="/all-proposals">
         <IndexAllProposals />
-
       </Route>
     </Switch>
   );

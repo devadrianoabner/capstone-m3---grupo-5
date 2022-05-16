@@ -79,7 +79,7 @@ const CardProposal = ({ diet }) => {
           {!status ? (
             <HStack py={"4"} w={"85%"} alignItems={"center"}>
               {edit ? (
-                <ModalEdit dietId={dietId} />
+                <ModalEdit dietId={dietId} description={description} />
               ) : (
                 <ModalViewProposal dietId={dietId} />
               )}

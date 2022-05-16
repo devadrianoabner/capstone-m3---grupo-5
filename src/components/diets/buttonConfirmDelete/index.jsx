@@ -39,7 +39,7 @@ export const ButtonConfirmDelete = ({ removeDiet, dietId }) => {
         <AlertDialogOverlay>
           <AlertDialogContent>
             <AlertDialogHeader fontSize="lg" fontWeight="bold">
-              Aceitar Oferta
+              Deletar Dieta
             </AlertDialogHeader>
 
             <AlertDialogBody>
@@ -53,6 +53,7 @@ export const ButtonConfirmDelete = ({ removeDiet, dietId }) => {
               <Button
                 onClick={() => {
                   removeDiet(dietId);
+                  onClose();
                 }}
                 ml={3}
                 colorScheme="red"
