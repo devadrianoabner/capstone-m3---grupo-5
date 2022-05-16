@@ -50,6 +50,7 @@ export const ProposalCard = ({ proposal, proposals, onClose }) => {
         `/users/${cookId}`,
         {
           qntAccepted: cook.qntAccepted + 1,
+          revenue: cook.revenue + price,
         },
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -62,6 +63,7 @@ export const ProposalCard = ({ proposal, proposals, onClose }) => {
         `/users/${clientId}`,
         {
           qntAccepted: client.qntAccepted + 1,
+          spent: client.spent + price,
         },
         {
           headers: { Authorization: `Bearer ${token}` },
