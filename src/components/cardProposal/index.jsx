@@ -1,21 +1,21 @@
-import {
-  Avatar,
-  Box,
-  Button,
-  Center,
-  Heading,
-  HStack,
-  Image,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { Avatar, Box, Center, HStack, Text, VStack } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { useDiets } from "../../providers/diets";
 import api from "../../services";
+import { ButtonConfirmDelete } from "../diets/buttonConfirmDelete";
+import ModalEdit from "../ModalEdit/Index";
 import ModalViewProposal from "../modalViewProposal";
 
 const CardProposal = ({ diet }) => {
-  const { id: dietId, clientId, description, status, cookId, price } = diet;
+  const {
+    id: dietId,
+    clientId,
+    description,
+    status,
+    cookId,
+    price,
+    edit,
+  } = diet;
 
   const { removeDiet } = useDiets();
 
@@ -78,23 +78,12 @@ const CardProposal = ({ diet }) => {
           </Text>
           {!status ? (
             <HStack py={"4"} w={"85%"} alignItems={"center"}>
-              <ModalViewProposal dietId={dietId} />
-              <Button
-                fontSize={"sm"}
-                maxH={"30px"}
-                borderRadius="8px"
-                isCentered
-                bg={"#6c663F"}
-                color={"white"}
-                _focus={{
-                  bg: "gray.500",
-                }}
-                onClick={() => {
-                  removeDiet(dietId);
-                }}
-              >
-                Excluir
-              </Button>
+              {edit ? (
+                <ModalEdit dietId={dietId} />
+              ) : (
+                <ModalViewProposal dietId={dietId} />
+              )}
+              <ButtonConfirmDelete removeDiet={removeDiet} dietId={dietId} />
             </HStack>
           ) : (
             <Box w="250px" pb="8px">

@@ -2,6 +2,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import api from "../../services";
 import { useToken } from "../token";
+import { useUser } from "../user";
 
 // criar o context
 export const DietsContext = createContext();
@@ -9,7 +10,8 @@ export const DietsContext = createContext();
 // criar o provider
 export const DietsProvider = ({ children }) => {
   const [diets, setDiets] = useState([]);
-  const { token } = useToken([]);
+  const { token } = useToken();
+  const { user } = useUser();
 
   useEffect(() => {
     api
@@ -34,8 +36,46 @@ export const DietsProvider = ({ children }) => {
       .delete(`diets/${dietId}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
-      .then((res) => refreshDiet())
+      .then((res) => {
+        refreshDiet();
+      })
       .catch((e) => console.log(e));
+  };
+
+  const addDiet = (data) => {
+    const { id } = user;
+
+    const newDiet = {
+      ...data,
+      clientId: id,
+      cookId: 0,
+      status: false,
+      price: 0,
+      edit: true,
+    };
+    api
+      .post("diets", newDiet, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((res) => {
+        refreshDiet();
+      })
+      .catch((err) => console.log(err));
+  };
+
+  const modifyDiet = (data, dietId) => {
+    console.log(data);
+    console.log(dietId);
+    console.log(token);
+    api
+      .patch(`diets/${dietId}`, data, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((res) => {
+        console.log("deu");
+        refreshDiet();
+      })
+      .catch((err) => console.log(err));
   };
 
   const removeAllProposalsforDiet = (dietId) => {
@@ -57,7 +97,9 @@ export const DietsProvider = ({ children }) => {
   };
 
   return (
-    <DietsContext.Provider value={{ diets, setDiets, refreshDiet, removeDiet }}>
+    <DietsContext.Provider
+      value={{ diets, setDiets, refreshDiet, removeDiet, addDiet, modifyDiet }}
+    >
       {children}
     </DietsContext.Provider>
   );

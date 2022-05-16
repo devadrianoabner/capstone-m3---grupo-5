@@ -4,6 +4,7 @@ import { AiFillStar } from "react-icons/ai";
 import { useDiets } from "../../../providers/diets";
 import { useToken } from "../../../providers/token";
 import api from "../../../services";
+import { ButtonConfirmAcceptence } from "../buttonConfirmAcceptence";
 
 export const ProposalCard = ({ proposal, proposals, onClose }) => {
   const { dietId, clientId, price, cookId, message, status, id } = proposal;
@@ -143,15 +144,11 @@ export const ProposalCard = ({ proposal, proposals, onClose }) => {
               R$ {price.toFixed(2).replace(".", ",")}
             </Text>
           </Box>
-          <Button
-            colorScheme="green"
-            w="40%"
-            mt="20px"
-            ml="20px"
-            onClick={() => acceptedOffer()}
-          >
-            Aceitar
-          </Button>
+          <ButtonConfirmAcceptence
+            acceptedOffer={acceptedOffer}
+            cook={cook}
+            price={price}
+          />
         </Flex>
       </Flex>
     </Flex>
