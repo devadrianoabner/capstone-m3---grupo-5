@@ -1,4 +1,6 @@
 import { Button, Heading, Text, useToast } from "@chakra-ui/react";
+import { CardContador } from "../../components/cardContador";
+import CardProposal from "../../components/cardProposal";
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/HeaderDashboard";
 import { useToken } from "../../providers/token";
@@ -32,6 +34,7 @@ export const Components = () => {
       </Button>
       <Heading>{user.name}</Heading>
       <Text>{token}</Text>
+      <CardProposal />
       <Footer color="footerDashboard" />
       {/* TEM QUE COLOCAR A COR SE É DO DASHBOARD OU LOGIN / REGISTRO*/}
     </>
