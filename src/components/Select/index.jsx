@@ -28,7 +28,7 @@ const Select = ({ register, name, label, errors, ...rest }) => {
         <option value="Vegetariano">Vegetariano</option>
       </ChakraSelect>
 
-      <FormHelperText fontSize={"12px"} color={"red"} my={"1"}>
+      <FormHelperText fontSize={"11px"} color={"red"} my={"1"}>
         {errors}
       </FormHelperText>
     </FormControl>

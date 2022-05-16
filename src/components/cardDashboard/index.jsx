@@ -11,7 +11,7 @@ export const CardDashboard = ({
   return (
     <>
       <Flex
-        w={["150px", "235px", "350px", "400px", "660px"]}
+        w={["150px", "235px", "350px", "480px"]}
         h={["133px", "200px", "219px"]}
         m={["5px", "8px", "11px", "16px", "20px"]}
       >
@@ -39,8 +39,8 @@ export const CardDashboard = ({
               color="#12120E"
               mt={["2", "5", "5", "5"]}
               mb={["2", "5", "5", "5"]}
-              w={["100px", "120px", "180px", "250px", "360px"]}
-              fontSize={["8px", "10px", "12px", "15px"]}
+              w={["100px", "120px", "180px", "250px"]}
+              fontSize={["8px", "10px", "12px"]}
               fontWeight="500"
             >
               {decpripTion}
@@ -61,10 +61,10 @@ export const CardDashboard = ({
           <Image
             src={img}
             alt="um card"
-            w={["60px", "90px", "130px", "150px", "170px"]}
+            w={["60px", "90px", "130px", "150px"]}
             pos="absolute"
-            bottom={["2", "2", "4", "6"]}
-            right={["2", "2", "4", "6"]}
+            bottom={["2", "2", "4"]}
+            right={["2", "2", "4"]}
           />
         </Flex>
       </Flex>

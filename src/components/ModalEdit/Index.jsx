@@ -1,6 +1,9 @@
 import Select from "../../components/Select";
 import Textarea from "../../components/textarea";
 import { useToast } from "@chakra-ui/react";
+import Select from "../Select";
+import Textarea from "../Textarea";
+
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
@@ -19,7 +22,9 @@ import { useDiets } from "../../providers/diets";
 
 const ModalEdit = ({ dietId }) => {
   const formSchema = Yup.object().shape({
-    description: Yup.string().required("Campo obrigatório"),
+    dieta: Yup.string()
+      .required("Campo obrigatório")
+      .max(50, " máximo de 50 caracteres"),
     combo: Yup.string()
       .required("Escolha uma opção")
       .test("choosenMod", "Escolha sua opção", (value) => value),

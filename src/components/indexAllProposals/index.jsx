@@ -1,6 +1,6 @@
-import { Header } from "../../components/HeaderDashboard";
-import { MainAreaCooker } from "../../components/mainAreaCokker";
-import { AsideDashboard } from "../../components/asideDashboard";
+import { MainAllProposals } from "../mainAllProposals";
+import { Header } from "../HeaderDashboard";
+import { AsideDashboard } from "../asideDashboard";
 
 import { Flex, Box, useDisclosure } from "@chakra-ui/react";
 
@@ -11,7 +11,7 @@ import icon3 from "../../assets/iconsDashboard/iconApertoDeMao.svg";
 import icon4 from "../../assets/iconsDashboard/iconPergunta.svg";
 import icon5 from "../../assets/iconsDashboard/iconSuporte.svg";
 
-export const DashboardPrestador = () => {
+export const IndexAllProposals = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -40,7 +40,7 @@ export const DashboardPrestador = () => {
             onOpen={onOpen}
             onClose={onClose}
           />
-          <MainAreaCooker />
+          <MainAllProposals />
         </Flex>
       </Box>
     </Box>
