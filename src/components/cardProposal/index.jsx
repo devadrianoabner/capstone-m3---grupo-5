@@ -5,7 +5,7 @@ const CardProposal = () => {
     <Center maxW={"350px"} w={"100%"} py={2}>
       <VStack
         borderRadius="8px"
-        w={["70%", "100%"]}
+        w={["88%", "100%"]}
         h={["100%", "auto"]}
         direction={{ base: "column", md: "row" }}
         bg={("white", "#D9D9D9")}

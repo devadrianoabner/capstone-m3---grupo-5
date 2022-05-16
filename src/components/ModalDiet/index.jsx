@@ -1,5 +1,6 @@
-import Input from "../Input";
+
 import Select from "../Select";
+import Textarea from "../Textarea";
 import { useToast } from "@chakra-ui/react";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -19,7 +20,12 @@ import {
 
 const ModalDiet = () => {
   const formSchema = Yup.object().shape({
-    proposta: Yup.string().required("Campo obrigatório"),
+    dieta: Yup.string()
+      .required("Campo obrigatório")
+      .max(50, " máximo de 50 caracteres"),
+    combo: Yup.string()
+      .required("Escolha uma opção")
+      .test("choosenMod", "Escolha sua opção", (value) => value),
   });
 
   const {
@@ -35,8 +41,8 @@ const ModalDiet = () => {
 
   const handleLogin = (data) => {
     toast({
-      title: "Dieta enviada.",
-      description: "Agora cuidaremos disso para você.",
+      title: "Dieta enviada!",
+      description: "Agora cuidaremos disso para você!",
       status: "success",
       duration: 5000,
       isClosable: true,
@@ -49,7 +55,6 @@ const ModalDiet = () => {
         Enviar dieta!
       </Button>
       <Modal
-        maxW={"500px"}
         isOpen={isOpen}
         onClose={onClose}
         isCentered
@@ -57,8 +62,8 @@ const ModalDiet = () => {
         textAlign={"center"}
       >
         <ModalOverlay borderRadius={"8px"} />
-        <form w={"100%"} id="new-form" onSubmit={handleSubmit(handleLogin)}>
-          <ModalContent borderRadius={"8px"} bgColor={"#F0DC5B"}>
+        <form w={"95%"} id="new-form" onSubmit={handleSubmit(handleLogin)}>
+          <ModalContent maxW={"350px"} borderRadius={"8px"} bgColor={"#D9D9D9"}>
             <ModalHeader
               color={"black"}
               fontWeight={"bold"}
@@ -71,7 +76,6 @@ const ModalDiet = () => {
             </ModalHeader>
             <ModalBody
               m={"6"}
-              p={"6"}
               isCentered
               bgColor={"#A69C5D"}
               borderRadius={"8px"}
@@ -81,7 +85,6 @@ const ModalDiet = () => {
               flexWrap={"wrap"}
             >
               <Textarea
-                w={"95%"}
                 bg={"#FFFF"}
                 name={"dieta"}
                 textarea={"textarea"}
@@ -90,17 +93,9 @@ const ModalDiet = () => {
                 register={register}
                 fontSize={"sm"}
                 mb={"2"}
+                errors={errors.dieta?.message}
               />
-              <Input
-                color={"black"}
-                name={"proposta"}
-                placeholder="O valor disposto a pagar"
-                label="Valor da proposta"
-                register={register}
-                errors={errors.proposta?.message}
-                fontSize={"sm"}
-                mb={"2"}
-              />
+
               <Select
                 label=" Opções para dietas restritas"
                 placeholder="Escolha o seu combo"
@@ -108,6 +103,7 @@ const ModalDiet = () => {
                 name={"combo"}
                 fontSize={"sm"}
                 mb={"2"}
+                errors={errors.combo?.message}
               />
             </ModalBody>
             <ModalFooter
