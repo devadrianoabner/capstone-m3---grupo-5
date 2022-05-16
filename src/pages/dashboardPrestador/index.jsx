@@ -39,6 +39,11 @@ export const DashboardPrestador = () => {
             isOpen={isOpen}
             onOpen={onOpen}
             onClose={onClose}
+            link1="/admin"
+            link2="/proposals-cookers"
+            link3="/all-proposals"
+            link4="/questions-cookers"
+            link5="/support"
           />
           <MainAreaCooker />
         </Flex>
