@@ -1,5 +1,5 @@
 import Banner from "../banner";
-import CardDashboard from "../cardDashboard";
+import { CardDashboard } from "../cardDashboard";
 import { Flex } from "@chakra-ui/react";
 import BannerImg from "../../assets/img/client/imgBannerCliente.png";
 import DuboutsImg from "../../assets/img/client/imgDoubtsCliente.png";
@@ -7,10 +7,18 @@ import InfoImg from "../../assets/img/client/imgInfoClient.png";
 import RequestImg from "../../assets/img/client/imgRequestClient.png";
 import VewRequestImg from "../../assets/img/client/imgVewResquests.png";
 
+
 const MainAreaClient = () => {
   return (
     <>
-      <Flex flexDirection="column" maxW="100%" align="center" justify="center" ml="10" mr="10">
+      <Flex
+        flexDirection="column"
+        maxW="100%"
+        align="center"
+        justify="center"
+        ml="10"
+        mr="10"
+      >
         <Banner
           bg="#F0DC5B
           "
@@ -21,6 +29,7 @@ const MainAreaClient = () => {
 
         <Flex w="100%" flexWrap="wrap" justify="center">
           <CardDashboard
+            modal
             bg="#BDAD48
             "
             title="Solicitar um novo pedido"

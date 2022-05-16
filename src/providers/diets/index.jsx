@@ -58,6 +58,7 @@ export const DietsProvider = ({ children }) => {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
+        console.log(res);
         refreshDiet();
       })
       .catch((err) => console.log(err));
@@ -95,10 +96,37 @@ export const DietsProvider = ({ children }) => {
       )
       .catch((e) => console.log(e));
   };
+  const cancelByCooker = (dietId) => {
+    console.log(dietId);
+    const cancelCooker = {
+      cookId: 0,
+      status: false,
+      price: 0,
+      edit: true,
+    };
+
+    api
+      .patch(`diets/${dietId}`, cancelCooker, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((res) => {
+        console.log("pedido cancelado");
+        refreshDiet();
+      })
+      .catch((err) => console.log(err));
+  };
 
   return (
     <DietsContext.Provider
-      value={{ diets, setDiets, refreshDiet, removeDiet, addDiet, modifyDiet }}
+      value={{
+        diets,
+        setDiets,
+        refreshDiet,
+        removeDiet,
+        addDiet,
+        modifyDiet,
+        cancelByCooker,
+      }}
     >
       {children}
     </DietsContext.Provider>

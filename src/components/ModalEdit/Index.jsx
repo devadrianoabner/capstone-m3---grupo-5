@@ -1,9 +1,6 @@
 import Select from "../../components/Select";
-import Textarea from "../../components/textarea";
+import Textarea from "../../components/Textarea";
 import { useToast } from "@chakra-ui/react";
-import Select from "../Select";
-import Textarea from "../Textarea";
-
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
@@ -22,10 +19,10 @@ import { useDiets } from "../../providers/diets";
 
 const ModalEdit = ({ dietId }) => {
   const formSchema = Yup.object().shape({
-    dieta: Yup.string()
+    description: Yup.string()
       .required("Campo obrigatório")
       .max(50, " máximo de 50 caracteres"),
-    combo: Yup.string()
+    meal: Yup.string()
       .required("Escolha uma opção")
       .test("choosenMod", "Escolha sua opção", (value) => value),
   });
@@ -44,7 +41,7 @@ const ModalEdit = ({ dietId }) => {
 
   const handleDiet = (data) => {
     toast({
-      title: "Dieta enviada!",
+      title: "Sua dieta foi editada!",
       description: "Agora cuidaremos disso para você!",
       status: "success",
       isClosable: true,
@@ -106,17 +103,17 @@ const ModalEdit = ({ dietId }) => {
                 register={register}
                 fontSize={"sm"}
                 mb={"2"}
-                errors={errors.dieta?.message}
+                errors={errors.description?.message}
               />
 
               <Select
                 label=" Opções para dietas restritas"
                 placeholder="Escolha o seu combo"
                 register={register}
-                name={"combo"}
+                name={"meal"}
                 fontSize={"sm"}
                 mb={"2"}
-                errors={errors.combo?.message}
+                errors={errors.meal?.message}
               />
             </ModalBody>
             <ModalFooter

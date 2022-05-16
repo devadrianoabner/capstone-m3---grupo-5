@@ -1,4 +1,4 @@
-import { Components } from "../pages/Components";
+//import { Components } from "../pages/Components";
 import { DashboardPrestador } from "../pages/dashboardPrestador";
 import { Route, Switch } from "react-router-dom";
 import { IndexProposalClients } from "../components/indexProposalClients";
@@ -9,7 +9,6 @@ import Login from "../pages/login";
 import Signup from "../pages/register";
 import { Diets } from "../pages/diets";
 import { DashBoardClient } from "../pages/dashboardClient";
-
 
 export const Routes = () => {
   return (
@@ -36,6 +35,7 @@ export const Routes = () => {
 
       <Route path="/diets">
         <Diets />
+      </Route>
 
       <Route path="/proposals-clients">
         <IndexProposalClients />
@@ -47,7 +47,6 @@ export const Routes = () => {
 
       <Route path="/all-proposals">
         <IndexAllProposals />
-
       </Route>
     </Switch>
   );
