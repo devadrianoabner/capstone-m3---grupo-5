@@ -96,7 +96,6 @@ export const DietsProvider = ({ children }) => {
       .catch((e) => console.log(e));
   };
   const cancelByCooker = (dietId) => {
-    console.log(dietId);
     const cancelCooker = {
       cookId: 0,
       status: false,
@@ -109,7 +108,6 @@ export const DietsProvider = ({ children }) => {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
-        console.log("pedido cancelado");
         refreshDiet();
       })
       .catch((err) => console.log(err));
