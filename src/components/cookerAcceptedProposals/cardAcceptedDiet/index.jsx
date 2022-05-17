@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useDiets } from "../../../providers/diets";
 import { useToken } from "../../../providers/token";
 import api from "../../../services";
+import { CancelModalConfirmation } from "../cancelModalConfirmation";
 import { FinishConfirmationModal } from "../finishConfirmationModal";
 
 export const CardAcceptedDiet = ({ diet }) => {
@@ -38,9 +39,7 @@ export const CardAcceptedDiet = ({ diet }) => {
             <Text>Dieta Finalizada!</Text>
           ) : (
             <Flex justifyContent="center" alignItems="center">
-              <Button w="80px" h="30px" colorScheme="red">
-                Cancelar
-              </Button>
+              <CancelModalConfirmation dietId={dietId} />
               <FinishConfirmationModal dietId={dietId} />
             </Flex>
           )}
