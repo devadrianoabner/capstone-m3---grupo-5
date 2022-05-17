@@ -9,8 +9,15 @@ import VewRequestImg from "../../assets/img/client/imgVewResquests.png";
 
 const MainAreaClient = () => {
   return (
-    <Box w="100%">
-      <Flex flexDirection="column">
+    <>
+      <Flex
+        flexDirection="column"
+        maxW="100%"
+        align="center"
+        justify="center"
+        ml="5px"
+        mr="5px"
+      >
         <Banner
           bg="#F0DC5B
           "
@@ -21,10 +28,12 @@ const MainAreaClient = () => {
 
         <Flex
           w="100%"
+          <Flex w="100%" justify="center">
           flexWrap="nowrap"
           mt={["15px", "15px", "20px", "30px", "30px"]}
         >
           <Box w="100%" mr={["3px", "5px", "5px", "15px"]}>
+
             <CardDashboard
               modal
               bg="#BDAD48
@@ -82,7 +91,9 @@ const MainAreaClient = () => {
               buttonColor="#666363"
               img={VewRequestImg}
             />
+          </Flex>
           </Box>
+
         </Flex>
       </Flex>
     </Box>
