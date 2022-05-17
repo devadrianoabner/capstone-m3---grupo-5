@@ -51,7 +51,7 @@ export const Routes = () => {
       </Route>
 
       <Route path="/new-diet">
-        <IndexAllProposals />
+        <>Nova dieta</>
       </Route>
 
       <Route path="/questions-cookers">

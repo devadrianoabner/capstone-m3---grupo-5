@@ -17,6 +17,8 @@ import {
   Avatar,
 } from "@chakra-ui/react";
 
+import { ModalLogout } from "../modalLogout";
+
 import { useHistory, Link } from "react-router-dom";
 
 import iconSeta from "../../assets/iconsDashboard/iconSeta.svg";
@@ -45,8 +47,8 @@ export const AsideDashboard = ({
   link4,
   link5,
 }) => {
-  /*   const { isOpen, onOpen, onClose } = useDisclosure();
-   */
+  /* const { isOpen, onOpen, onClose } = useDisclosure(); */
+
   const history = useHistory();
   return (
     <Flex
@@ -201,23 +203,14 @@ export const AsideDashboard = ({
         </Flex>
 
         <Flex pl="15px" align="flex-end" h="10%">
-          <Button
-            backgroundColor="#0000"
-            border="1px"
-            borderColor={baseColor}
-            w="110px"
-            h="30px"
-            _hover={{
-              background: "#6f6736",
-            }}
-          >
+          <ModalLogout baseColor={baseColor}>
             <Flex>
               <Image src={iconSeta} />
               <Text fontSize="14px" ml="2px" color={baseColor}>
                 Logout
               </Text>
             </Flex>
-          </Button>
+          </ModalLogout>
         </Flex>
       </Flex>
 
@@ -339,21 +332,14 @@ export const AsideDashboard = ({
           </DrawerBody>
 
           <DrawerFooter>
-            <Button
-              backgroundColor="#0000"
-              border="1px"
-              borderColor={baseColor}
-              w="110px"
-              h="30px"
-              mb="5vh"
-            >
+            <ModalLogout baseColor={baseColor}>
               <Flex>
                 <Image src={iconSeta} />
                 <Text fontSize="14px" ml="2px" color={baseColor}>
                   Logout
                 </Text>
               </Flex>
-            </Button>
+            </ModalLogout>
           </DrawerFooter>
         </DrawerContent>
       </Drawer>

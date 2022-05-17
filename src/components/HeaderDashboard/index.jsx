@@ -6,6 +6,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { BsFillGearFill } from "react-icons/bs";
 import { BiLogOut } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { ModalLogoutIcon } from "../modalLougoutIcon";
 
 export const Header = ({ onOpen }) => {
   return (
@@ -64,7 +65,9 @@ export const Header = ({ onOpen }) => {
           <Icon as={BsFillGearFill} w={[5, 6]} h={[5, 6]} />
         </Box>
         <Box p="8px">
-          <Icon as={BiLogOut} w={[5, 6]} h={[5, 6]} />
+          <ModalLogoutIcon>
+            <Icon as={BiLogOut} w={[5, 6]} h={[5, 6]} />
+          </ModalLogoutIcon>
         </Box>
       </Flex>
     </Flex>
