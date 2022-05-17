@@ -51,7 +51,7 @@ export const Routes = () => {
       </Route>
 
       <Route path="/new-diet">
-        <IndexAllProposals />
+        <>Nova dieta</>
       </Route>
 
       <Route path="/questions-cookers">
@@ -62,13 +62,13 @@ export const Routes = () => {
         <>Pág de perrguntas frequentes cozinheiro</>
       </Route>
 
-      {/*       <Route path="/support">
+      <Route path="/support">
         <>Pág de suporte</>
-
       </Route>
+
       <Route path="/cook-accepted-proposals">
         <CookAcceptedProposals />
-      </Route> */}
+      </Route>
     </Switch>
   );
 };

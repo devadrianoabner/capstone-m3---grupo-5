@@ -28,12 +28,11 @@ const MainAreaClient = () => {
 
         <Flex
           w="100%"
-          <Flex w="100%" justify="center">
+          justify="center"
           flexWrap="nowrap"
           mt={["15px", "15px", "20px", "30px", "30px"]}
         >
           <Box w="100%" mr={["3px", "5px", "5px", "15px"]}>
-
             <CardDashboard
               modal
               bg="#BDAD48
@@ -58,6 +57,7 @@ const MainAreaClient = () => {
               buttonText="Ver tudo"
               buttonColor="#43B07B"
               img={InfoImg}
+              linkBtn="/proposals-clients"
             />
           </Box>
         </Flex>
@@ -91,12 +91,10 @@ const MainAreaClient = () => {
               buttonColor="#666363"
               img={VewRequestImg}
             />
-          </Flex>
           </Box>
-
         </Flex>
       </Flex>
-    </Box>
+    </>
   );
 };
 

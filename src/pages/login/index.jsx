@@ -21,9 +21,10 @@ import { Footer } from "../../components/Footer";
 import { InputDiv } from "../../components/InputDiv";
 import { Logo } from "../../components/Logo";
 import { useToken } from "../../providers/token";
-import api from "../../services/api";
+import api from "../../services";
 
-const Signup = () => {
+const Login = () => {
+  // MUDEI O NOME POIS ESTAVA SIGNUP oO
   const schema = yup.object().shape({
     email: yup
       .string()
@@ -113,6 +114,7 @@ const Signup = () => {
           <Link to="/nossaequipe">Nossa Equipe</Link>
           <Link to="/cozinheiros">Ver Cozinheiros</Link>
           <Link to="/contato">Contato</Link>
+        
           <Flex
             w="100px"
             h="30px"
@@ -241,4 +243,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Login;

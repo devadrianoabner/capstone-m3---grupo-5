@@ -12,6 +12,7 @@ import {
   Text,
   useToast,
   VStack,
+ 
 } from "@chakra-ui/react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
@@ -26,7 +27,7 @@ import { Footer } from "../../components/Footer";
 import { InputDiv } from "../../components/InputDiv";
 import { Logo } from "../../components/Logo";
 import { useToken } from "../../providers/token";
-import api from "../../services/api";
+import api from "../../services";
 
 const Signup = () => {
   const schema = yup.object().shape({
@@ -73,10 +74,14 @@ const Signup = () => {
       password,
       type,
       qntAccepted: 0,
-      qntRejected: 0,
     };
-    if (type === "Prestador") user.faturado = 0;
-    if (type === "Cliente") user.gasto = 0;
+    if (type === "Prestador") {
+      user.qntRejected = 0;
+      user.spent = 0;
+    }
+    if (type === "Cliente") {
+      user.revenue = 0;
+    }
 
     api
       .post("/users", user)
@@ -115,7 +120,7 @@ const Signup = () => {
         m={[0, 0, 0, "0px 100px"]}
         fontSize="14px"
       >
-        <Logo color="#000" m="10" />
+        <Logo color="#000" m="10px" />
         <Flex
           display={["none", "none", "none", "flex"]}
           justify="center"
@@ -150,7 +155,7 @@ const Signup = () => {
         w="100%"
         h="calc(100% - 80px - 50px)"
         grow="1"
-        bgColor="#fcf4a4"
+        bgColor="#ecdf85" // MUDEI a cor para ficar igual login
         direction="row"
         justify={["center", "center", "center", "space-between"]}
         align={["center", "center", "center", "center"]}

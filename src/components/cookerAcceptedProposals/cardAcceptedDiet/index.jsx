@@ -19,8 +19,6 @@ export const CardAcceptedDiet = ({ diet }) => {
       .then((res) => setClientName(res.data.name));
   }, []);
 
-  console.log(clientName);
-
   return (
     <Box bg="#d3d3d3" p="15px" borderRadius="10px" mt="10px">
       <Flex justify="space-between">
