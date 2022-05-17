@@ -18,15 +18,6 @@ import { useToken } from "../../providers/token";
 import api from "../../services";
 import { ProposalCard } from "../diets/proposalsCard";
 
-// 1 - Ao clicar no botão Fazer um get na API das propostas enviadas para a proposta em questão
-// 2 - Renderizar as propostas no modal
-// 3 - Ao clicar no like perguntar se o cliente quer realmente aceitar aquela proposta
-// 5 - Alterar o status de todas as propostas referente ao card
-// 6 - Proposta aceita vai alterar o state para proposta aceita e card do cozinheiro fica verde
-// 7 - Cozinheiro recebe uma notificação avisando que a sua proposta foi aceita e ele já pode começar a cozinhar
-// 8 - Propostas recusadas vão alterar seus states para propostas recusadas, card do cozinheiro fica cinza com uma mensagem "Outro cozinheiro já está preparando essa refeição"
-// 9 - Cozinheiro rece uma notificação avisando que o status de uma de suas propostas foi atualizado
-
 const ModalViewProposal = ({ dietId }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -43,9 +34,6 @@ const ModalViewProposal = ({ dietId }) => {
       .then((res) => setProposals(res.data))
       .catch((e) => console.log(e));
   }, [diets]);
-
-  console.log("proposals");
-  console.log(proposals);
 
   return (
     <>

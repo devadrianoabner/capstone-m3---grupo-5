@@ -10,9 +10,6 @@ export const MainAllProposalsCook = () => {
   const { diets } = useDiets();
   const { user } = useUser();
 
-  console.log(diets);
-  console.log(user);
-
   return (
     <Box w="100%">
       <Flex direction="row">

@@ -16,11 +16,8 @@ import {
   useDisclosure,
   Avatar,
 } from "@chakra-ui/react";
-
 import { ModalLogout } from "../modalLogout";
-
 import { useHistory, Link } from "react-router-dom";
-
 import iconSeta from "../../assets/iconsDashboard/iconSeta.svg";
 
 export const AsideDashboard = ({
