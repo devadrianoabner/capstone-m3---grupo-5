@@ -9,7 +9,7 @@ import imagem3 from "../../assets/imgDashboardPrestador/dinheiro.svg";
 import imagem4 from "../../assets/imgDashboardPrestador/homem-de-negocio.svg";
 import imagem5 from "../../assets/imgDashboardPrestador/culinaria.svg";
 
-export const MainAreaCooker = () => {
+export const MainAreaCooker = ({ faturamento, concluidos }) => {
   return (
     <Box w="100%">
       <Flex flexDirection="column">
@@ -29,7 +29,7 @@ export const MainAreaCooker = () => {
             <CardContador
               bg="#BDAD48"
               title="Propostas aceitas"
-              decpripTion="0"
+              decpripTion={concluidos}
               bgCount="#F0DC5B
             "
               img={imagem2}
@@ -40,7 +40,7 @@ export const MainAreaCooker = () => {
             <CardContador
               bg="#5FDD9F"
               title="Seu faturamento"
-              decpripTion="R$1500,00"
+              decpripTion={faturamento}
               bgCount="#43B07B
             "
               img={imagem3}

@@ -5,6 +5,9 @@ import { Footer } from "../../components/Footer";
 
 import { Flex, Box, useDisclosure } from "@chakra-ui/react";
 
+import { useContext } from "react";
+import { UserContext } from "../../providers/user/index";
+
 import imgPerfil from "../../assets/iconsDashboard/foto.svg";
 import icon1 from "../../assets/iconsDashboard/iconHome.svg";
 import icon2 from "../../assets/iconsDashboard/iconList.svg";
@@ -14,7 +17,8 @@ import icon5 from "../../assets/iconsDashboard/iconSuporte.svg";
 
 export const DashboardPrestador = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
+  const { user, setUser } = useContext(UserContext);
+  console.log(user);
   return (
     <Box>
       <Box h="10vh">
@@ -52,11 +56,14 @@ export const DashboardPrestador = () => {
             ml={["10px", "10px", "15px", "25px", "37px"]}
             mr={["10px", "10px", "15px", "25px", "37px"]}
           >
-            <MainAreaCooker />
+            <MainAreaCooker
+              concluidos={user.qntAccepted}
+              faturamento={user.faturado}
+            />
           </Box>
         </Flex>
       </Box>
-      <Box mt="40px">
+      <Box h="5vh">
         <Footer />
       </Box>
     </Box>
