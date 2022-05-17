@@ -1,4 +1,4 @@
-import { Components } from "../pages/Components";
+//import { Components } from "../pages/Components";
 import { DashboardPrestador } from "../pages/dashboardPrestador";
 import { Route, Switch } from "react-router-dom";
 import { IndexProposalClients } from "../components/indexProposalClients";
@@ -7,7 +7,9 @@ import { IndexAllProposals } from "../components/indexAllProposals";
 
 import Login from "../pages/login";
 import Signup from "../pages/register";
+import { Diets } from "../pages/diets";
 import { DashBoardClient } from "../pages/dashboardClient";
+import { CookAcceptedProposals } from "../pages/cookAcceptedProposals";
 
 export const Routes = () => {
   return (
@@ -30,6 +32,10 @@ export const Routes = () => {
 
       <Route path="/admin">
         <DashboardPrestador />
+      </Route>
+
+      <Route path="/diets">
+        <Diets />
       </Route>
 
       <Route path="/proposals-clients">
@@ -58,6 +64,9 @@ export const Routes = () => {
 
       <Route path="/support">
         <>Pág de suporte</>
+
+      <Route path="/cook-accepted-proposals">
+        <CookAcceptedProposals />
       </Route>
     </Switch>
   );

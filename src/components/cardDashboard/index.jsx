@@ -1,5 +1,6 @@
 import { Flex, Image, Heading, Text, Button } from "@chakra-ui/react";
-
+//import { useState } from "react";
+import ModalDiet from "../ModalDiet";
 export const CardDashboard = ({
   bg,
   title,
@@ -7,6 +8,7 @@ export const CardDashboard = ({
   buttonText,
   buttonColor,
   img,
+  modal = false,
 }) => {
   return (
     <>
@@ -42,17 +44,21 @@ export const CardDashboard = ({
               {decpripTion}
             </Text>
 
-            <Button
-              width={["74px", "100px", "147px"]}
-              height={["22px", "30px", "39px"]}
-              px="5"
-              bg={buttonColor}
-              color="#fff"
-              fontSize={["8px", "12px", "15px", "15px"]}
-              fontWeight="500"
-            >
-              {buttonText}
-            </Button>
+            {!modal ? (
+              <Button
+                width={["74px", "100px", "147px"]}
+                height={["22px", "30px", "39px"]}
+                px="5"
+                bg={buttonColor}
+                color="#fff"
+                fontSize={["8px", "12px", "15px", "15px"]}
+                fontWeight="500"
+              >
+                {buttonText}
+              </Button>
+            ) : (
+              <ModalDiet>Fazer pedido</ModalDiet>
+            )}
           </div>
           <Image
             src={img}

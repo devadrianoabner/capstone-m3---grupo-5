@@ -27,11 +27,11 @@ export const Header = ({ onOpen }) => {
       </Box>
       <Logo
         color={"#000"}
-        display={["flex", "flex", "none", "none"]}
+        display={["flex", "flex", "flex", "none"]}
         mb="5px"
       />
 
-      <Flex align="center" display={["none", "none", "flex"]}>
+      <Flex align="center" display={["none", "none", "none", "flex"]}>
         <Flex
           w={["0vw", "0vw", "0vw", "0vw", "19.3vw", "14.7vw"]}
           h="50px"

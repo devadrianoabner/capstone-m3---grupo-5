@@ -14,6 +14,7 @@ import {
   DrawerContent,
   DrawerCloseButton,
   useDisclosure,
+  Avatar,
 } from "@chakra-ui/react";
 
 import { useHistory, Link } from "react-router-dom";
@@ -69,7 +70,7 @@ export const AsideDashboard = ({
           </Box>
 
           <Box borderBottom="2px" borderColor={baseColor} pb="13px">
-            <Image boxSize="82px" mt="22px" src={fotoUser} />
+            <Avatar boxSize="82px" mt="22px" src={fotoUser} name={nomeUser} />
             <Text fontSize="25px" fontWeight="600" mt="15px" color={baseColor}>
               {nomeUser}
             </Text>

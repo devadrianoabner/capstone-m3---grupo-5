@@ -7,6 +7,7 @@ import InfoImg from "../../assets/img/client/imgInfoClient.png";
 import RequestImg from "../../assets/img/client/imgRequestClient.png";
 import VewRequestImg from "../../assets/img/client/imgVewResquests.png";
 
+
 const MainAreaClient = () => {
   return (
     <>
@@ -28,6 +29,7 @@ const MainAreaClient = () => {
 
         <Flex w="100%" flexWrap="wrap" justify="center">
           <CardDashboard
+            modal
             bg="#BDAD48
             "
             title="Solicitar um novo pedido"
