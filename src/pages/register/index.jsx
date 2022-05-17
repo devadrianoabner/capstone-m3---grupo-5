@@ -26,7 +26,7 @@ import { Footer } from "../../components/Footer";
 import { InputDiv } from "../../components/InputDiv";
 import { Logo } from "../../components/Logo";
 import { useToken } from "../../providers/token";
-import api from "../../services/api";
+import api from "../../services";
 
 const Signup = () => {
   const schema = yup.object().shape({
@@ -73,10 +73,14 @@ const Signup = () => {
       password,
       type,
       qntAccepted: 0,
-      qntRejected: 0,
     };
-    if (type === "Prestador") user.faturado = 0;
-    if (type === "Cliente") user.gasto = 0;
+    if (type === "Prestador") {
+      user.qntRejected = 0;
+      user.spent = 0;
+    }
+    if (type === "Cliente") {
+      user.revenue = 0;
+    }
 
     api
       .post("/users", user)
@@ -102,14 +106,20 @@ const Signup = () => {
   };
 
   return (
-    <Flex w="100vw" h="100vh" direction="column" justify="space-between">
+    <Flex
+      w="100vw"
+      minH="100vh"
+      h="100%"
+      direction="column"
+      justify="space-between"
+    >
       <Flex
         h={["48px", "48px", "48px", "80px"]}
         justify={["center", "center", "center", "space-between"]}
         m={[0, 0, 0, "0px 100px"]}
         fontSize="14px"
       >
-        <Logo color="#000" />
+        <Logo color="#000" m="10px" />
         <Flex
           display={["none", "none", "none", "flex"]}
           justify="center"
@@ -144,7 +154,7 @@ const Signup = () => {
         w="100%"
         h="calc(100% - 80px - 50px)"
         grow="1"
-        bgColor="#ecdf85"
+        bgColor="#ecdf85" // MUDEI a cor para ficar igual login
         direction="row"
         justify={["center", "center", "center", "space-between"]}
         align={["center", "center", "center", "center"]}
@@ -162,10 +172,10 @@ const Signup = () => {
         <VStack
           w={["500px"]}
           minW={["250px"]}
-          h={["700px"]}
+          maxH={["700px"]}
           bgColor="#FFF"
           p={["5px", "5px", "5px", "20px 20px 40px 20px"]}
-          m={[0, 0, 0, "200px 40px"]}
+          m={[0, 0, 0, "20px 40px"]}
           borderRadius="8px"
         >
           <Heading color="#000" fontSize="26px" fontWeight="normal">

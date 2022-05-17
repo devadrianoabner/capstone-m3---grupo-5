@@ -14,7 +14,14 @@ export const CardDashboard = ({
 }) => {
   return (
     <>
-      <Flex w="100%" h={["133px", "200px", "219px"]}>
+      <Flex
+        maxW="660px"
+        w="100%"
+        h={["133px", "200px", "219px"]}
+        mr={["5px", "15px"]}
+        ml={["5px", "15px"]}
+        mb={["10px", "30px"]}
+      >
         <Flex
           bg={bg}
           justify={["space-between", "space-between"]}
@@ -69,6 +76,7 @@ export const CardDashboard = ({
             pos="absolute"
             bottom={["2", "2", "4"]}
             right={["2", "2", "4"]}
+            ml="5px"
           />
         </Flex>
       </Flex>

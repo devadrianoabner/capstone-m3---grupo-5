@@ -56,6 +56,7 @@ export const AsideDashboard = ({
       direction="column"
       display={["none", "none", "none", "none", "fixed"]}
       h="100%"
+      borderRadius="0 4px 0 0"
     >
       <Flex direction="column">
         <Flex direction="column" pl="15px" h="80%">

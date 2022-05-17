@@ -42,13 +42,14 @@ const CardProposal = ({ diet }) => {
 
   console.log(client.name);
   return (
-    <Center maxW={"350px"} w={"100%"} py={2}>
+    <Center maxW={"350px"} w={"100%"} minH="100%" py={"8px"} minW="250px">
       <VStack
         borderRadius="8px"
-        w={["88%", "100%"]}
-        h={["100%", "auto"]}
+        w={"90%"}
+        minH={"100%"}
         direction={{ base: "column", md: "row" }}
         bg={("white", "#D9D9D9")}
+        justify="space-between"
       >
         <HStack
           w={"80%"}
@@ -62,48 +63,49 @@ const CardProposal = ({ diet }) => {
             maxW={"50px"}
             maxH={"50px"}
             w={"80%"}
+            name={client.name}
             src={
               "https://images.unsplash.com/photo-1520810627419-35e362c5dc07?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
             }
           />
 
           <Text fontSize={"20px"} fontFamily={"body"}>
-            Dieta do {client.name} - id {dietId}
+            Dieta do {client.name}
           </Text>
         </HStack>
-        <VStack justifyContent="center" alignItems="center">
+        <VStack justifyContent="flex-start" alignItems="center" flexGrow="2">
           <Text color={"black"} fontWeight={"bold"} fontSize={"13px"}>
             Descrição da dieta:
           </Text>
           <Text textAlign={"center"} color={"black"} fontSize={"13px"}>
             {description}
           </Text>
-          {!status ? (
-            <HStack py={"4"} w={"85%"} alignItems={"center"}>
-              {edit ? (
-                <ModalEdit dietId={dietId} />
-              ) : (
-                <ModalViewProposal dietId={dietId} />
-              )}
-              <ButtonConfirmDelete removeDiet={removeDiet} dietId={dietId} />
-            </HStack>
-          ) : !finished ? (
-            <Box w="250px" pb="8px">
-              <Text fontWeight="bold">
-                Você escolheu já um cozinheiro para essa dieta!
-              </Text>
-              <Text>Cozinheiro: {cook.name}</Text>
-              <Text fontWeight="bold">
-                Valor: R${price.toFixed(2).replace(".", ",")}
-              </Text>
-            </Box>
-          ) : (
-            <Box>
-              <Text fontWeight="bold">Seu pedido está finalizado.</Text>
-              <Text fontWeight="bold">Favor retirar: {address}</Text>
-            </Box>
-          )}
         </VStack>
+        {!status ? (
+          <HStack py={"4"} w={"80%"} justify={"center"}>
+            {edit ? (
+              <ModalEdit dietId={dietId} description={description} />
+            ) : (
+              <ModalViewProposal dietId={dietId} />
+            )}
+            <ButtonConfirmDelete removeDiet={removeDiet} dietId={dietId} />
+          </HStack>
+        ) : !finished ? (
+          <Box w="90%" pb="8px">
+            <Text fontWeight="bold">
+              Você escolheu já um cozinheiro para essa dieta!
+            </Text>
+            <Text>Cozinheiro: {cook.name}</Text>
+            <Text fontWeight="bold">
+              Valor: R${price.toFixed(2).replace(".", ",")}
+            </Text>
+          </Box>
+        ) : (
+          <Box>
+            <Text fontWeight="bold">Seu pedido está finalizado.</Text>
+            <Text fontWeight="bold">Favor retirar: {address}</Text>
+          </Box>
+        )}
       </VStack>
     </Center>
   );

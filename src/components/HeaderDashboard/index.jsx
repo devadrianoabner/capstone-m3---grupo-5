@@ -11,7 +11,7 @@ import { ModalLogoutIcon } from "../modalLougoutIcon";
 export const Header = ({ onOpen }) => {
   return (
     <Flex
-      w="100%"
+      w={["100%"]}
       h={["50px", "50px", "90px"]}
       align="center"
       justify="space-between"
@@ -28,11 +28,11 @@ export const Header = ({ onOpen }) => {
       </Box>
       <Logo
         color={"#000"}
-        display={["flex", "flex", "flex", "none"]}
+        display={["flex", "flex", "flex", "flex", "none"]}
         mb="5px"
       />
 
-      <Flex align="center" display={["none", "none", "none", "flex"]}>
+      <Flex align="center" display={["none", "none", "none", "none", "flex"]}>
         <Flex
           w={["0vw", "0vw", "0vw", "0vw", "19.3vw", "14.7vw"]}
           h="50px"
@@ -40,9 +40,8 @@ export const Header = ({ onOpen }) => {
           borderRadius="0px 15px 15px 0px"
           align="center"
           justify="center"
-          display={["none", "none", "none", "none", "flex", "flex"]}
         >
-          <Logo fontSize="25px" />
+          <Logo color="#000" />
         </Flex>
         <Flex
           w={["200px", "200px", "230px", "300px"]}

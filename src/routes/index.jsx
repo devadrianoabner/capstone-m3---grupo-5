@@ -62,9 +62,9 @@ export const Routes = () => {
         <>Pág de perrguntas frequentes cozinheiro</>
       </Route>
 
-      {/*       <Route path="/support">
+      <Route path="/support">
         <>Pág de suporte</>
-        <Route/> */}
+      </Route>
 
       <Route path="/cook-accepted-proposals">
         <CookAcceptedProposals />
