@@ -39,6 +39,9 @@ export const IndexAllProposals = () => {
             isOpen={isOpen}
             onOpen={onOpen}
             onClose={onClose}
+            link1="/admin"
+            link2="/proposals-cookers"
+            link3="/all-proposals"
           />
           <MainAllProposals />
         </Flex>

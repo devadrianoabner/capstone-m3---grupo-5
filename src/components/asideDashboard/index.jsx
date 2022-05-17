@@ -17,6 +17,8 @@ import {
   Avatar,
 } from "@chakra-ui/react";
 
+import { useHistory, Link } from "react-router-dom";
+
 import iconSeta from "../../assets/iconsDashboard/iconSeta.svg";
 
 export const AsideDashboard = ({
@@ -37,9 +39,15 @@ export const AsideDashboard = ({
   isOpen,
   onOpen,
   onClose,
+  link1,
+  link2,
+  link3,
+  link4,
+  link5,
 }) => {
   /*   const { isOpen, onOpen, onClose } = useDisclosure();
    */
+  const history = useHistory();
   return (
     <Flex
       bgColor={corBody}
@@ -67,9 +75,9 @@ export const AsideDashboard = ({
             </Text>
           </Box>
 
-          <List mr="15px">
-            <ListItem borderBottom="1px" borderColor={baseColor}>
-              <Button backgroundColor="#0000" h="45px">
+          <List mr="15px" spacing={2}>
+            <ListItem>
+              <Link to={link1}>
                 <Flex align="center">
                   <Image src={icon1} />
                   <Flex align="flex-end">
@@ -78,11 +86,11 @@ export const AsideDashboard = ({
                     </Text>
                   </Flex>
                 </Flex>
-              </Button>
+              </Link>
             </ListItem>
 
-            <ListItem borderBottom="1px" borderColor={baseColor}>
-              <Button backgroundColor="#0000" h="45px">
+            <ListItem>
+              <Link to={link2}>
                 <Flex align="center">
                   <Image src={icon2} />
                   <Flex align="flex-end">
@@ -91,11 +99,11 @@ export const AsideDashboard = ({
                     </Text>
                   </Flex>
                 </Flex>
-              </Button>
+              </Link>
             </ListItem>
 
-            <ListItem borderBottom="1px" borderColor={baseColor}>
-              <Button backgroundColor="#0000" h="45px">
+            <ListItem>
+              <Link to={link3}>
                 <Flex align="center">
                   <Image mt="5px" src={icon3} />
                   <Flex align="flex-end">
@@ -104,11 +112,11 @@ export const AsideDashboard = ({
                     </Text>
                   </Flex>
                 </Flex>
-              </Button>
+              </Link>
             </ListItem>
 
-            <ListItem borderBottom="1px" borderColor={baseColor}>
-              <Button backgroundColor="#0000" h="45px">
+            <ListItem>
+              <Link to={link4}>
                 <Flex align="center">
                   <Image src={icon4} />
                   <Flex align="flex-end">
@@ -117,11 +125,11 @@ export const AsideDashboard = ({
                     </Text>
                   </Flex>
                 </Flex>
-              </Button>
+              </Link>
             </ListItem>
 
-            <ListItem borderBottom="1px" borderColor={baseColor}>
-              <Button backgroundColor="#0000" h="45px">
+            <ListItem>
+              <Link to={link5}>
                 <Flex align="center">
                   <Image src={icon5} />
                   <Flex align="flex-end">
@@ -130,27 +138,18 @@ export const AsideDashboard = ({
                     </Text>
                   </Flex>
                 </Flex>
-              </Button>
+              </Link>
             </ListItem>
           </List>
         </Flex>
 
         <Flex h="26vh" pl="15px" align="flex-end">
-          <Button
-            backgroundColor="#0000"
-            border="1px"
-            borderColor={baseColor}
-            w="110px"
-            h="30px"
-            mb="5vh"
-          >
-            <Flex>
-              <Image src={iconSeta} />
-              <Text fontSize="14px" ml="2px" color={baseColor}>
-                Logout
-              </Text>
-            </Flex>
-          </Button>
+          <Flex>
+            <Image src={iconSeta} />
+            <Text fontSize="14px" ml="2px" color={baseColor}>
+              Logout
+            </Text>
+          </Flex>
         </Flex>
       </Flex>
 
@@ -175,7 +174,7 @@ export const AsideDashboard = ({
 
             <List mr="15px">
               <ListItem borderBottom="1px" borderColor={baseColor}>
-                <Button backgroundColor="#0000" h="45px">
+                <Link to={link1}>
                   <Flex align="center">
                     <Image src={icon1} />
                     <Flex align="flex-end">
@@ -184,11 +183,11 @@ export const AsideDashboard = ({
                       </Text>
                     </Flex>
                   </Flex>
-                </Button>
+                </Link>
               </ListItem>
 
               <ListItem borderBottom="1px" borderColor={baseColor}>
-                <Button backgroundColor="#0000" h="45px">
+                <Link to={link2}>
                   <Flex align="center">
                     <Image src={icon2} />
                     <Flex align="flex-end">
@@ -197,11 +196,11 @@ export const AsideDashboard = ({
                       </Text>
                     </Flex>
                   </Flex>
-                </Button>
+                </Link>
               </ListItem>
 
               <ListItem borderBottom="1px" borderColor={baseColor}>
-                <Button backgroundColor="#0000" h="45px">
+                <Link to={link3}>
                   <Flex align="center">
                     <Image mt="5px" src={icon3} />
                     <Flex align="flex-end">
@@ -210,11 +209,11 @@ export const AsideDashboard = ({
                       </Text>
                     </Flex>
                   </Flex>
-                </Button>
+                </Link>
               </ListItem>
 
               <ListItem borderBottom="1px" borderColor={baseColor}>
-                <Button backgroundColor="#0000" h="45px">
+                <Link to={link4}>
                   <Flex align="center">
                     <Image src={icon4} />
                     <Flex align="flex-end">
@@ -223,11 +222,11 @@ export const AsideDashboard = ({
                       </Text>
                     </Flex>
                   </Flex>
-                </Button>
+                </Link>
               </ListItem>
 
               <ListItem borderBottom="1px" borderColor={baseColor}>
-                <Button backgroundColor="#0000" h="45px">
+                <Link to={link5}>
                   <Flex align="center">
                     <Image src={icon5} />
                     <Flex align="flex-end">
@@ -236,7 +235,7 @@ export const AsideDashboard = ({
                       </Text>
                     </Flex>
                   </Flex>
-                </Button>
+                </Link>
               </ListItem>
             </List>
           </DrawerBody>
