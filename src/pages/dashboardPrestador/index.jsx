@@ -56,7 +56,7 @@ export const DashboardPrestador = () => {
           </Box>
         </Flex>
       </Box>
-      <Box>
+      <Box mt="40px">
         <Footer />
       </Box>
     </Box>
