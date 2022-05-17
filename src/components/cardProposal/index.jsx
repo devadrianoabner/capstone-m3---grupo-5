@@ -15,6 +15,8 @@ const CardProposal = ({ diet }) => {
     cookId,
     price,
     edit,
+    finished,
+    address,
   } = diet;
 
   const { removeDiet } = useDiets();
@@ -85,7 +87,7 @@ const CardProposal = ({ diet }) => {
               )}
               <ButtonConfirmDelete removeDiet={removeDiet} dietId={dietId} />
             </HStack>
-          ) : (
+          ) : !finished ? (
             <Box w="250px" pb="8px">
               <Text fontWeight="bold">
                 Você escolheu já um cozinheiro para essa dieta!
@@ -94,6 +96,11 @@ const CardProposal = ({ diet }) => {
               <Text fontWeight="bold">
                 Valor: R${price.toFixed(2).replace(".", ",")}
               </Text>
+            </Box>
+          ) : (
+            <Box>
+              <Text fontWeight="bold">Seu pedido está finalizado.</Text>
+              <Text fontWeight="bold">Favor retirar: {address}</Text>
             </Box>
           )}
         </VStack>

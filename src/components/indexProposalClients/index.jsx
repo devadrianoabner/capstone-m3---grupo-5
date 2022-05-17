@@ -39,6 +39,9 @@ export const IndexProposalClients = () => {
             isOpen={isOpen}
             onOpen={onOpen}
             onClose={onClose}
+            link1="/dashboard"
+            link2="/new-diet"
+            link3="/proposals-clients"
           />
           <MainAreaProposal />
         </Flex>

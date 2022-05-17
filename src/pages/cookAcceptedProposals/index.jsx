@@ -1,18 +1,19 @@
-import { Header } from "../../components/HeaderDashboard";
-import { MainAreaCooker } from "../../components/mainAreaCokker";
-import { AsideDashboard } from "../../components/asideDashboard";
-
-import { Flex, Box, useDisclosure } from "@chakra-ui/react";
-
+import { Box, Flex, useDisclosure } from "@chakra-ui/react";
 import imgPerfil from "../../assets/iconsDashboard/foto.svg";
+import icon3 from "../../assets/iconsDashboard/iconApertoDeMao.svg";
 import icon1 from "../../assets/iconsDashboard/iconHome.svg";
 import icon2 from "../../assets/iconsDashboard/iconList.svg";
-import icon3 from "../../assets/iconsDashboard/iconApertoDeMao.svg";
 import icon4 from "../../assets/iconsDashboard/iconPergunta.svg";
 import icon5 from "../../assets/iconsDashboard/iconSuporte.svg";
+import { AsideDashboard } from "../../components/asideDashboard";
+import { MainAllProposalsCook } from "../../components/cookerAcceptedProposals/mainAllProposalsCook";
+import { Header } from "../../components/HeaderDashboard";
+import { useUser } from "../../providers/user";
 
-export const DashboardPrestador = () => {
+export const CookAcceptedProposals = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const { user } = useUser();
 
   return (
     <Box>
@@ -24,7 +25,7 @@ export const DashboardPrestador = () => {
           <AsideDashboard
             corBody="#A69C5D"
             fotoUser={imgPerfil}
-            nomeUser="Alysson Colombo"
+            nomeUser={user.name}
             icon1={icon1}
             icon2={icon2}
             icon3={icon3}
@@ -39,13 +40,8 @@ export const DashboardPrestador = () => {
             isOpen={isOpen}
             onOpen={onOpen}
             onClose={onClose}
-            link1="/admin"
-            link2="/proposals-cookers"
-            link3="/all-proposals"
-            link4="/questions-cookers"
-            link5="/support"
           />
-          <MainAreaCooker />
+          <MainAllProposalsCook />
         </Flex>
       </Box>
     </Box>

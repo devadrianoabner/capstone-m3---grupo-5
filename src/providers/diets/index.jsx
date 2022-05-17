@@ -73,7 +73,6 @@ export const DietsProvider = ({ children }) => {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
-        console.log("deu");
         refreshDiet();
       })
       .catch((err) => console.log(err));

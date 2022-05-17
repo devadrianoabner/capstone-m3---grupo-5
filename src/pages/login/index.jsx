@@ -43,12 +43,6 @@ const Signup = () => {
   const history = useHistory();
   const toast = useToast();
 
-  const { token, setToken } = useToken();
-
-  if (token) {
-    return <Redirect to="/dashboard" />;
-  }
-
   const onSubmitFunction = ({ email, password }) => {
     const user = {
       email,
@@ -69,8 +63,17 @@ const Signup = () => {
 
         localStorage.setItem("@HDR:token", JSON.stringify(accessToken));
         localStorage.setItem("@HDR:user", JSON.stringify(user));
-        setToken(accessToken);
-        history.push("/login");
+        console.log(user.type);
+        switch (user.type) {
+          case "Prestador":
+            return history.push("/admin");
+
+          case "Usuário":
+            return history.push("/dashboard");
+
+          default:
+            break;
+        }
       })
       .catch((err) => {
         console.log(err);
