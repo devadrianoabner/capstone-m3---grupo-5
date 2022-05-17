@@ -23,7 +23,8 @@ import { Logo } from "../../components/Logo";
 import { useToken } from "../../providers/token";
 import api from "../../services";
 
-const Signup = () => {
+const Login = () => {
+  // MUDEI O NOME POIS ESTAVA SIGNUP oO
   const schema = yup.object().shape({
     email: yup
       .string()
@@ -241,4 +242,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Login;
