@@ -2,7 +2,8 @@ import { Footer } from "../../components/Footer";
 import { Header } from "../../components/HeaderDashboard";
 import { AsideDashboard } from "../../components/asideDashboard";
 import MainAreaClient from "../../components/mainAreaClient";
-import { Flex } from "@chakra-ui/react";
+
+import { Flex, Box, useDisclosure } from "@chakra-ui/react";
 
 import imgPerfil from "../../assets/iconsDashboard/foto.svg";
 import icon1 from "../../assets/iconsDashboard/iconHome.svg";
@@ -12,6 +13,8 @@ import icon4 from "../../assets/iconsDashboard/iconPergunta.svg";
 import icon5 from "../../assets/iconsDashboard/iconSuporte.svg";
 
 export const DashBoardClient = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <>
       <Flex direction="column" h="100%" maxH="100vh">
@@ -29,10 +32,13 @@ export const DashBoardClient = () => {
               icon5={icon5}
               textIcon1="Dashboard"
               textIcon2="Fazer novo pedido"
-              textIcon3="Ver propostas"
+              textIcon3="Ver dietas"
               textIcon4="Perguntas frequentes"
               textIcon5="Fale com a central"
               baseColor="#12120E"
+              isOpen={isOpen}
+              onOpen={onOpen}
+              onClose={onClose}
               link1="/dashboard"
               link2="/new-diet"
               link3="/proposals-clients"
@@ -40,10 +46,12 @@ export const DashBoardClient = () => {
           </Flex>
           <Flex maxW={["100vw", "100%"]} w={["100vw", "100%"]}>
             <MainAreaClient />
-          </Flex>
+          </Box>
         </Flex>
+      </Box>
+      <Box mt="40px">
         <Footer />
-      </Flex>
-    </>
+      </Box>
+    </Box>
   );
 };

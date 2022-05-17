@@ -36,7 +36,7 @@ export const MainAreaCooker = () => {
             />
           </Box>
 
-          <Box w="100%" ml="15px">
+          <Box w="100%" ml={["3px", "5px", "5px", "15px"]}>
             <CardContador
               bg="#5FDD9F"
               title="Seu faturamento"

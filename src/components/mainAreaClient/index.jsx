@@ -1,6 +1,6 @@
 import Banner from "../banner";
 import { CardDashboard } from "../cardDashboard";
-import { Flex } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import BannerImg from "../../assets/img/client/imgBannerCliente.png";
 import DuboutsImg from "../../assets/img/client/imgDoubtsCliente.png";
 import InfoImg from "../../assets/img/client/imgInfoClient.png";
@@ -28,14 +28,12 @@ const MainAreaClient = () => {
 
         <Flex
           w="100%"
-          maxW="1400px"
-          maxH="100%"
-          alignContent="flex-start"
-          flexWrap="wrap"
-          justify="center"
-          mt={["5px", "30px"]}
-        >
           <Flex w="100%" justify="center">
+          flexWrap="nowrap"
+          mt={["15px", "15px", "20px", "30px", "30px"]}
+        >
+          <Box w="100%" mr={["3px", "5px", "5px", "15px"]}>
+
             <CardDashboard
               modal
               bg="#BDAD48
@@ -48,6 +46,9 @@ const MainAreaClient = () => {
               buttonColor="#706B4C"
               img={DuboutsImg}
             />
+          </Box>
+
+          <Box w="100%" ml={["3px", "5px", "5px", "15px"]}>
             <CardDashboard
               bg="#5FDD9F"
               title="Visualizar pedidos"
@@ -58,9 +59,15 @@ const MainAreaClient = () => {
               buttonColor="#43B07B"
               img={InfoImg}
             />
-          </Flex>
+          </Box>
+        </Flex>
 
-          <Flex w="100%" justify="center">
+        <Flex
+          w="100%"
+          flexWrap="nowrap"
+          mt={["15px", "15px", "20px", "30px", "30px"]}
+        >
+          <Box w="100%" mr={["3px", "5px", "5px", "15px"]}>
             <CardDashboard
               bg="#F0DC5B"
               title="Tem dúvidas?"
@@ -71,6 +78,9 @@ const MainAreaClient = () => {
               buttonColor="#706B4C"
               img={RequestImg}
             />
+          </Box>
+
+          <Box w="100%" ml={["3px", "5px", "5px", "15px"]}>
             <CardDashboard
               bg="#F2E8A5"
               title="Não sabe o que pedir?"
@@ -82,9 +92,11 @@ const MainAreaClient = () => {
               img={VewRequestImg}
             />
           </Flex>
+          </Box>
+
         </Flex>
       </Flex>
-    </>
+    </Box>
   );
 };
 
