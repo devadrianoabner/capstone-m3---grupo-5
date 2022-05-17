@@ -46,12 +46,12 @@ export const DashBoardClient = () => {
           </Flex>
           <Flex maxW={["100vw", "100%"]} w={["100vw", "100%"]}>
             <MainAreaClient />
-          </Box>
+          </Flex>
         </Flex>
-      </Box>
+      </Flex>
       <Box mt="40px">
         <Footer />
       </Box>
-    </Box>
+      </>
   );
 };
