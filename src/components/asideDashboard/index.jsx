@@ -14,6 +14,7 @@ import {
   DrawerContent,
   DrawerCloseButton,
   useDisclosure,
+  Avatar,
 } from "@chakra-ui/react";
 
 import iconSeta from "../../assets/iconsDashboard/iconSeta.svg";
@@ -60,7 +61,7 @@ export const AsideDashboard = ({
           </Box>
 
           <Box borderBottom="2px" borderColor={baseColor} pb="13px">
-            <Image boxSize="82px" mt="22px" src={fotoUser} />
+            <Avatar boxSize="82px" mt="22px" src={fotoUser} name={nomeUser} />
             <Text fontSize="15px" fontWeight="600" mt="15px" color={baseColor}>
               {nomeUser}
             </Text>
