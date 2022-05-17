@@ -1,34 +1,29 @@
 import {
   AlertDialog,
   AlertDialogBody,
-  AlertDialogContent,
   AlertDialogFooter,
   AlertDialogHeader,
+  AlertDialogContent,
   AlertDialogOverlay,
   Button,
   useDisclosure,
+  Input,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
+import { useDiets } from "../../../providers/diets";
 
-export const ButtonConfirmDelete = ({ removeDiet, dietId }) => {
+export const FinishConfirmationModal = ({ dietId }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const cancelRef = React.useRef();
 
+  const { modifyDiet } = useDiets();
+
+  const [address, setAddress] = useState("");
+
   return (
     <>
-      <Button
-        fontSize={"sm"}
-        maxH={"30px"}
-        borderRadius="8px"
-        isCentered
-        bg={"#6c663F"}
-        color={"white"}
-        _focus={{
-          bg: "gray.500",
-        }}
-        onClick={onOpen}
-      >
-        Excluir
+      <Button ml="10px" w="80px" h="30px" colorScheme="green" onClick={onOpen}>
+        Finalizar{" "}
       </Button>
 
       <AlertDialog
@@ -39,26 +34,33 @@ export const ButtonConfirmDelete = ({ removeDiet, dietId }) => {
         <AlertDialogOverlay>
           <AlertDialogContent>
             <AlertDialogHeader fontSize="lg" fontWeight="bold">
-              Aceitar Oferta
+              Finalizar Dieta
             </AlertDialogHeader>
 
             <AlertDialogBody>
-              Tem certeza que desejar deletar essa dieta?
+              Tem certeza que deseja finalizar essa dieta?
+              <Input
+                mt="8px"
+                placeholder="Insira o endereço de retirada"
+                onChange={(e) => {
+                  setAddress(e.target.value);
+                }}
+              />
             </AlertDialogBody>
 
             <AlertDialogFooter>
               <Button ref={cancelRef} onClick={onClose}>
-                Cancelar
+                Cancel
               </Button>
               <Button
+                colorScheme="green"
                 onClick={() => {
-                  removeDiet(dietId);
+                  modifyDiet({ finished: true, address: address }, dietId);
                   onClose();
                 }}
                 ml={3}
-                colorScheme="red"
               >
-                Deletar
+                Finalizar
               </Button>
             </AlertDialogFooter>
           </AlertDialogContent>
