@@ -14,9 +14,9 @@ import icon5 from "../../assets/iconsDashboard/iconSuporte.svg";
 export const DashBoardClient = () => {
   return (
     <>
-      <Flex direction="column">
+      <Flex direction="column" h="100%" maxH="100vh">
         <Header />
-        <Flex>
+        <Flex mt="25px">
           <Flex maxW="28vw">
             <AsideDashboard
               corBody="#A69C5D"
@@ -38,7 +38,7 @@ export const DashBoardClient = () => {
               link3="/proposals-clients"
             />
           </Flex>
-          <Flex w="90vw">
+          <Flex maxW={["100vw", "100%"]} w={["100vw", "100%"]}>
             <MainAreaClient />
           </Flex>
         </Flex>

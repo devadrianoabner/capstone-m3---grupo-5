@@ -102,14 +102,20 @@ const Signup = () => {
   };
 
   return (
-    <Flex w="100vw" h="100vh" direction="column" justify="space-between">
+    <Flex
+      w="100vw"
+      minH="100vh"
+      h="100%"
+      direction="column"
+      justify="space-between"
+    >
       <Flex
         h={["48px", "48px", "48px", "80px"]}
         justify={["center", "center", "center", "space-between"]}
         m={[0, 0, 0, "0px 100px"]}
         fontSize="14px"
       >
-        <Logo color="#000" />
+        <Logo color="#000" m="10" />
         <Flex
           display={["none", "none", "none", "flex"]}
           justify="center"
@@ -144,7 +150,7 @@ const Signup = () => {
         w="100%"
         h="calc(100% - 80px - 50px)"
         grow="1"
-        bgColor="#ecdf85"
+        bgColor="#fcf4a4"
         direction="row"
         justify={["center", "center", "center", "space-between"]}
         align={["center", "center", "center", "center"]}
@@ -162,10 +168,10 @@ const Signup = () => {
         <VStack
           w={["500px"]}
           minW={["250px"]}
-          h={["700px"]}
+          maxH={["700px"]}
           bgColor="#FFF"
           p={["5px", "5px", "5px", "20px 20px 40px 20px"]}
-          m={[0, 0, 0, "200px 40px"]}
+          m={[0, 0, 0, "20px 40px"]}
           borderRadius="8px"
         >
           <Heading color="#000" fontSize="26px" fontWeight="normal">
