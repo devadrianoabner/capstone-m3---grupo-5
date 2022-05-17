@@ -16,18 +16,18 @@ export const Header = ({ onOpen }) => {
       justify="space-between"
       mt={["8px", "8px", "0px"]}
     >
-      <Box p="8px" ml="10px" display={["block", "block", "none", "none"]}>
+      <Box p="8px" ml="10px" display={["block", "block", "block", "none"]}>
         <Button bg="#0000" onClick={onOpen}>
           <Icon as={GiHamburgerMenu} w={[5, 6]} h={[5, 6]} />
         </Button>
       </Box>
       <Logo
         color={"#000"}
-        display={["flex", "flex", "none", "none"]}
+        display={["flex", "flex", "flex", "none"]}
         mb="5px"
       />
 
-      <Flex align="center" display={["none", "none", "flex"]}>
+      <Flex align="center" display={["none", "none", "none", "flex"]}>
         <Flex
           w="385px"
           h="50px"

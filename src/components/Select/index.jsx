@@ -21,7 +21,7 @@ const Select = ({ register, name, label, errors, ...rest }) => {
         <option value="" hidden>
           Opções para dietas restritas
         </option>
-        <option value="Nenhum">Nenhum</option>
+        <option value="Nenhuma">Nenhuma</option>
         <option value="Vegano">Vegano</option>
         <option value="LacFree">LacFree</option>
         <option value="Gluten free">Gluten free</option>

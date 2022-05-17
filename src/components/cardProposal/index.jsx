@@ -1,6 +1,46 @@
-import { Button, Center, VStack, Image, Text, HStack } from "@chakra-ui/react";
+import { Avatar, Box, Center, HStack, Text, VStack } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
+import { useDiets } from "../../providers/diets";
+import api from "../../services";
+import { ButtonConfirmDelete } from "../diets/buttonConfirmDelete";
+import ModalEdit from "../ModalEdit/Index";
+import ModalViewProposal from "../modalViewProposal";
 
-const CardProposal = () => {
+const CardProposal = ({ diet }) => {
+  const {
+    id: dietId,
+    clientId,
+    description,
+    status,
+    cookId,
+    price,
+    edit,
+    finished,
+    address,
+  } = diet;
+
+  const { removeDiet } = useDiets();
+
+  const [client, setClient] = useState("");
+  const [cook, setCook] = useState({});
+
+  useEffect(() => {
+    api
+      .get(`/users/${clientId}`)
+      .then((res) => setClient(res.data))
+      .catch((e) => console.log(e));
+  }, []);
+
+  useEffect(() => {
+    if (cookId !== 0) {
+      api
+        .get(`/users/${cookId}`)
+        .then((res) => setCook(res.data))
+        .catch((e) => console.log(e));
+    }
+  }, [status]);
+
+  console.log(client.name);
   return (
     <Center maxW={"350px"} w={"100%"} py={2}>
       <VStack
@@ -17,7 +57,7 @@ const CardProposal = () => {
           py={"3"}
           justifyContent={"space-between"}
         >
-          <Image
+          <Avatar
             borderRadius={"50%"}
             maxW={"50px"}
             maxH={"50px"}
@@ -28,44 +68,41 @@ const CardProposal = () => {
           />
 
           <Text fontSize={"20px"} fontFamily={"body"}>
-            Lindsey James
+            Dieta do {client.name} - id {dietId}
           </Text>
         </HStack>
         <VStack justifyContent="center" alignItems="center">
           <Text color={"black"} fontWeight={"bold"} fontSize={"13px"}>
-            Título da dieta
+            Descrição da dieta:
           </Text>
           <Text textAlign={"center"} color={"black"} fontSize={"13px"}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna.
+            {description}
           </Text>
-
-          <HStack py={"4"} w={"80%"} alignItems={"center"}>
-            <Button
-              fontSize={"sm"}
-              borderRadius="8px"
-              maxH={"30px"}
-              bg={"#A69C5D"}
-              _focus={{
-                bg: "gray.200",
-              }}
-            >
-              Ver propostas
-            </Button>
-            <Button
-              fontSize={"sm"}
-              maxH={"30px"}
-              borderRadius="8px"
-              isCentered
-              bg={"#6c663F"}
-              color={"white"}
-              _focus={{
-                bg: "gray.500",
-              }}
-            >
-              Excluir
-            </Button>
-          </HStack>
+          {!status ? (
+            <HStack py={"4"} w={"85%"} alignItems={"center"}>
+              {edit ? (
+                <ModalEdit dietId={dietId} />
+              ) : (
+                <ModalViewProposal dietId={dietId} />
+              )}
+              <ButtonConfirmDelete removeDiet={removeDiet} dietId={dietId} />
+            </HStack>
+          ) : !finished ? (
+            <Box w="250px" pb="8px">
+              <Text fontWeight="bold">
+                Você escolheu já um cozinheiro para essa dieta!
+              </Text>
+              <Text>Cozinheiro: {cook.name}</Text>
+              <Text fontWeight="bold">
+                Valor: R${price.toFixed(2).replace(".", ",")}
+              </Text>
+            </Box>
+          ) : (
+            <Box>
+              <Text fontWeight="bold">Seu pedido está finalizado.</Text>
+              <Text fontWeight="bold">Favor retirar: {address}</Text>
+            </Box>
+          )}
         </VStack>
       </VStack>
     </Center>
