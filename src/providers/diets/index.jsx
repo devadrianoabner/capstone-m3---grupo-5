@@ -95,10 +95,36 @@ export const DietsProvider = ({ children }) => {
       )
       .catch((e) => console.log(e));
   };
+  const postProposals = (data, dietId, cookId) => {
+    const { id } = user;
+    const newProposal = {
+      ...data,
+      clientId: id,
+      status: false,
+      dietId: dietId,
+      cookId: cookId,
+    };
+    api
+      .post("proposals", newProposal, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((res) => {
+        refreshDiet();
+      })
+      .catch((err) => console.log(err));
+  };
 
   return (
     <DietsContext.Provider
-      value={{ diets, setDiets, refreshDiet, removeDiet, addDiet, modifyDiet }}
+      value={{
+        diets,
+        setDiets,
+        refreshDiet,
+        removeDiet,
+        addDiet,
+        modifyDiet,
+        postProposals,
+      }}
     >
       {children}
     </DietsContext.Provider>

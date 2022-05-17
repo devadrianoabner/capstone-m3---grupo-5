@@ -110,6 +110,7 @@ const Signup = () => {
           <Link to="/nossaequipe">Nossa Equipe</Link>
           <Link to="/cozinheiros">Ver Cozinheiros</Link>
           <Link to="/contato">Contato</Link>
+        
           <Flex
             w="100px"
             h="30px"

@@ -1,7 +1,10 @@
 import { Text, VStack, SimpleGrid, Center } from "@chakra-ui/react";
 import { CardProposalCookers } from "../cardProposalCookers";
+import { useDiets } from "../../providers/diets";
 
 export const MainAreaProposalCookers = () => {
+  const { diets } = useDiets();
+
   return (
     <Center w={["100vw"]} h={["auto"]}>
       <VStack w={["90%", "auto"]}>
@@ -21,12 +24,9 @@ export const MainAreaProposalCookers = () => {
           </Text>
         </VStack>
         <SimpleGrid columns={[1, 2, 3]} spacing={[3, 5, 10]}>
-          <CardProposalCookers />
-          <CardProposalCookers />
-          <CardProposalCookers />
-          <CardProposalCookers />
-          <CardProposalCookers />
-          <CardProposalCookers />
+          {diets.map((diet) => {
+            return <CardProposalCookers diet={diet} />;
+          })}
         </SimpleGrid>
       </VStack>
     </Center>

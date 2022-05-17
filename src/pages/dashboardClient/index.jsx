@@ -4,13 +4,15 @@ import { AsideDashboard } from "../../components/asideDashboard";
 import MainAreaClient from "../../components/mainAreaClient";
 import AvatarUser from "../../assets/img/paulo.jfif";
 import { Flex } from "@chakra-ui/react";
+//import { useUser } from "../../providers/user";
 
 export const DashBoardClient = () => {
+ // const { user } = useUser();
   return (
     <>
       <Flex direction="column">
         <Header />
-        <Flex >
+        <Flex>
           <Flex maxW="28vw">
             <AsideDashboard
               corBody="#A69C5D"

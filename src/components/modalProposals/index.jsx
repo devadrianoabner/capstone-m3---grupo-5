@@ -3,6 +3,7 @@ import { useToast } from "@chakra-ui/react";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
+
 import Input from "../Input/index";
 import {
   Modal,
@@ -15,20 +16,17 @@ import {
   useDisclosure,
   Button,
 } from "@chakra-ui/react";
+//import { useToken } from "../../providers/token";
 import { useDiets } from "../../providers/diets";
+import { useUser } from "../../providers/user";
 
-const ModalDiet = () => {
+const ModalProposals = ({ dietId, description }) => {
+  const { postProposals } = useDiets();
+  const { user } = useUser();
+
   const formSchema = Yup.object().shape({
-    dieta: Yup.string()
-      .required("Campo obrigatório")
-      .max(50, " máximo de 50 caracteres"),
-    combo: Yup.string()
-      .required("Campo obrigatório")
-      .test("choosenMod", "Escolha sua opção", (value) => value),
+    price: Yup.string().required("Campo obrigatório"),
   });
-
-  const {diets} = useDiets();
-  // console.log(diets)
 
   const {
     register,
@@ -41,7 +39,7 @@ const ModalDiet = () => {
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const handleLogin = (data) => {
+  const handlePostProposals = (data) => {
     toast({
       title: "Proposta enviada!",
       description: "Aguarde o retorno do cliente!",
@@ -49,11 +47,21 @@ const ModalDiet = () => {
       duration: 5000,
       isClosable: true,
     });
-
+    postProposals(data, dietId, user.id);
+    onClose();
   };
   return (
     <>
-      <Button w={"140px"} bg="#F0DC5B" onClick={onOpen}>
+      <Button
+        fontSize={"sm"}
+        borderRadius="8px"
+        maxH={"30px"}
+        bg={"#A69C5D"}
+        _focus={{
+          bg: "gray.200",
+        }}
+        onClick={onOpen}
+      >
         Fazer proposta
       </Button>
       <Modal
@@ -64,8 +72,17 @@ const ModalDiet = () => {
         textAlign={"center"}
       >
         <ModalOverlay borderRadius={"8px"} />
-        <form w={"95%"} id="new-form" onSubmit={handleSubmit(handleLogin)}>
-          <ModalContent maxW={"350px"} minH={"400px"}borderRadius={"8px"} bgColor={"#D9D9D9"}>
+        <form
+          w={"95%"}
+          id="new-form"
+          onSubmit={handleSubmit(handlePostProposals)}
+        >
+          <ModalContent
+            maxW={"350px"}
+            minH={"400px"}
+            borderRadius={"8px"}
+            bgColor={"#D9D9D9"}
+          >
             <ModalHeader
               color={"black"}
               fontWeight={"bold"}
@@ -88,14 +105,22 @@ const ModalDiet = () => {
             >
               <Textarea
                 bg={"#FFFF"}
-                name={"dieta"}
+                name={"description"}
                 textarea={"textarea"}
-                isDisabled placeholder={diets.description}
+                placeholder={description}
                 label="Plano alimentar"
                 register={register}
                 fontSize={"sm"}
                 mb={"2"}
-                errors={errors.dieta?.message}
+              />
+              <Input
+                bg={"#fff"}
+                label="Mensagem"
+                placeholder="Mensagem do cozinheiro"
+                register={register}
+                name={"message"}
+                fontSize={"sm"}
+                mb={"2"}
               />
 
               <Input
@@ -103,10 +128,10 @@ const ModalDiet = () => {
                 label="Valor"
                 placeholder="R$00,00"
                 register={register}
-                name={"combo"}
+                name={"price"}
                 fontSize={"sm"}
                 mb={"2"}
-                errors={errors.combo?.message}
+                errors={errors.price?.message}
               />
             </ModalBody>
             <ModalFooter
@@ -130,4 +155,4 @@ const ModalDiet = () => {
     </>
   );
 };
-export default ModalDiet;
+export default ModalProposals;

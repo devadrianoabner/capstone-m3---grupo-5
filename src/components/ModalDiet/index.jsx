@@ -1,4 +1,3 @@
-
 import Select from "../Select";
 import Textarea from "../Textarea";
 import { useToast } from "@chakra-ui/react";
@@ -15,7 +14,6 @@ import {
   ModalCloseButton,
   useDisclosure,
   Button,
-  Textarea,
 } from "@chakra-ui/react";
 
 const ModalDiet = () => {
