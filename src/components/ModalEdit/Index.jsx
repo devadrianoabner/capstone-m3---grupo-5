@@ -1,6 +1,7 @@
 import Select from "../../components/Select";
 import Textarea from "../../components/Textarea";
 import { useToast } from "@chakra-ui/react";
+
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
@@ -17,7 +18,7 @@ import {
 } from "@chakra-ui/react";
 import { useDiets } from "../../providers/diets";
 
-const ModalEdit = ({ dietId }) => {
+const ModalEdit = ({ dietId, description }) => {
   const formSchema = Yup.object().shape({
     description: Yup.string()
       .required("Campo obrigatório")
@@ -103,6 +104,7 @@ const ModalEdit = ({ dietId }) => {
                 register={register}
                 fontSize={"sm"}
                 mb={"2"}
+                description={description}
                 errors={errors.description?.message}
               />
 

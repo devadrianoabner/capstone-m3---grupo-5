@@ -9,8 +9,15 @@ import VewRequestImg from "../../assets/img/client/imgVewResquests.png";
 
 const MainAreaClient = () => {
   return (
-    <Box w="100%">
-      <Flex flexDirection="column">
+    <>
+      <Flex
+        flexDirection="column"
+        maxW="100%"
+        align="center"
+        justify="center"
+        ml="10"
+        mr="10"
+      >
         <Banner
           bg="#F0DC5B
           "
@@ -85,7 +92,7 @@ const MainAreaClient = () => {
           </Box>
         </Flex>
       </Flex>
-    </Box>
+    </>
   );
 };
 

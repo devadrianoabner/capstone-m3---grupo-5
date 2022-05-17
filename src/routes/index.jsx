@@ -66,9 +66,9 @@ export const Routes = () => {
         <>Pág de suporte</>
         <Route/> */}
 
-      {/*       <Route path="/cook-accepted-proposals">
+      <Route path="/cook-accepted-proposals">
         <CookAcceptedProposals />
-      </Route> */}
+      </Route>
     </Switch>
   );
 };
