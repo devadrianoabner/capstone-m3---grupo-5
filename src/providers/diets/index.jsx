@@ -95,6 +95,22 @@ export const DietsProvider = ({ children }) => {
       )
       .catch((e) => console.log(e));
   };
+
+  const postProposals = (data, dietId, cookId) => {
+    const { id } = user;
+    const newProposal = {
+      ...data,
+      clientId: id,
+      status: false,
+      dietId: dietId,
+      cookId: cookId,
+    };
+    api
+      .post("proposals", newProposal, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((res) => {
+
   const cancelByCooker = (dietId) => {
     console.log(dietId);
     const cancelCooker = {
@@ -110,6 +126,7 @@ export const DietsProvider = ({ children }) => {
       })
       .then((res) => {
         console.log("pedido cancelado");
+
         refreshDiet();
       })
       .catch((err) => console.log(err));
@@ -124,6 +141,7 @@ export const DietsProvider = ({ children }) => {
         removeDiet,
         addDiet,
         modifyDiet,
+        postProposals,
         cancelByCooker,
       }}
     >

@@ -1,33 +1,34 @@
 import { Text, VStack, SimpleGrid, Center, Box } from "@chakra-ui/react";
 import { CardProposalCookers } from "../cardProposalCookers";
+import { useDiets } from "../../providers/diets";
 
 export const MainAreaProposalCookers = () => {
+  const { diets } = useDiets();
+
   return (
-    <Box>
-      <Box>
-        <Text spacing={"8px"} w={"100%"} fontSize={"30px"}>
-          Aceitar novas propostas
-        </Text>
-        <Text
-          spacing={"8px"}
-          w={"100%"}
-          maxW={"600px"}
-          fontFamily={"Inter"}
-          fontSize={"20px"}
-          mt="15px"
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna
-        </Text>
-      </Box>
-      <SimpleGrid columns={[1, 2, 3, 4]} spacing={[2]} mt="25px">
-        <CardProposalCookers />
-        <CardProposalCookers />
-        <CardProposalCookers />
-        <CardProposalCookers />
-        <CardProposalCookers />
-        <CardProposalCookers />
-      </SimpleGrid>
-    </Box>
+    <Center w={["100vw"]} h={["auto"]}>
+      <VStack w={["90%", "auto"]}>
+        <VStack alignItems={"flex-start"} w={"100%"}>
+          <Text spacing={"8px"} w={"100%"} fontSize={"30px"}>
+            Aceitar novas propostas
+          </Text>
+          <Text
+            spacing={"8px"}
+            w={"100%"}
+            maxW={"571px"}
+            fontFamily={"Inter"}
+            fontSize={"20px"}
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna
+          </Text>
+        </VStack>
+        <SimpleGrid columns={[1, 2, 3]} spacing={[3, 5, 10]}>
+          {diets.map((diet) => {
+            return <CardProposalCookers diet={diet} />;
+          })}
+        </SimpleGrid>
+      </VStack>
+    </Center>
   );
 };

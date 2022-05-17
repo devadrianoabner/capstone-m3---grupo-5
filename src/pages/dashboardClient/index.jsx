@@ -2,7 +2,6 @@ import { Footer } from "../../components/Footer";
 import { Header } from "../../components/HeaderDashboard";
 import { AsideCliente } from "../../components/asideCliente";
 import MainAreaClient from "../../components/mainAreaClient";
-
 import { Flex, Box, useDisclosure } from "@chakra-ui/react";
 
 export const DashBoardClient = () => {

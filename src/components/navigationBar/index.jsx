@@ -123,7 +123,7 @@ const NavigationBar = (props) => {
               color={"#FFFF"}
               bg={"#F0DC5B"}
             >
-              <Avatar bg="#A69C5D" />
+              <Avatar name ={"Talitta Nunes"} bg="#A69C5D" />
             </Button>
           </MenuItem>
         </Flex>
