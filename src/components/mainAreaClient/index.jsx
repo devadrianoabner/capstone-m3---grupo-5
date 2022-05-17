@@ -49,6 +49,7 @@ const MainAreaClient = () => {
               buttonText="Ver tudo"
               buttonColor="#43B07B"
               img={InfoImg}
+              linkBtn="/proposals-clients"
             />
           </Box>
         </Flex>

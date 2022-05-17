@@ -1,4 +1,5 @@
 import { Flex, Image, Heading, Text, Button } from "@chakra-ui/react";
+import { Redirect, Link } from "react-router-dom";
 //import { useState } from "react";
 import ModalDiet from "../ModalDiet";
 export const CardDashboard = ({
@@ -9,6 +10,7 @@ export const CardDashboard = ({
   buttonColor,
   img,
   modal = false,
+  linkBtn,
 }) => {
   return (
     <>
@@ -54,7 +56,7 @@ export const CardDashboard = ({
                 fontSize={["8px", "12px", "15px", "15px"]}
                 fontWeight="500"
               >
-                {buttonText}
+                <Link to={linkBtn}>{buttonText}</Link>
               </Button>
             ) : (
               <ModalDiet>Fazer pedido</ModalDiet>
