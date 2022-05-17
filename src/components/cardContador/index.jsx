@@ -3,11 +3,7 @@ import { Flex, Image, Heading, Text, Button } from "@chakra-ui/react";
 export const CardContador = ({ bg, title, decpripTion, img, bgCount }) => {
   return (
     <>
-      <Flex
-        w={["150px", "235px", "350px", "400px", "660px"]}
-        h={["133px", "200px", "219px"]}
-        m={["5px", "8px", "11px", "16px", "20px"]}
-      >
+      <Flex w="100%" h={["133px", "200px", "219px"]}>
         <Flex
           bg={bg}
           justify={["space-between", "space-between"]}

@@ -1,7 +1,7 @@
 import Banner from "../banner";
 import { CardDashboard } from "../cardDashboard";
 import { CardContador } from "../cardContador";
-import { Flex } from "@chakra-ui/react";
+import { Flex, Box } from "@chakra-ui/react";
 
 import imagem1 from "../../assets/imgDashboardPrestador/computador.svg";
 import imagem2 from "../../assets/imgDashboardPrestador/propostas.svg";
@@ -11,8 +11,8 @@ import imagem5 from "../../assets/imgDashboardPrestador/culinaria.svg";
 
 export const MainAreaCooker = () => {
   return (
-    <>
-      <Flex flexDirection="column" maxW="1440" align="center" justify="center">
+    <Box w="100%">
+      <Flex flexDirection="column">
         <Banner
           bg="#F0DC5B"
           title="Seja bem vindo a sua Dashboard!"
@@ -20,45 +20,63 @@ export const MainAreaCooker = () => {
           img={imagem1}
         />
 
-        <Flex w="100%" flexWrap="nowrap" justify="center">
-          <CardContador
-            bg="#BDAD48"
-            title="Propostas aceitas"
-            decpripTion="0"
-            bgCount="#F0DC5B
+        <Flex
+          w="100%"
+          flexWrap="nowrap"
+          mt={["15px", "15px", "20px", "30px", "30px"]}
+        >
+          <Box w="100%" mr={["3px", "5px", "5px", "15px"]}>
+            <CardContador
+              bg="#BDAD48"
+              title="Propostas aceitas"
+              decpripTion="0"
+              bgCount="#F0DC5B
             "
-            img={imagem2}
-          />
-          <CardContador
-            bg="#5FDD9F"
-            title="Seu faturamento"
-            decpripTion="R$1500,00"
-            bgCount="#43B07B
+              img={imagem2}
+            />
+          </Box>
+
+          <Box w="100%" ml="15px">
+            <CardContador
+              bg="#5FDD9F"
+              title="Seu faturamento"
+              decpripTion="R$1500,00"
+              bgCount="#43B07B
             "
-            img={imagem3}
-          />
+              img={imagem3}
+            />
+          </Box>
         </Flex>
-        <Flex w="100%" flexWrap="nowrap" justify="center">
-          <CardDashboard
-            bg="#F0DC5B"
-            title="Fazer novos negócios"
-            decpripTion="Lorem ipsum dolor sit amet, consectetur adipiscing
+        <Flex
+          w="100%"
+          flexWrap="nowrap"
+          mt={["15px", "15px", "20px", "30px", "30px"]}
+        >
+          <Box w="100%" mr={["3px", "5px", "5px", "15px"]}>
+            <CardDashboard
+              bg="#F0DC5B"
+              title="Fazer novos negócios"
+              decpripTion="Lorem ipsum dolor sit amet, consectetur adipiscing
             elit, sed do eiusmod tempor incididunt"
-            buttonText="Fazer propostas"
-            buttonColor="#706B4C"
-            img={imagem4}
-          />
-          <CardDashboard
-            bg="#F2E8A5"
-            title="Acessar cursos"
-            decpripTion="Lorem ipsum dolor sit amet, consectetur adipiscing
+              buttonText="Fazer propostas"
+              buttonColor="#706B4C"
+              img={imagem4}
+            />
+          </Box>
+
+          <Box w="100%" ml="15px" mb={["15px", "15px", "20px", "30px", "30px"]}>
+            <CardDashboard
+              bg="#F2E8A5"
+              title="Acessar cursos"
+              decpripTion="Lorem ipsum dolor sit amet, consectetur adipiscing
             elit, sed do eiusmod tempor incididunt"
-            buttonText="Acessar"
-            buttonColor="#666363"
-            img={imagem5}
-          />
+              buttonText="Acessar"
+              buttonColor="#666363"
+              img={imagem5}
+            />
+          </Box>
         </Flex>
       </Flex>
-    </>
+    </Box>
   );
 };
