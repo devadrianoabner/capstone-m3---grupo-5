@@ -6,7 +6,14 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 
-const Textarea = ({ register, name, label, errors, description, ...rest }) => {
+export const Textarea = ({
+  register,
+  name,
+  label,
+  errors,
+  description,
+  ...rest
+}) => {
   const [value, setValue] = useState(description);
 
   return (
@@ -36,4 +43,3 @@ const Textarea = ({ register, name, label, errors, description, ...rest }) => {
     </FormControl>
   );
 };
-export default Textarea;

@@ -1,5 +1,5 @@
 import Select from "../../components/Select";
-import Textarea from "../../components/Textarea";
+import { Textarea } from "../textarea";
 import { useToast } from "@chakra-ui/react";
 
 import * as Yup from "yup";
