@@ -1,5 +1,6 @@
+import Select from "../../components/Select";
+import Textarea from "../../components/Textarea";
 import { useToast } from "@chakra-ui/react";
-
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
@@ -40,7 +41,7 @@ const ModalEdit = ({ dietId }) => {
 
   const handleDiet = (data) => {
     toast({
-      title: "Dieta enviada!",
+      title: "Sua dieta foi editada!",
       description: "Agora cuidaremos disso para você!",
       status: "success",
       isClosable: true,
