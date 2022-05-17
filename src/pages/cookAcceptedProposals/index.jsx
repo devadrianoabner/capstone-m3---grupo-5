@@ -1,12 +1,15 @@
-import { MainAllProposals } from "../mainAllProposals";
-import { Header } from "../HeaderDashboard";
-import { AsideCozinheiro } from "../asideCozinheiro";
-import { Footer } from "../../components/Footer";
+import { Box, Flex, useDisclosure } from "@chakra-ui/react";
 
-import { Flex, Box, useDisclosure } from "@chakra-ui/react";
+import { MainAllProposalsCook } from "../../components/cookerAcceptedProposals/mainAllProposalsCook";
+import { Header } from "../../components/HeaderDashboard";
+import { useUser } from "../../providers/user";
 
-export const IndexAllProposals = () => {
+import { AsideCozinheiro } from "../../components/asideCozinheiro";
+
+export const CookAcceptedProposals = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const { user } = useUser();
 
   return (
     <Box>
@@ -17,22 +20,20 @@ export const IndexAllProposals = () => {
         <Flex h="90vh">
           <Box w={["0vw", "0vw", "0vw", "0vw", "20vw", "15vw"]}>
             <AsideCozinheiro
-              onOpen={onOpen}
               isOpen={isOpen}
+              onOpen={onOpen}
               onClose={onClose}
             />
           </Box>
+
           <Box
             w={["100vw", "100vw", "100vw", "100vw", "80vw", "85vw"]}
             ml={["10px", "10px", "15px", "25px", "37px"]}
             mr={["10px", "10px", "15px", "25px", "37px"]}
           >
-            <MainAllProposals />
+            <MainAllProposalsCook />
           </Box>
         </Flex>
-      </Box>
-      <Box>
-        <Footer />
       </Box>
     </Box>
   );

@@ -1,4 +1,4 @@
-import { Text, VStack, SimpleGrid, Center } from "@chakra-ui/react";
+import { Text, VStack, SimpleGrid, Center, Box } from "@chakra-ui/react";
 import { CardProposalCookers } from "../cardProposalCookers";
 import { useDiets } from "../../providers/diets";
 

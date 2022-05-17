@@ -1,5 +1,7 @@
 import { Flex, Image, Heading, Text, Button } from "@chakra-ui/react";
-
+import { Redirect, Link } from "react-router-dom";
+//import { useState } from "react";
+import ModalDiet from "../ModalDiet";
 export const CardDashboard = ({
   bg,
   title,
@@ -7,13 +9,18 @@ export const CardDashboard = ({
   buttonText,
   buttonColor,
   img,
+  modal = false,
+  linkBtn,
 }) => {
   return (
     <>
       <Flex
-        w={["150px", "235px", "350px", "480px"]}
+        maxW="660px"
+        w="100%"
         h={["133px", "200px", "219px"]}
-        m={["5px", "8px", "11px", "16px", "20px"]}
+        mr={["5px", "15px"]}
+        ml={["5px", "15px"]}
+        mb={["10px", "30px"]}
       >
         <Flex
           bg={bg}
@@ -46,17 +53,21 @@ export const CardDashboard = ({
               {decpripTion}
             </Text>
 
-            <Button
-              width={["74px", "100px", "147px"]}
-              height={["22px", "30px", "39px"]}
-              px="5"
-              bg={buttonColor}
-              color="#fff"
-              fontSize={["8px", "12px", "15px", "15px"]}
-              fontWeight="500"
-            >
-              {buttonText}
-            </Button>
+            {!modal ? (
+              <Button
+                width={["74px", "100px", "147px"]}
+                height={["22px", "30px", "39px"]}
+                px="5"
+                bg={buttonColor}
+                color="#fff"
+                fontSize={["8px", "12px", "15px", "15px"]}
+                fontWeight="500"
+              >
+                <Link to={linkBtn}>{buttonText}</Link>
+              </Button>
+            ) : (
+              <ModalDiet>Fazer pedido</ModalDiet>
+            )}
           </div>
           <Image
             src={img}
@@ -65,6 +76,7 @@ export const CardDashboard = ({
             pos="absolute"
             bottom={["2", "2", "4"]}
             right={["2", "2", "4"]}
+            ml="5px"
           />
         </Flex>
       </Flex>

@@ -1,6 +1,6 @@
 import Banner from "../banner";
 import { CardDashboard } from "../cardDashboard";
-import { Flex } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import BannerImg from "../../assets/img/client/imgBannerCliente.png";
 import DuboutsImg from "../../assets/img/client/imgDoubtsCliente.png";
 import InfoImg from "../../assets/img/client/imgInfoClient.png";
@@ -10,7 +10,14 @@ import VewRequestImg from "../../assets/img/client/imgVewResquests.png";
 const MainAreaClient = () => {
   return (
     <>
-      <Flex flexDirection="column" maxW="100%" align="center" justify="center" ml="10" mr="10">
+      <Flex
+        flexDirection="column"
+        maxW="100%"
+        align="center"
+        justify="center"
+        ml="5px"
+        mr="5px"
+      >
         <Banner
           bg="#F0DC5B
           "
@@ -19,48 +26,72 @@ const MainAreaClient = () => {
           img={BannerImg}
         />
 
-        <Flex w="100%" flexWrap="wrap" justify="center">
-          <CardDashboard
-            bg="#BDAD48
+        <Flex
+          w="100%"
+          justify="center"
+          flexWrap="nowrap"
+          mt={["15px", "15px", "20px", "30px", "30px"]}
+        >
+          <Box w="100%" mr={["3px", "5px", "5px", "15px"]}>
+            <CardDashboard
+              modal
+              bg="#BDAD48
             "
-            title="Solicitar um novo pedido"
-            decpripTion="Lorem ipsum dolor sit amet, consectetur adipiscing
+              title="Solicitar um novo pedido"
+              decpripTion="Lorem ipsum dolor sit amet, consectetur adipiscing
             elit, sed do eiusmod tempor incididunt ut labore
             et dolore magna aliqua. "
-            buttonText="Fazer pedido"
-            buttonColor="#706B4C"
-            img={DuboutsImg}
-          />
-          <CardDashboard
-            bg="#5FDD9F"
-            title="Visualizar pedidos"
-            decpripTion="Lorem ipsum dolor sit amet, consectetur adipiscing
+              buttonText="Fazer pedido"
+              buttonColor="#706B4C"
+              img={DuboutsImg}
+            />
+          </Box>
+
+          <Box w="100%" ml={["3px", "5px", "5px", "15px"]}>
+            <CardDashboard
+              bg="#5FDD9F"
+              title="Visualizar pedidos"
+              decpripTion="Lorem ipsum dolor sit amet, consectetur adipiscing
             elit, sed do eiusmod tempor incididunt ut labore
             et dolore magna aliqua. "
-            buttonText="Ver tudo"
-            buttonColor="#43B07B"
-            img={InfoImg}
-          />
-          <CardDashboard
-            bg="#F0DC5B"
-            title="Tem dúvidas?"
-            decpripTion="Lorem ipsum dolor sit amet, consectetur adipiscing
+              buttonText="Ver tudo"
+              buttonColor="#43B07B"
+              img={InfoImg}
+              linkBtn="/proposals-clients"
+            />
+          </Box>
+        </Flex>
+
+        <Flex
+          w="100%"
+          flexWrap="nowrap"
+          mt={["15px", "15px", "20px", "30px", "30px"]}
+        >
+          <Box w="100%" mr={["3px", "5px", "5px", "15px"]}>
+            <CardDashboard
+              bg="#F0DC5B"
+              title="Tem dúvidas?"
+              decpripTion="Lorem ipsum dolor sit amet, consectetur adipiscing
             elit, sed do eiusmod tempor incididunt ut labore
             et dolore magna aliqua. "
-            buttonText="Fazer propostas"
-            buttonColor="#706B4C"
-            img={RequestImg}
-          />
-          <CardDashboard
-            bg="#F2E8A5"
-            title="Não sabe o que pedir?"
-            decpripTion="Lorem ipsum dolor sit amet, consectetur adipiscing
+              buttonText="Fazer propostas"
+              buttonColor="#706B4C"
+              img={RequestImg}
+            />
+          </Box>
+
+          <Box w="100%" ml={["3px", "5px", "5px", "15px"]}>
+            <CardDashboard
+              bg="#F2E8A5"
+              title="Não sabe o que pedir?"
+              decpripTion="Lorem ipsum dolor sit amet, consectetur adipiscing
             elit, sed do eiusmod tempor incididunt ut labore
             et dolore magna aliqua. "
-            buttonText="Ver sugestões"
-            buttonColor="#666363"
-            img={VewRequestImg}
-          />
+              buttonText="Ver sugestões"
+              buttonColor="#666363"
+              img={VewRequestImg}
+            />
+          </Box>
         </Flex>
       </Flex>
     </>

@@ -1,4 +1,4 @@
-import { Center, VStack, Image, Text, HStack } from "@chakra-ui/react";
+import { Center, VStack, Image, Text, HStack, Button, Box } from "@chakra-ui/react";
 import ModalProposals from "../modalProposals";
 import { useEffect, useState } from "react";
 import api from "../../services";

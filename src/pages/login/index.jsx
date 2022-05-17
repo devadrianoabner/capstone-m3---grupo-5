@@ -21,9 +21,10 @@ import { Footer } from "../../components/Footer";
 import { InputDiv } from "../../components/InputDiv";
 import { Logo } from "../../components/Logo";
 import { useToken } from "../../providers/token";
-import api from "../../services/api";
+import api from "../../services";
 
-const Signup = () => {
+const Login = () => {
+  // MUDEI O NOME POIS ESTAVA SIGNUP oO
   const schema = yup.object().shape({
     email: yup
       .string()
@@ -42,12 +43,6 @@ const Signup = () => {
 
   const history = useHistory();
   const toast = useToast();
-
-  const { token, setToken } = useToken();
-
-  if (token) {
-    return <Redirect to="/dashboard" />;
-  }
 
   const onSubmitFunction = ({ email, password }) => {
     const user = {
@@ -69,8 +64,17 @@ const Signup = () => {
 
         localStorage.setItem("@HDR:token", JSON.stringify(accessToken));
         localStorage.setItem("@HDR:user", JSON.stringify(user));
-        setToken(accessToken);
-        history.push("/login");
+        console.log(user.type);
+        switch (user.type) {
+          case "Prestador":
+            return history.push("/admin");
+
+          case "Usuário":
+            return history.push("/dashboard");
+
+          default:
+            break;
+        }
       })
       .catch((err) => {
         console.log(err);
@@ -239,4 +243,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Login;

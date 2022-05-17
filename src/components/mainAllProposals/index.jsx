@@ -4,7 +4,7 @@ import analitcs from "../../assets/imgIndexAllProposals/analitcs.svg";
 
 export const MainAllProposals = () => {
   return (
-    <Box>
+    <Box w="75vw">
       <Flex>
         <Box ml="2vw" mr="2vw" w={["100vw", "100vw", "100vw", "50vw"]}>
           <Flex direction="column">

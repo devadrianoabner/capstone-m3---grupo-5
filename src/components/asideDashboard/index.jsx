@@ -14,7 +14,12 @@ import {
   DrawerContent,
   DrawerCloseButton,
   useDisclosure,
+  Avatar,
 } from "@chakra-ui/react";
+
+import { ModalLogout } from "../modalLogout";
+
+import { useHistory, Link } from "react-router-dom";
 
 import iconSeta from "../../assets/iconsDashboard/iconSeta.svg";
 
@@ -36,17 +41,25 @@ export const AsideDashboard = ({
   isOpen,
   onOpen,
   onClose,
+  link1,
+  link2,
+  link3,
+  link4,
+  link5,
 }) => {
-  /*   const { isOpen, onOpen, onClose } = useDisclosure();
-   */
+  /* const { isOpen, onOpen, onClose } = useDisclosure(); */
+
+  const history = useHistory();
   return (
     <Flex
       bgColor={corBody}
       direction="column"
-      display={["none", "none", "none", "flex"]}
+      display={["none", "none", "none", "none", "fixed"]}
+      h="100%"
+      borderRadius="0 4px 0 0"
     >
       <Flex direction="column">
-        <Flex h="75vh" direction="column" pl="15px">
+        <Flex direction="column" pl="15px" h="80%">
           <Box
             borderBottom="2px"
             borderColor={baseColor}
@@ -60,96 +73,144 @@ export const AsideDashboard = ({
           </Box>
 
           <Box borderBottom="2px" borderColor={baseColor} pb="13px">
-            <Image boxSize="82px" mt="22px" src={fotoUser} />
-            <Text fontSize="15px" fontWeight="600" mt="15px" color={baseColor}>
+            <Avatar boxSize="82px" mt="22px" src={fotoUser} name={nomeUser} />
+            <Text fontSize="25px" fontWeight="600" mt="15px" color={baseColor}>
               {nomeUser}
             </Text>
           </Box>
 
-          <List mr="15px">
-            <ListItem borderBottom="1px" borderColor={baseColor}>
-              <Button backgroundColor="#0000" h="45px">
+          <List mr="15px" spacing={4} mt="10px">
+            <ListItem
+              w="100%"
+              _hover={{
+                background: "#847b45",
+              }}
+            >
+              <Link to={link1}>
                 <Flex align="center">
                   <Image src={icon1} />
                   <Flex align="flex-end">
-                    <Text fontSize="12px" color={baseColor} ml="5px" mt="6px">
+                    <Text
+                      fontSize="17px"
+                      fontWeight="600"
+                      color={baseColor}
+                      ml="5px"
+                      mt="6px"
+                    >
                       {textIcon1}
                     </Text>
                   </Flex>
                 </Flex>
-              </Button>
+              </Link>
             </ListItem>
 
-            <ListItem borderBottom="1px" borderColor={baseColor}>
-              <Button backgroundColor="#0000" h="45px">
+            <ListItem
+              w="100%"
+              _hover={{
+                background: "#847b45",
+              }}
+            >
+              <Link to={link2}>
                 <Flex align="center">
                   <Image src={icon2} />
                   <Flex align="flex-end">
-                    <Text fontSize="12px" color={baseColor} ml="5px" mt="6px">
+                    <Text
+                      fontSize="17px"
+                      fontWeight="600"
+                      color={baseColor}
+                      ml="5px"
+                      mt="6px"
+                    >
                       {textIcon2}
                     </Text>
                   </Flex>
                 </Flex>
-              </Button>
+              </Link>
             </ListItem>
 
-            <ListItem borderBottom="1px" borderColor={baseColor}>
-              <Button backgroundColor="#0000" h="45px">
+            <ListItem
+              w="100%"
+              _hover={{
+                background: "#847b45",
+              }}
+            >
+              <Link to={link3}>
                 <Flex align="center">
                   <Image mt="5px" src={icon3} />
                   <Flex align="flex-end">
-                    <Text fontSize="12px" color={baseColor} ml="5px" mt="6px">
+                    <Text
+                      fontSize="17px"
+                      fontWeight="600"
+                      color={baseColor}
+                      ml="5px"
+                      mt="6px"
+                    >
                       {textIcon3}
                     </Text>
                   </Flex>
                 </Flex>
-              </Button>
+              </Link>
             </ListItem>
 
-            <ListItem borderBottom="1px" borderColor={baseColor}>
-              <Button backgroundColor="#0000" h="45px">
+            <ListItem
+              w="100%"
+              _hover={{
+                background: "#847b45",
+              }}
+            >
+              <Link to={link4}>
                 <Flex align="center">
                   <Image src={icon4} />
                   <Flex align="flex-end">
-                    <Text fontSize="12px" color={baseColor} ml="5px" mt="6px">
+                    <Text
+                      fontSize="17px"
+                      fontWeight="600"
+                      color={baseColor}
+                      ml="5px"
+                      mt="6px"
+                    >
                       {textIcon4}
                     </Text>
                   </Flex>
                 </Flex>
-              </Button>
+              </Link>
             </ListItem>
 
-            <ListItem borderBottom="1px" borderColor={baseColor}>
-              <Button backgroundColor="#0000" h="45px">
+            <ListItem
+              w="100%"
+              _hover={{
+                background: "#847b45",
+              }}
+            >
+              <Link to={link5}>
                 <Flex align="center">
                   <Image src={icon5} />
                   <Flex align="flex-end">
-                    <Text fontSize="12px" color={baseColor} ml="5px" mt="6px">
+                    <Text
+                      fontSize="17px"
+                      fontWeight="600"
+                      color={baseColor}
+                      ml="5px"
+                      mt="6px"
+                    >
                       {textIcon5}
                     </Text>
                   </Flex>
                 </Flex>
-              </Button>
+              </Link>
             </ListItem>
           </List>
         </Flex>
 
-        <Flex h="26vh" pl="15px" align="flex-end">
-          <Button
-            backgroundColor="#0000"
-            border="1px"
-            borderColor={baseColor}
-            w="110px"
-            h="30px"
-            mb="5vh"
-          >
+        <Flex pl="15px" align="flex-end" h="10%">
+          <ModalLogout baseColor={baseColor}>
             <Flex>
               <Image src={iconSeta} />
               <Text fontSize="14px" ml="2px" color={baseColor}>
                 Logout
               </Text>
             </Flex>
-          </Button>
+          </ModalLogout>
         </Flex>
       </Flex>
 
@@ -163,7 +224,7 @@ export const AsideDashboard = ({
             <Box borderBottom="2px" borderColor={baseColor} pb="13px">
               <Image boxSize="82px" mt="22px" src={fotoUser} />
               <Text
-                fontSize="15px"
+                fontSize="27px"
                 fontWeight="600"
                 mt="15px"
                 color={baseColor}
@@ -172,90 +233,113 @@ export const AsideDashboard = ({
               </Text>
             </Box>
 
-            <List mr="15px">
-              <ListItem borderBottom="1px" borderColor={baseColor}>
-                <Button backgroundColor="#0000" h="45px">
+            <List mr="15px" spacing={3} mt="15px">
+              <ListItem>
+                <Link to={link1}>
                   <Flex align="center">
                     <Image src={icon1} />
                     <Flex align="flex-end">
-                      <Text fontSize="12px" color={baseColor} ml="5px" mt="6px">
+                      <Text
+                        fontSize="18px"
+                        fontWeight="600"
+                        color={baseColor}
+                        ml="5px"
+                        mt="6px"
+                      >
                         {textIcon1}
                       </Text>
                     </Flex>
                   </Flex>
-                </Button>
+                </Link>
               </ListItem>
 
-              <ListItem borderBottom="1px" borderColor={baseColor}>
-                <Button backgroundColor="#0000" h="45px">
+              <ListItem>
+                <Link to={link2}>
                   <Flex align="center">
                     <Image src={icon2} />
                     <Flex align="flex-end">
-                      <Text fontSize="12px" color={baseColor} ml="5px" mt="6px">
+                      <Text
+                        fontSize="18px"
+                        fontWeight="600"
+                        color={baseColor}
+                        ml="5px"
+                        mt="6px"
+                      >
                         {textIcon2}
                       </Text>
                     </Flex>
                   </Flex>
-                </Button>
+                </Link>
               </ListItem>
 
-              <ListItem borderBottom="1px" borderColor={baseColor}>
-                <Button backgroundColor="#0000" h="45px">
+              <ListItem>
+                <Link to={link3}>
                   <Flex align="center">
                     <Image mt="5px" src={icon3} />
                     <Flex align="flex-end">
-                      <Text fontSize="12px" color={baseColor} ml="5px" mt="6px">
+                      <Text
+                        fontSize="18px"
+                        fontWeight="600"
+                        color={baseColor}
+                        ml="5px"
+                        mt="6px"
+                      >
                         {textIcon3}
                       </Text>
                     </Flex>
                   </Flex>
-                </Button>
+                </Link>
               </ListItem>
 
-              <ListItem borderBottom="1px" borderColor={baseColor}>
-                <Button backgroundColor="#0000" h="45px">
+              <ListItem>
+                <Link to={link4}>
                   <Flex align="center">
                     <Image src={icon4} />
                     <Flex align="flex-end">
-                      <Text fontSize="12px" color={baseColor} ml="5px" mt="6px">
+                      <Text
+                        fontSize="18px"
+                        fontWeight="600"
+                        color={baseColor}
+                        ml="5px"
+                        mt="6px"
+                      >
                         {textIcon4}
                       </Text>
                     </Flex>
                   </Flex>
-                </Button>
+                </Link>
               </ListItem>
 
-              <ListItem borderBottom="1px" borderColor={baseColor}>
-                <Button backgroundColor="#0000" h="45px">
+              <ListItem>
+                <Link to={link5}>
                   <Flex align="center">
                     <Image src={icon5} />
                     <Flex align="flex-end">
-                      <Text fontSize="12px" color={baseColor} ml="5px" mt="6px">
+                      <Text
+                        fontSize="18px"
+                        fontWeight="600"
+                        color={baseColor}
+                        ml="5px"
+                        mt="6px"
+                      >
                         {textIcon5}
                       </Text>
                     </Flex>
                   </Flex>
-                </Button>
+                </Link>
               </ListItem>
             </List>
           </DrawerBody>
 
           <DrawerFooter>
-            <Button
-              backgroundColor="#0000"
-              border="1px"
-              borderColor={baseColor}
-              w="110px"
-              h="30px"
-              mb="5vh"
-            >
+            <ModalLogout baseColor={baseColor}>
               <Flex>
                 <Image src={iconSeta} />
                 <Text fontSize="14px" ml="2px" color={baseColor}>
                   Logout
                 </Text>
               </Flex>
-            </Button>
+            </ModalLogout>
           </DrawerFooter>
         </DrawerContent>
       </Drawer>
