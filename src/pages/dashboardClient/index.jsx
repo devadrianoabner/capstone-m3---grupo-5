@@ -16,13 +16,11 @@ export const DashBoardClient = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Box>
-      <Box h="10vh">
-        <Header onOpen={onOpen} />
-      </Box>
-      <Box>
-        <Flex h="90vh">
-          <Box w={["0vw", "0vw", "0vw", "0vw", "20vw", "15vw"]}>
+    <>
+      <Flex direction="column" h="100%" maxH="100vh">
+        <Header />
+        <Flex mt="25px">
+          <Flex maxW="28vw">
             <AsideDashboard
               corBody="#A69C5D"
               fotoUser={imgPerfil}
@@ -45,20 +43,15 @@ export const DashBoardClient = () => {
               link2="/new-diet"
               link3="/proposals-clients"
             />
-          </Box>
-
-          <Box
-            w={["100vw", "100vw", "100vw", "100vw", "80vw", "85vw"]}
-            ml={["10px", "10px", "15px", "25px", "37px"]}
-            mr={["10px", "10px", "15px", "25px", "37px"]}
-          >
+          </Flex>
+          <Flex maxW={["100vw", "100%"]} w={["100vw", "100%"]}>
             <MainAreaClient />
-          </Box>
+          </Flex>
         </Flex>
-      </Box>
+      </Flex>
       <Box mt="40px">
         <Footer />
       </Box>
-    </Box>
+    </>
   );
 };

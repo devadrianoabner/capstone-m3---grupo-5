@@ -15,8 +15,8 @@ const MainAreaClient = () => {
         maxW="100%"
         align="center"
         justify="center"
-        ml="10"
-        mr="10"
+        ml="5px"
+        mr="5px"
       >
         <Banner
           bg="#F0DC5B
@@ -28,6 +28,7 @@ const MainAreaClient = () => {
 
         <Flex
           w="100%"
+          justify="center"
           flexWrap="nowrap"
           mt={["15px", "15px", "20px", "30px", "30px"]}
         >
