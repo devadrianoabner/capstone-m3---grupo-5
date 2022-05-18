@@ -1,4 +1,4 @@
-import Textarea from "../Textarea";
+import { Textarea } from "../textarea";
 import { useToast } from "@chakra-ui/react";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";

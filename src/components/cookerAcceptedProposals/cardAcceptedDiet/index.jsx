@@ -20,7 +20,7 @@ export const CardAcceptedDiet = ({ diet }) => {
   }, []);
 
   return (
-    <Box bg="#d3d3d3" p="15px" borderRadius="10px" mt="10px">
+    <Box bg="#d3d3d3" p="15px" borderRadius="10px" mt="20px">
       <Flex justify="space-between">
         <Box width="65%">
           <Flex align="center">
@@ -31,19 +31,23 @@ export const CardAcceptedDiet = ({ diet }) => {
           </Flex>
         </Box>
         <Box>
-          <Flex justify="center">
-            <Text fontSize="22px">R${price.toFixed(2).replace(".", ",")}</Text>
-          </Flex>
-          {finished ? (
-            <Text>Dieta Finalizada!</Text>
-          ) : (
-            <Flex justifyContent="center" alignItems="center">
-              <Button w="80px" h="30px" colorScheme="red">
-                Cancelar
-              </Button>
-              <FinishConfirmationModal dietId={dietId} />
+          <Flex>
+            <Flex justify="center">
+              <Text fontSize="22px" mr="15px">
+                R${price.toFixed(2).replace(".", ",")}
+              </Text>
             </Flex>
-          )}
+            {finished ? (
+              <Text>Dieta Finalizada!</Text>
+            ) : (
+              <Flex justifyContent="center" alignItems="center">
+                <Button w="80px" h="30px" colorScheme="red">
+                  Cancelar
+                </Button>
+                <FinishConfirmationModal dietId={dietId} />
+              </Flex>
+            )}
+          </Flex>
         </Box>
       </Flex>
     </Box>

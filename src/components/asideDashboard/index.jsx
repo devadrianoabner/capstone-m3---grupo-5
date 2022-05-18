@@ -199,7 +199,7 @@ export const AsideDashboard = ({
           </List>
         </Flex>
 
-        <Flex pl="15px" align="flex-end" h="10%">
+        <Flex pl="15px" align="flex-end" h="10vh">
           <ModalLogout baseColor={baseColor}>
             <Flex>
               <Image src={iconSeta} />

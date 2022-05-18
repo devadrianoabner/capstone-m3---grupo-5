@@ -110,6 +110,10 @@ export const DietsProvider = ({ children }) => {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
+        refreshDiet();
+      })
+      .catch((err) => console.log(err));
+  };
 
   const cancelByCooker = (dietId) => {
     console.log(dietId);

@@ -1,6 +1,6 @@
 import { Flex, Image, Heading, Text, Box } from "@chakra-ui/react";
 
-const Banner = ({ bg, title, decpripTion, img }) => {
+export const BannerClient = ({ bg, title, decpripTion, img }) => {
   return (
     <>
       <Flex w={"100%"} h="100%" px="1">
@@ -22,7 +22,7 @@ const Banner = ({ bg, title, decpripTion, img }) => {
                 color="#12120E"
                 fontWeight="900"
                 fontSize={["15px", "20px", "25px", "30px"]}
-                w={["240px", "300px", "290px", "320px", "380px"]}
+                w={["230px", "230px", "250px", "280px", "300px"]}
                 mt={["5px", "20px", "50px"]}
               >
                 {title}
@@ -45,7 +45,7 @@ const Banner = ({ bg, title, decpripTion, img }) => {
               <Image
                 src={img}
                 alt="um card"
-                w={["350px", "350px", "350px", "380px"]}
+                w={["350px", "350px", "350px", "300px"]}
               />
             </Flex>
           </Box>
@@ -54,5 +54,3 @@ const Banner = ({ bg, title, decpripTion, img }) => {
     </>
   );
 };
-
-export default Banner;

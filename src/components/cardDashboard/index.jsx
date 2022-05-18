@@ -1,4 +1,4 @@
-import { Flex, Image, Heading, Text, Button } from "@chakra-ui/react";
+import { Flex, Image, Heading, Text, Button, Box } from "@chakra-ui/react";
 import { Redirect, Link } from "react-router-dom";
 //import { useState } from "react";
 import ModalDiet from "../ModalDiet";
@@ -14,14 +14,7 @@ export const CardDashboard = ({
 }) => {
   return (
     <>
-      <Flex
-        maxW="660px"
-        w="100%"
-        h={["133px", "200px", "219px"]}
-        mr={["5px", "15px"]}
-        ml={["5px", "15px"]}
-        mb={["10px", "30px"]}
-      >
+      <Flex w="100%" h="100%">
         <Flex
           bg={bg}
           justify={["space-between", "space-between"]}
@@ -32,20 +25,23 @@ export const CardDashboard = ({
           mx="auto"
           borderRadius="10px"
           pos="relative"
+          alignItems="flex-start"
+          pt="20px"
+          pb="20px"
         >
           <div>
             <Heading
               color="#12120E"
               fontWeight="800"
               fontSize={["12px", "15px", "20px", "25px"]}
-              w={["150px", "160px", "200px", "250px", "360px"]}
+              w={["140px", "190px", "250px", "300px", "360px"]}
             >
               {title}
             </Heading>
             <Text
               color="#12120E"
-              mt={["2", "5", "5", "5"]}
-              mb={["2", "5", "5", "5"]}
+              mt="3px"
+              pb={["25px", "20px", "15px", "10px"]}
               w={["100px", "120px", "180px", "250px"]}
               fontSize={["8px", "10px", "12px"]}
               fontWeight="500"
@@ -56,8 +52,7 @@ export const CardDashboard = ({
             {!modal ? (
               <Button
                 width={["74px", "100px", "147px"]}
-                height={["22px", "30px", "39px"]}
-                px="5"
+                height={["22px", "25px", "30px"]}
                 bg={buttonColor}
                 color="#fff"
                 fontSize={["8px", "12px", "15px", "15px"]}
@@ -72,7 +67,7 @@ export const CardDashboard = ({
           <Image
             src={img}
             alt="um card"
-            w={["60px", "90px", "130px", "150px"]}
+            w={["60px", "90px", "120px", "120px"]}
             pos="absolute"
             bottom={["2", "2", "4"]}
             right={["2", "2", "4"]}
