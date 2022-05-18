@@ -3,7 +3,7 @@ import { MainAreaCooker } from "../../components/mainAreaCokker";
 import { AsideCozinheiro } from "../../components/asideCozinheiro";
 import { Footer } from "../../components/Footer";
 
-import { Flex, Box, useDisclosure, Button } from "@chakra-ui/react";
+import { Flex, Box, useDisclosure, Button, Text } from "@chakra-ui/react";
 
 import { useContext } from "react";
 import { UserContext } from "../../providers/user/index";
@@ -25,7 +25,7 @@ import {
 export const DashboardPrestador = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { user, setUser } = useContext(UserContext);
-  console.log(user);
+  console.log(user.notification);
   return (
     <Box>
       <Box h="10vh">
@@ -37,13 +37,12 @@ export const DashboardPrestador = () => {
           rightIcon={<Icon as={AiOutlineBell} />}
         ></MenuButton>
         <MenuList>
-          <MenuItem>Download</MenuItem>
-          <MenuItem>Create a Copy</MenuItem>
-          <MenuItem>Mark as Draft</MenuItem>
-          <MenuItem>Delete</MenuItem>
-          <MenuItem>Attend a Workshop</MenuItem>
+          {user.notification.map((notif) => {
+            return <MenuItem>{notif.message}</MenuItem>;
+          })}
         </MenuList>
       </Menu>
+
       <Box>
         <Flex h="90vh">
           <Box w={["0vw", "0vw", "0vw", "0vw", "20vw", "15vw"]}>
