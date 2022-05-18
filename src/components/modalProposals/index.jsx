@@ -21,6 +21,7 @@ import {
 //import { useToken } from "../../providers/token";
 import { useDiets } from "../../providers/diets";
 import { useUser } from "../../providers/user";
+import { useEffect } from "react";
 
 const ModalProposals = ({ dietId, description }) => {
   const { postProposals } = useDiets();
@@ -34,9 +35,12 @@ const ModalProposals = ({ dietId, description }) => {
     register,
     handleSubmit,
     formState: { errors },
+    watch,
+    setValue,
   } = useForm({
     resolver: yupResolver(formSchema),
   });
+
   const toast = useToast();
 
   const { isOpen, onOpen, onClose } = useDisclosure();

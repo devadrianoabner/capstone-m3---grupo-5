@@ -20,7 +20,9 @@ import imgLoginPng2 from "../../assets/img/imgLoginPng2.png";
 import { Footer } from "../../components/Footer";
 import { InputDiv } from "../../components/InputDiv";
 import { Logo } from "../../components/Logo";
+import { useDiets } from "../../providers/diets";
 import { useToken } from "../../providers/token";
+import { useUser } from "../../providers/user";
 import api from "../../services";
 
 const Login = () => {
@@ -44,13 +46,14 @@ const Login = () => {
   const history = useHistory();
   const toast = useToast();
 
+  const { setToken } = useToken();
+  const { setUser } = useUser();
+
   const onSubmitFunction = ({ email, password }) => {
     const user = {
       email,
       password,
     };
-
-    console.log(user);
 
     api
       .post("/login", user)
@@ -64,7 +67,10 @@ const Login = () => {
 
         localStorage.setItem("@HDR:token", JSON.stringify(accessToken));
         localStorage.setItem("@HDR:user", JSON.stringify(user));
-        console.log(user.type);
+
+        setToken(accessToken);
+        setUser(user);
+
         switch (user.type) {
           case "Prestador":
             return history.push("/admin");
