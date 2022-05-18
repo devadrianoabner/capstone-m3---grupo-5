@@ -93,11 +93,10 @@ export const DietsProvider = ({ children }) => {
       .catch((e) => console.log(e));
   };
 
-  const postProposals = (data, dietId, cookId) => {
-    const { id } = user;
+  const postProposals = (data, dietId, cookId, clientId) => {
     const newProposal = {
       ...data,
-      clientId: id,
+      clientId: clientId,
       status: false,
       dietId: dietId,
       cookId: cookId,
@@ -118,6 +117,13 @@ export const DietsProvider = ({ children }) => {
             }
           )
           .then((res) => {
+            sendNotification(
+              {
+                message: `${user.name} enviou uma proposta para você`,
+                seen: false,
+              },
+              clientId
+            );
             refreshDiet();
           })
           .catch((err) => console.log(err));
@@ -125,7 +131,24 @@ export const DietsProvider = ({ children }) => {
       .catch((err) => console.log(err));
   };
 
-  const cancelByCooker = (dietId) => {
+  const sendNotification = (notif, id) => {
+    api
+      .get(`users/${id}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((res) => {
+        api.patch(
+          `users/${id}`,
+          { notifications: [notif, ...res.data.notifications] },
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
+        );
+      })
+      .catch((e) => console.log(e));
+  };
+
+  const cancelByCooker = (dietId, clientId) => {
     const cancelCooker = {
       cookId: 0,
       status: false,
@@ -138,6 +161,13 @@ export const DietsProvider = ({ children }) => {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
+        sendNotification(
+          {
+            message: `${user.name} cancelou sua dieta`,
+            seen: false,
+          },
+          clientId
+        );
         refreshDiet();
       })
       .catch((err) => console.log(err));
@@ -154,6 +184,7 @@ export const DietsProvider = ({ children }) => {
         modifyDiet,
         postProposals,
         cancelByCooker,
+        sendNotification,
       }}
     >
       {children}

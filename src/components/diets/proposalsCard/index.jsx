@@ -9,7 +9,7 @@ import { ButtonConfirmAcceptence } from "../buttonConfirmAcceptence";
 export const ProposalCard = ({ proposal, proposals, onClose }) => {
   const { dietId, clientId, price, cookId, message, status, id } = proposal;
 
-  const { refreshDiet } = useDiets();
+  const { refreshDiet, sendNotification } = useDiets();
 
   const [cook, setCook] = useState({});
   const [client, setClient] = useState({});
@@ -81,7 +81,6 @@ export const ProposalCard = ({ proposal, proposals, onClose }) => {
           .catch((e) => console.log(e))
       );
 
-    console.log(proposals);
     proposals // ITERACAO DE PROPOSTAS RECUSADAS PARA ADC REJECTED E DELETAR
       .filter((proposal) => proposal.id !== id)
       .map(async (proposal) => {
@@ -110,6 +109,13 @@ export const ProposalCard = ({ proposal, proposals, onClose }) => {
           })
           .catch((e) => console.log(e));
       });
+    sendNotification(
+      {
+        message: `${client.name} aceitou a sua proposta`,
+        seen: false,
+      },
+      cookId
+    );
     refreshDiet();
     onClose();
   };

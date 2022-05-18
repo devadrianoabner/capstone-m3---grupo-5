@@ -54,7 +54,11 @@ export const CardProposalCookers = ({ diet }) => {
           </Text>
 
           <HStack py={"4"} w={"80%"} alignItems={"center"}>
-            <ModalProposals description={description} dietId={dietId}>
+            <ModalProposals
+              description={description}
+              dietId={dietId}
+              clientId={clientId}
+            >
               Fazer propostas
             </ModalProposals>
           </HStack>

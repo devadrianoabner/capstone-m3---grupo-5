@@ -5,43 +5,17 @@ import { Footer } from "../../components/Footer";
 
 import { Flex, Box, useDisclosure, Button, Text } from "@chakra-ui/react";
 
-import { useContext } from "react";
-import { UserContext } from "../../providers/user/index";
-
-import { Icon } from "@chakra-ui/react";
-import { AiOutlineBell } from "react-icons/ai";
-
-import {
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
-  MenuDivider,
-} from "@chakra-ui/react";
+import { useUser } from "../../providers/user/index";
 
 export const DashboardPrestador = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { user, setUser } = useContext(UserContext);
-  console.log(user.notification);
+  const { user, setUser } = useUser();
+  console.log(user.notifications);
   return (
     <Box>
       <Box h="10vh">
         <Header onOpen={onOpen} />
       </Box>
-      <Menu>
-        <MenuButton
-          as={Button}
-          rightIcon={<Icon as={AiOutlineBell} />}
-        ></MenuButton>
-        <MenuList>
-          {user.notification.map((notif) => {
-            return <MenuItem>{notif.message}</MenuItem>;
-          })}
-        </MenuList>
-      </Menu>
 
       <Box>
         <Flex h="90vh">

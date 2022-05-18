@@ -11,14 +11,17 @@ import {
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { useDiets } from "../../../providers/diets";
+import { useUser } from "../../../providers/user";
 
-export const FinishConfirmationModal = ({ dietId }) => {
+export const FinishConfirmationModal = ({ dietId, clientId }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const cancelRef = React.useRef();
 
-  const { modifyDiet } = useDiets();
+  const { modifyDiet, sendNotification } = useDiets();
 
   const [address, setAddress] = useState("");
+
+  const { user } = useUser();
 
   return (
     <>
@@ -56,6 +59,14 @@ export const FinishConfirmationModal = ({ dietId }) => {
                 colorScheme="green"
                 onClick={() => {
                   modifyDiet({ finished: true, address: address }, dietId);
+                  sendNotification(
+                    {
+                      message: `${user.name} finalizou sua dieta`,
+                      seen: false,
+                    },
+                    clientId
+                  );
+                  console.log("foi");
                   onClose();
                 }}
                 ml={3}

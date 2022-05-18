@@ -7,6 +7,7 @@ import { BsFillGearFill } from "react-icons/bs";
 import { BiLogOut } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { ModalLogoutIcon } from "../modalLougoutIcon";
+import { NotificationButton } from "../notificationButton";
 
 export const Header = ({ onOpen }) => {
   return (
@@ -61,6 +62,9 @@ export const Header = ({ onOpen }) => {
         </Flex>
       </Flex>
       <Flex mr={["10px", "20px"]} gap="8px">
+        <Box mr="15px">
+          <NotificationButton />
+        </Box>
         <Box p="8px">
           <Icon as={BsFillGearFill} w={[5, 6]} h={[5, 6]} />
         </Box>
