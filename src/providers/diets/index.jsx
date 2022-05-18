@@ -13,16 +13,9 @@ export const DietsProvider = ({ children }) => {
   const { token } = useToken();
   const { user } = useUser();
 
-  useEffect(() => {
-    api
-      .get("diets", {
-        headers: { Authorization: `Bearer ${token}` },
-      })
-      .then((res) => setDiets(res.data))
-      .catch((e) => console.log(e));
-  }, []);
-
-  const refreshDiet = () => {
+  const refreshDiet = (
+    token = JSON.parse(localStorage.getItem("@HDR:token"))
+  ) => {
     api
       .get("diets", {
         headers: { Authorization: `Bearer ${token}` },
@@ -30,6 +23,10 @@ export const DietsProvider = ({ children }) => {
       .then((res) => setDiets(res.data))
       .catch((e) => console.log(e));
   };
+
+  useEffect(() => {
+    refreshDiet();
+  }, [token]);
 
   const removeDiet = (dietId) => {
     api

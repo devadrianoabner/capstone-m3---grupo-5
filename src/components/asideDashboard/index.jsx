@@ -19,11 +19,11 @@ import {
 import { ModalLogout } from "../modalLogout";
 import { useHistory, Link } from "react-router-dom";
 import iconSeta from "../../assets/iconsDashboard/iconSeta.svg";
+import { useUser } from "../../providers/user";
 
 export const AsideDashboard = ({
   corBody,
   fotoUser,
-  nomeUser,
   icon1,
   icon2,
   icon3,
@@ -47,6 +47,8 @@ export const AsideDashboard = ({
   /* const { isOpen, onOpen, onClose } = useDisclosure(); */
 
   const history = useHistory();
+
+  const { user } = useUser();
   return (
     <Flex
       bgColor={corBody}
@@ -70,9 +72,9 @@ export const AsideDashboard = ({
           </Box>
 
           <Box borderBottom="2px" borderColor={baseColor} pb="13px">
-            <Avatar boxSize="82px" mt="22px" src={fotoUser} name={nomeUser} />
+            <Avatar boxSize="82px" mt="22px" name={user.name} size={"xl"} />
             <Text fontSize="25px" fontWeight="600" mt="15px" color={baseColor}>
-              {nomeUser}
+              {user.name}
             </Text>
           </Box>
 
@@ -219,14 +221,14 @@ export const AsideDashboard = ({
 
           <DrawerBody>
             <Box borderBottom="2px" borderColor={baseColor} pb="13px">
-              <Image boxSize="82px" mt="22px" src={fotoUser} />
+              <Avatar boxSize="82px" mt="22px" name={user.name} size={"xl"} />
               <Text
                 fontSize="27px"
                 fontWeight="600"
                 mt="15px"
                 color={baseColor}
               >
-                {nomeUser}
+                {user.name}
               </Text>
             </Box>
 

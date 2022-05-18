@@ -14,13 +14,11 @@ import {
 } from "@chakra-ui/react";
 import { CardProposalCookers } from "../../components/cardProposalCookers";
 import { useDiets } from "../../providers/diets";
-import { useUser } from "../../providers/user";
 
 export const ProposalsCookers = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const { diets } = useDiets();
-  const { user } = useUser();
 
   return (
     <Box>
