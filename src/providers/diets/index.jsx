@@ -110,7 +110,20 @@ export const DietsProvider = ({ children }) => {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
-        refreshDiet();
+        api
+          .patch(
+            `diets/${dietId}`,
+            {
+              edit: false,
+            },
+            {
+              headers: { Authorization: `Bearer ${token}` },
+            }
+          )
+          .then((res) => {
+            refreshDiet();
+          })
+          .catch((err) => console.log(err));
       })
       .catch((err) => console.log(err));
   };
