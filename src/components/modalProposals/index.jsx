@@ -25,7 +25,7 @@ const ModalProposals = ({ dietId, description }) => {
   const { user } = useUser();
 
   const formSchema = Yup.object().shape({
-    price: Yup.string().required("Campo obrigatório"),
+    price: Yup.number().required("Campo obrigatório"),
   });
 
   const {

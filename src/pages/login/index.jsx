@@ -69,7 +69,7 @@ const Login = () => {
           case "Prestador":
             return history.push("/admin");
 
-          case "Usuário":
+          case "Cliente": //usamos cliente e não usuário
             return history.push("/dashboard");
 
           default:
@@ -114,7 +114,7 @@ const Login = () => {
           <Link to="/nossaequipe">Nossa Equipe</Link>
           <Link to="/cozinheiros">Ver Cozinheiros</Link>
           <Link to="/contato">Contato</Link>
-        
+
           <Flex
             w="100px"
             h="30px"
