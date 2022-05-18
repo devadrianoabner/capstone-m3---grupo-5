@@ -17,9 +17,6 @@ export const CancelModalConfirmation = ({ dietId }) => {
 
   const { cancelByCooker } = useDiets();
 
-  console.log("dietId");
-  console.log(dietId);
-
   return (
     <>
       <Button w="80px" h="30px" colorScheme="red" onClick={onOpen}>
@@ -43,7 +40,7 @@ export const CancelModalConfirmation = ({ dietId }) => {
 
             <AlertDialogFooter>
               <Button ref={cancelRef} onClick={onClose}>
-                Cancel
+                Cancelar
               </Button>
               <Button
                 colorScheme="red"
@@ -53,7 +50,7 @@ export const CancelModalConfirmation = ({ dietId }) => {
                   onClose();
                 }}
               >
-                Delete
+                Remover
               </Button>
             </AlertDialogFooter>
           </AlertDialogContent>

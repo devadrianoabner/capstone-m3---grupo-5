@@ -74,7 +74,7 @@ const MainAreaClient = () => {
               decpripTion="Lorem ipsum dolor sit amet, consectetur adipiscing
             elit, sed do eiusmod tempor incididunt ut labore
             et dolore magna aliqua. "
-              buttonText="Fazer propostas"
+              buttonText="Entre em contato"
               buttonColor="#706B4C"
               img={RequestImg}
             />

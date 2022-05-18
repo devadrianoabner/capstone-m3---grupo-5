@@ -21,7 +21,7 @@ export const AsideCliente = ({ isOpen, onOpen, onClose }) => {
       icon3={icon4}
       icon4={icon5}
       textIcon1="Dashboard"
-      textIcon2="Ver propostas"
+      textIcon2="Ver dietas"
       textIcon3="Perguntas frequentes"
       textIcon4="Fale com a central"
       baseColor="#12120E"
