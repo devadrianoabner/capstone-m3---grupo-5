@@ -1,4 +1,4 @@
-import { Textarea } from "../textarea";
+//import { Textarea } from "../textarea";
 import { useToast } from "@chakra-ui/react";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -15,6 +15,8 @@ import {
   ModalCloseButton,
   useDisclosure,
   Button,
+  Textarea,
+  Text,
 } from "@chakra-ui/react";
 //import { useToken } from "../../providers/token";
 import { useDiets } from "../../providers/diets";
@@ -103,15 +105,17 @@ const ModalProposals = ({ dietId, description }) => {
               alignItems={"center"}
               flexWrap={"wrap"}
             >
+              <Text color={"black"} fontSize={"13px"} mb={"1.5"}>
+                Plano Alimentar
+              </Text>
               <Textarea
                 bg={"#FFFF"}
-                name={"description"}
-                textarea={"textarea"}
+                isDisabled
                 placeholder={description}
-                label="Plano alimentar"
                 register={register}
                 fontSize={"sm"}
                 mb={"2"}
+                w={"85%"}
               />
               <Input
                 bg={"#fff"}

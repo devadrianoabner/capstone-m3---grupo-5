@@ -22,7 +22,7 @@ const ModalEdit = ({ dietId, description }) => {
   const formSchema = Yup.object().shape({
     description: Yup.string()
       .required("Campo obrigatório")
-      .max(50, " máximo de 50 caracteres"),
+      .min(20, " mínimo de 20 caracteres"),
     meal: Yup.string()
       .required("Escolha uma opção")
       .test("choosenMod", "Escolha sua opção", (value) => value),

@@ -1,4 +1,4 @@
-import { Center, VStack, Image, Text, HStack, Button, Box } from "@chakra-ui/react";
+import { Center, VStack, Image, Text, HStack } from "@chakra-ui/react";
 import ModalProposals from "../modalProposals";
 import { useEffect, useState } from "react";
 import api from "../../services";
@@ -42,7 +42,7 @@ export const CardProposalCookers = ({ diet }) => {
           />
 
           <Text fontSize={"20px"} fontFamily={"body"}>
-            Dieta do {client.name} - id {dietId}
+            Dieta {client.name} - id {dietId}
           </Text>
         </HStack>
         <VStack justifyContent="center" alignItems="center">
