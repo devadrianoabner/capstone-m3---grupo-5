@@ -24,8 +24,8 @@ export const MainAreaProposalCookers = () => {
           </Text>
         </VStack>
         <SimpleGrid columns={[1, 2, 3]} spacing={[3, 5, 10]}>
-          {diets.map((diet) => {
-            return <CardProposalCookers diet={diet} />;
+          {diets.map((diet, id) => {
+            return <CardProposalCookers key={id} diet={diet} />;
           })}
         </SimpleGrid>
       </VStack>
