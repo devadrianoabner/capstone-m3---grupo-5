@@ -20,15 +20,13 @@ import {
 import { useDiets } from "../../providers/diets";
 import { useUser } from "../../providers/user";
 import { useEffect } from "react";
-import { normalizePrice } from "../../utils/mask";
-import { InputMask } from "../inputMask";
 
 const ModalProposals = ({ dietId, description }) => {
   const { postProposals } = useDiets();
   const { user } = useUser();
 
   const formSchema = Yup.object().shape({
-    price: Yup.string().required("Campo obrigatório"),
+    price: Yup.number().required("Campo obrigatório"),
   });
 
   const {
@@ -129,7 +127,7 @@ const ModalProposals = ({ dietId, description }) => {
                 mb={"2"}
               />
 
-              <InputMask
+              <Input
                 bg={"#fff"}
                 label="Valor"
                 placeholder="R$00,00"
@@ -138,8 +136,6 @@ const ModalProposals = ({ dietId, description }) => {
                 fontSize={"sm"}
                 mb={"2"}
                 errors={errors.price?.message}
-                watch={watch}
-                setValue={setValue}
               />
             </ModalBody>
             <ModalFooter
