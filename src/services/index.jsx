@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:3001/",
+  baseURL: "https://horadorango-capstone-g5.herokuapp.com/",
 });
 // https://horadorango-capstone-g5.herokuapp.com/
 export default api;
