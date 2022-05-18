@@ -19,7 +19,7 @@ export const InputMask = ({
   const priceValue = watch("price");
 
   useEffect(() => {
-    setValue("price", normalizePrice);
+    setValue("price", normalizePrice(priceValue));
   }, [priceValue]);
 
   return (

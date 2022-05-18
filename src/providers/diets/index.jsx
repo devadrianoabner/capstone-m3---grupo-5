@@ -94,13 +94,16 @@ export const DietsProvider = ({ children }) => {
   };
 
   const postProposals = (data, dietId, cookId) => {
+    let { message, price } = data;
+    price = Number(price.replace("R$ ", "").replace(",", "."));
     const { id } = user;
     const newProposal = {
-      ...data,
+      message,
+      price,
       clientId: id,
       status: false,
-      dietId: dietId,
-      cookId: cookId,
+      dietId,
+      cookId,
     };
     api
       .post("proposals", newProposal, {
