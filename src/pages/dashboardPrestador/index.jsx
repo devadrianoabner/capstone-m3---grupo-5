@@ -1,20 +1,26 @@
 import { Header } from "../../components/HeaderDashboard";
 import { MainAreaCooker } from "../../components/mainAreaCokker";
-import { AsideDashboard } from "../../components/asideDashboard";
 import { AsideCozinheiro } from "../../components/asideCozinheiro";
 import { Footer } from "../../components/Footer";
 
-import { Flex, Box, useDisclosure } from "@chakra-ui/react";
+import { Flex, Box, useDisclosure, Button } from "@chakra-ui/react";
 
 import { useContext } from "react";
 import { UserContext } from "../../providers/user/index";
 
-import imgPerfil from "../../assets/iconsDashboard/foto.svg";
-import icon1 from "../../assets/iconsDashboard/iconHome.svg";
-import icon2 from "../../assets/iconsDashboard/iconList.svg";
-import icon3 from "../../assets/iconsDashboard/iconApertoDeMao.svg";
-import icon4 from "../../assets/iconsDashboard/iconPergunta.svg";
-import icon5 from "../../assets/iconsDashboard/iconSuporte.svg";
+import { Icon } from "@chakra-ui/react";
+import { AiOutlineBell } from "react-icons/ai";
+
+import {
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuItemOption,
+  MenuGroup,
+  MenuOptionGroup,
+  MenuDivider,
+} from "@chakra-ui/react";
 
 export const DashboardPrestador = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -25,6 +31,19 @@ export const DashboardPrestador = () => {
       <Box h="10vh">
         <Header onOpen={onOpen} />
       </Box>
+      <Menu>
+        <MenuButton
+          as={Button}
+          rightIcon={<Icon as={AiOutlineBell} />}
+        ></MenuButton>
+        <MenuList>
+          <MenuItem>Download</MenuItem>
+          <MenuItem>Create a Copy</MenuItem>
+          <MenuItem>Mark as Draft</MenuItem>
+          <MenuItem>Delete</MenuItem>
+          <MenuItem>Attend a Workshop</MenuItem>
+        </MenuList>
+      </Menu>
       <Box>
         <Flex h="90vh">
           <Box w={["0vw", "0vw", "0vw", "0vw", "20vw", "15vw"]}>
@@ -42,7 +61,7 @@ export const DashboardPrestador = () => {
           >
             <MainAreaCooker
               concluidos={user.qntAccepted}
-              faturamento={user.faturado}
+              faturamento={user.revenue}
             />
           </Box>
         </Flex>
