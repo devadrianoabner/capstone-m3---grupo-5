@@ -45,6 +45,7 @@ const CardProposal = ({ diet }) => {
     <Center maxW={"350px"} w={"100%"} minH="100%" py={"8px"} minW="250px">
       <VStack
         borderRadius="8px"
+        p="5px"
         w={"90%"}
         minH={"100%"}
         direction={{ base: "column", md: "row" }}
@@ -67,7 +68,7 @@ const CardProposal = ({ diet }) => {
           />
 
           <Text fontSize={"20px"} fontFamily={"body"}>
-            Dieta do {client.name}
+            {client.name}
           </Text>
         </HStack>
         <VStack justifyContent="flex-start" alignItems="center" flexGrow="2">
@@ -99,8 +100,8 @@ const CardProposal = ({ diet }) => {
           </Box>
         ) : (
           <Box>
-            <Text fontWeight="bold">Seu pedido está finalizado.</Text>
-            <Text fontWeight="bold">Favor retirar: {address}</Text>
+            <Text fontWeight="bold">Pedido finalizado.</Text>
+            <Text fontWeight="bold">Local de retirada: {address}</Text>
           </Box>
         )}
       </VStack>

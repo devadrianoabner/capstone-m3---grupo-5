@@ -211,6 +211,7 @@ const Login = () => {
             <InputDiv
               label="Senha"
               name="password"
+              type="password"
               register={register}
               error={errors.password?.message}
               placeholder="Digite sua senha"

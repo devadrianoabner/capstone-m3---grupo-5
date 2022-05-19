@@ -37,11 +37,14 @@ const Signup = () => {
       .email("E-mail inválido!"),
     password: yup
       .string()
-      .min(8, "Mínimo de 8 dígitos!")
+      .matches(
+        /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/,
+        "A senha deve conter pelo menos 8 caracteres, uma letra maiúscula, um número e um símbolo"
+      )
       .required("Campo obrigatório!"),
     confirmPassword: yup
       .string()
-      .oneOf([yup.ref("password")], "Senha não confere!")
+      .oneOf([yup.ref("password")], "Senhas não coincidem!")
       .required("Campo obrigatório!"),
     type: yup
       .string()
@@ -247,6 +250,7 @@ const Signup = () => {
             <InputDiv
               label="Senha"
               name="password"
+              type="password"
               register={register}
               error={errors.password?.message}
               placeholder="Digite sua senha"
@@ -254,6 +258,7 @@ const Signup = () => {
             <InputDiv
               label="Confirmação de senha"
               name="confirmPassword"
+              type="password"
               register={register}
               error={errors.confirmPassword?.message}
               placeholder="Confirme sua senha"
