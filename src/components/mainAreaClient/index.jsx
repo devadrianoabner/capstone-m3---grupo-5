@@ -21,7 +21,7 @@ const MainAreaClient = () => {
             display={["none", "flex", "flex"]}
           />
         </Box>
-        <Box >
+        <Box>
           <Flex
             w="100%"
             justify="center"
