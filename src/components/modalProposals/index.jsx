@@ -22,7 +22,7 @@ import { useDiets } from "../../providers/diets";
 import { useUser } from "../../providers/user";
 import { InputMask } from "../inputMask";
 
-const ModalProposals = ({ dietId, description }) => {
+const ModalProposals = ({ dietId, description, clientId }) => {
   const { postProposals } = useDiets();
   const { user } = useUser();
 
@@ -52,7 +52,7 @@ const ModalProposals = ({ dietId, description }) => {
       duration: 5000,
       isClosable: true,
     });
-    postProposals(data, dietId, user.id);
+    postProposals(data, dietId, user.id, clientId);
     onClose();
   };
   return (

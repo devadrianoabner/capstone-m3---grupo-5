@@ -11,7 +11,7 @@ import {
 import React from "react";
 import { useDiets } from "../../../providers/diets";
 
-export const CancelModalConfirmation = ({ dietId }) => {
+export const CancelModalConfirmation = ({ dietId, clientId }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const cancelRef = React.useRef();
 
@@ -46,7 +46,7 @@ export const CancelModalConfirmation = ({ dietId }) => {
                 colorScheme="red"
                 ml={3}
                 onClick={() => {
-                  cancelByCooker(dietId);
+                  cancelByCooker(dietId, clientId);
                   onClose();
                 }}
               >

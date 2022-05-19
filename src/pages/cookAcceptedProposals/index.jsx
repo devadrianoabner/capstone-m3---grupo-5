@@ -9,8 +9,6 @@ import { AsideCozinheiro } from "../../components/asideCozinheiro";
 export const CookAcceptedProposals = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const { user } = useUser();
-
   return (
     <Box>
       <Box h="12vh">

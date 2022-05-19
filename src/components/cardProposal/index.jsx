@@ -90,7 +90,7 @@ const CardProposal = ({ diet }) => {
         ) : !finished ? (
           <Box w="90%" pb="8px">
             <Text fontWeight="bold">
-              Você escolheu já um cozinheiro para essa dieta!
+              Você escolheu um cozinheiro para essa dieta!
             </Text>
             <Text>Cozinheiro: {cook.name}</Text>
             <Text fontWeight="bold">

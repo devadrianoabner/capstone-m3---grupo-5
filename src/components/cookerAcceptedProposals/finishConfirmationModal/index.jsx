@@ -8,17 +8,51 @@ import {
   Button,
   useDisclosure,
   Input,
+  Box,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { useDiets } from "../../../providers/diets";
+import { useUser } from "../../../providers/user";
 
-export const FinishConfirmationModal = ({ dietId }) => {
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+import { useForm } from "react-hook-form";
+import { InputDiv } from "../../InputDiv";
+
+export const FinishConfirmationModal = ({ dietId, clientId }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const cancelRef = React.useRef();
 
-  const { modifyDiet } = useDiets();
+  const { modifyDiet, sendNotification } = useDiets();
 
-  const [address, setAddress] = useState("");
+  //const [address, setAddress] = useState("");
+
+  const { user } = useUser();
+
+  const schema = yup.object().shape({
+    address: yup.string().required("Campo obrigatório!"),
+  });
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  const insertAddress = ({ address }) => {
+    modifyDiet({ finished: true, address: address }, dietId);
+    sendNotification(
+      {
+        message: `${user.name} finalizou sua dieta`,
+        seen: false,
+        url: "/proposals-clients",
+      },
+      clientId
+    );
+    onClose();
+  };
 
   return (
     <>
@@ -37,32 +71,26 @@ export const FinishConfirmationModal = ({ dietId }) => {
               Finalizar Dieta
             </AlertDialogHeader>
 
-            <AlertDialogBody>
-              Tem certeza que deseja finalizar essa dieta?
-              <Input
-                mt="8px"
-                placeholder="Insira o endereço de retirada"
-                onChange={(e) => {
-                  setAddress(e.target.value);
-                }}
-              />
-            </AlertDialogBody>
+            <Box as="form" onSubmit={handleSubmit(insertAddress)}>
+              <AlertDialogBody>
+                Tem certeza que deseja finalizar essa dieta?
+                <InputDiv
+                  name="address"
+                  register={register}
+                  error={errors.address?.message}
+                  placeholder="Insira o endereço de retirada"
+                />
+              </AlertDialogBody>
 
-            <AlertDialogFooter>
-              <Button ref={cancelRef} onClick={onClose}>
-                Cancel
-              </Button>
-              <Button
-                colorScheme="green"
-                onClick={() => {
-                  modifyDiet({ finished: true, address: address }, dietId);
-                  onClose();
-                }}
-                ml={3}
-              >
-                Finalizar
-              </Button>
-            </AlertDialogFooter>
+              <AlertDialogFooter>
+                <Button ref={cancelRef} onClick={onClose}>
+                  Cancel
+                </Button>
+                <Button colorScheme="green" type="submit" ml={3}>
+                  Finalizar
+                </Button>
+              </AlertDialogFooter>
+            </Box>
           </AlertDialogContent>
         </AlertDialogOverlay>
       </AlertDialog>

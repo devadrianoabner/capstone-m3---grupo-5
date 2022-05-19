@@ -42,8 +42,8 @@ export const CardAcceptedDiet = ({ diet }) => {
               <Text>Dieta Finalizada!</Text>
             ) : (
               <Flex justifyContent="center" alignItems="center">
-                <CancelModalConfirmation dietId={dietId} />
-                <FinishConfirmationModal dietId={dietId} />
+                <CancelModalConfirmation dietId={dietId} clientId={clientId} />
+                <FinishConfirmationModal dietId={dietId} clientId={clientId} />
               </Flex>
             )}
           </Flex>

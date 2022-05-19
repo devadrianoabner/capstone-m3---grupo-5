@@ -73,6 +73,7 @@ const Signup = () => {
       password,
       type,
       qntAccepted: 0,
+      notifications: [],
     };
     if (type === "Prestador") {
       user.qntRejected = 0;
