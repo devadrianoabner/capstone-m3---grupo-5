@@ -1,4 +1,3 @@
-//import { Components } from "../pages/Components";
 import { DashboardPrestador } from "../pages/dashboardPrestador";
 import { Route, Switch } from "react-router-dom";
 import { IndexProposalClients } from "../components/indexProposalClients";
@@ -15,9 +14,6 @@ import { UnderConstruction } from "../pages/pageUnderConstruction";
 export const Routes = () => {
   return (
     <Switch>
-      {/* <Route exact path="/">
-        <Home authenticated={authenticated} />
-      </Route> */}
       <Route exact path="/">
         <Home />
       </Route>
@@ -46,20 +42,16 @@ export const Routes = () => {
         <ProposalsCookers />
       </Route>
 
-      <Route path="/new-diet">
-        <>Nova dieta</>
-      </Route>
-
       <Route path="/questions-cookers">
-        <>Pág de perrguntas frequentes cozinheiro</>
+        <UnderConstruction />
       </Route>
 
       <Route path="/questions-clients">
-        <>Pág de perrguntas frequentes cozinheiro</>
+        <UnderConstruction />
       </Route>
 
       <Route path="/support">
-        <>Pág de suporte</>
+        <UnderConstruction />
       </Route>
 
       <Route path="/cook-accepted-proposals">
