@@ -13,7 +13,7 @@ export const CookAcceptedProposals = () => {
 
   return (
     <Box>
-      <Box h="10vh">
+      <Box h="12vh">
         <Header onOpen={onOpen} />
       </Box>
       <Box>

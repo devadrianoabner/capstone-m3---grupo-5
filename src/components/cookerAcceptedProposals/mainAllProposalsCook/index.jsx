@@ -9,10 +9,11 @@ import { CardAcceptedDiet } from "../cardAcceptedDiet";
 export const MainAllProposalsCook = () => {
   const { diets } = useDiets();
   const { user } = useUser();
+  console.log(user);
 
   return (
     <Box w="100%">
-      <Flex direction="row">
+      <Flex direction="row" w="100%">
         <Box ml="2vw" mr="2vw" w="100%">
           <Flex direction="column">
             <Text spacing={"8px"} w={"100%"} fontSize={"30px"}>
@@ -35,15 +36,6 @@ export const MainAllProposalsCook = () => {
               ))}
           </Flex>
         </Box>
-        {
-          <Flex
-            justifyContent="center"
-            display={["none", "none", "none", "flex"]}
-            w="30%"
-          >
-            <Image src={analitcs} />
-          </Flex>
-        }
       </Flex>
     </Box>
   );

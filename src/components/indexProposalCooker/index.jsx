@@ -1,15 +1,12 @@
-import { Footer } from "../../components/Footer";
+import { MainAreaProposalCookers } from "../mainAreaProposalCookers";
 import { Header } from "../../components/HeaderDashboard";
-import { AsideCliente } from "../../components/asideCliente";
-import MainAreaClient from "../../components/mainAreaClient";
+import { AsideCozinheiro } from "../asideCozinheiro";
+import { Footer } from "../../components/Footer";
+
 import { Flex, Box, useDisclosure } from "@chakra-ui/react";
 
-import { useContext } from "react";
-import { UserContext } from "../../providers/user/index";
-
-export const DashBoardClient = () => {
+export const IndexProposalCookers = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { user } = useContext(UserContext);
 
   return (
     <Box>
@@ -19,20 +16,19 @@ export const DashBoardClient = () => {
       <Box>
         <Flex h="90vh">
           <Box w={["0vw", "0vw", "0vw", "0vw", "20vw", "15vw"]}>
-            <AsideCliente
+            <AsideCozinheiro
               isOpen={isOpen}
               onOpen={onOpen}
               onClose={onClose}
-              user={user.name}
             />
           </Box>
 
           <Box
-            w={["100vw", "100vw", "100vw", "100vw", "80vw", "80vw"]}
+            w={["100vw", "100vw", "100vw", "100vw", "80vw", "85vw"]}
             ml={["10px", "10px", "15px", "25px", "37px"]}
             mr={["10px", "10px", "15px", "25px", "37px"]}
           >
-            <MainAreaClient />
+            <MainAreaProposalCookers />
           </Box>
         </Flex>
       </Box>

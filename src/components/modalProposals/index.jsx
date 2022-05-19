@@ -1,4 +1,4 @@
-//import { Textarea } from "../textarea";
+import { Textarea } from "../textarea";
 import { useToast } from "@chakra-ui/react";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -15,13 +15,11 @@ import {
   ModalCloseButton,
   useDisclosure,
   Button,
-  Textarea,
   Text,
 } from "@chakra-ui/react";
 //import { useToken } from "../../providers/token";
 import { useDiets } from "../../providers/diets";
 import { useUser } from "../../providers/user";
-import { useEffect } from "react";
 import { InputMask } from "../inputMask";
 
 const ModalProposals = ({ dietId, description }) => {
