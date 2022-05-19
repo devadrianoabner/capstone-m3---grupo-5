@@ -3,7 +3,9 @@ import { MainHome } from "../../components/homeComponents/mainHome";
 import { Footer } from "../../components/Footer";
 import { Flex } from "@chakra-ui/react";
 
+
 export const Home = () => {
+  
   return (
     <Flex
       h="100%"

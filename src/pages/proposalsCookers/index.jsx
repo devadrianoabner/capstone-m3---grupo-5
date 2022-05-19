@@ -14,11 +14,19 @@ import {
 } from "@chakra-ui/react";
 import { CardProposalCookers } from "../../components/cardProposalCookers";
 import { useDiets } from "../../providers/diets";
+import { useHistory } from "react-router-dom";
+import { useUser } from "../../providers/user/index";
 
 export const ProposalsCookers = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const { diets } = useDiets();
+  const { user } = useUser();
+  const history = useHistory();
+
+  if (user.type === "Usuário") {
+    return history.push("/dashboard");
+  }
 
   return (
     <Box>

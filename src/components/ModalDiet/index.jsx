@@ -54,8 +54,7 @@ const ModalDiet = () => {
     <>
       <Button
         width={["74px", "100px", "147px"]}
-        height={["22px", "30px", "39px"]}
-        px="5"
+        height={["22px", "25px", "30px"]}
         bg="#706B4C"
         color="#fff"
         fontSize={["8px", "12px", "15px", "15px"]}

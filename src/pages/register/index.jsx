@@ -63,7 +63,7 @@ const Signup = () => {
   const { token } = useToken();
 
   if (token) {
-    return <Redirect to="/dashboard" />;
+    return <Redirect to="/login" />;
   }
 
   const onSubmitFunction = ({ name, email, password, type }) => {
@@ -79,7 +79,7 @@ const Signup = () => {
       user.qntRejected = 0;
       user.spent = 0;
     }
-    if (type === "Cliente") {
+    if (type === "Usuário") {
       user.revenue = 0;
     }
 

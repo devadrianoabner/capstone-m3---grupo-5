@@ -20,7 +20,7 @@ const MainAreaClient = () => {
             img={BannerImg}
           />
         </Box>
-        <Box h={["45vh", "45vh", "50vh"]}>
+        <Box >
           <Flex
             w="100%"
             justify="center"
@@ -34,7 +34,7 @@ const MainAreaClient = () => {
                 bg="#BDAD48
             "
                 title="Novo pedido"
-                decpripTion="Clique no botão para montar uma nova dieta! "
+                decpripTion="Faça uma dieta personalizada clicando no botão! "
                 buttonText="Fazer pedido"
                 buttonColor="#706B4C"
                 img={DuboutsImg}
@@ -45,7 +45,7 @@ const MainAreaClient = () => {
               <CardDashboard
                 bg="#5FDD9F"
                 title="Visualizar pedidos"
-                decpripTion="Clique no botão para ver todas as suas dietas! "
+                decpripTion="Veja todas as suas dietas clicando no botão abaixo! "
                 buttonText="Ver tudo"
                 buttonColor="#43B07B"
                 img={InfoImg}
@@ -74,7 +74,7 @@ const MainAreaClient = () => {
               <CardDashboard
                 bg="#F2E8A5"
                 title="Sugestões de dietas"
-                decpripTion="Temos algumas sugestões de dietas para você!"
+                decpripTion="Temos algumas  algumas sugestões de dietas para você, clique aqui!"
                 buttonText="Ver sugestões"
                 buttonColor="#666363"
                 img={VewRequestImg}
