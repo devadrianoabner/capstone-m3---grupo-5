@@ -101,44 +101,46 @@ const Login = () => {
 
   return (
     <Flex w="100vw" h="100vh" direction="column" justify="space-between">
-      <Flex
-        h={["48px", "48px", "48px", "80px"]}
-        justify={["center", "center", "center", "space-between"]}
-        m={[0, 0, 0, "0px 100px"]}
-        fontSize="14px"
-      >
-        <Logo color="#000" />
+      <Box>
         <Flex
-          display={["none", "none", "none", "flex"]}
-          justify="center"
-          align="center"
-          gap="40px"
-          grow="1"
+          h={["48px", "48px", "48px", "80px"]}
+          justify={["center", "center", "center", "space-between"]}
+          m={[0, 0, 0, "0px 100px"]}
+          fontSize="14px"
         >
-          <Link to="/login">Home</Link>
-          <Link to="/quemsomos">Quem Somos</Link>
-          <Link to="/nossaequipe">Nossa Equipe</Link>
-          <Link to="/cozinheiros">Ver Cozinheiros</Link>
-          <Link to="/contato">Contato</Link>
-
+          <Logo color="#000" />
           <Flex
-            w="100px"
-            h="30px"
-            border="2px solid #FFDD00"
-            borderRadius="5px"
+            display={["none", "none", "none", "flex"]}
+            justify="center"
             align="center"
-            _hover={{ cursor: "pointer" }}
-            onClick={() => {
-              history.push("/register");
-            }}
+            gap="40px"
+            grow="1"
           >
-            <Icon as={BsArrowRight} color="tertiary" ml="8px" />
-            <Text color="tertiary" display="inline" ml="8px">
-              Registrar
-            </Text>
+            <Link to="/login">Home</Link>
+            <Link to="/quemsomos">Quem Somos</Link>
+            <Link to="/nossaequipe">Nossa Equipe</Link>
+            <Link to="/contato">Contato</Link>
+
+            <Flex
+              w="100px"
+              h="30px"
+              ml="50px"
+              border="2px solid #FFDD00"
+              borderRadius="5px"
+              align="center"
+              _hover={{ cursor: "pointer" }}
+              onClick={() => {
+                history.push("/register");
+              }}
+            >
+              <Icon as={BsArrowRight} color="tertiary" ml="8px" />
+              <Text color="tertiary" display="inline" ml="8px">
+                Registrar
+              </Text>
+            </Flex>
           </Flex>
         </Flex>
-      </Flex>
+      </Box>
       <Flex
         w="100%"
         h="calc(100% - 80px - 50px)"
@@ -159,9 +161,9 @@ const Login = () => {
           mt="300px"
         />
         <VStack
-          w={["500px"]}
+          w={["465px"]}
           minW={["250px"]}
-          h={["450px", "450px", "450px", "500px"]}
+          h="auto"
           bgColor="#FFF"
           p={["5px", "5px", "5px", "20px 20px 40px 20px"]}
           m={[0, 0, 0, "200px 40px"]}
@@ -226,13 +228,13 @@ const Login = () => {
               FAZER LOGIN
             </Button>
           </Box>
-          <Text fontSize="10px" pt="8px">
-            Não tem conta? Clique
+          <Text fontSize="12px" pt="8px">
+            Não tem conta? Clique{" "}
             <Link to="/register">
-              <Text color="tertiary" display="inline">
+              <Text fontWeight="700" color="#ffd902" display="inline">
                 aqui
               </Text>
-            </Link>
+            </Link>{" "}
             para criar uma conta
           </Text>
         </VStack>
