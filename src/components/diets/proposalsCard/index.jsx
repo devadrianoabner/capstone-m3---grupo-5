@@ -35,7 +35,7 @@ export const ProposalCard = ({ proposal, proposals, onClose }) => {
       .patch(
         `/diets/${dietId}`,
         {
-          status: "true",
+          status: true,
           cookId: cookId,
           price: price,
         },
