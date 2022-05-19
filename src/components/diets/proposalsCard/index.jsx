@@ -1,4 +1,12 @@
-import { Avatar, Box, Button, Flex, Icon, Text } from "@chakra-ui/react";
+import {
+  Avatar,
+  Box,
+  Button,
+  Flex,
+  Icon,
+  Text,
+  useToast,
+} from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { AiFillStar } from "react-icons/ai";
 import { useDiets } from "../../../providers/diets";
@@ -29,6 +37,8 @@ export const ProposalCard = ({ proposal, proposals, onClose }) => {
   }, []);
 
   console.log(cook);
+
+  const toast = useToast();
 
   const acceptedOffer = () => {
     api // PATCH DIETA P ACEITA  STATUS TRUE, PRICE, AND COOK ID
@@ -117,6 +127,14 @@ export const ProposalCard = ({ proposal, proposals, onClose }) => {
       },
       cookId
     );
+    toast({
+      title: "Proposta Aceita!",
+      description: "Você aceitou uma proposta!",
+      status: "success",
+      duration: 5000,
+      isClosable: true,
+    });
+
     refreshDiet();
     onClose();
   };

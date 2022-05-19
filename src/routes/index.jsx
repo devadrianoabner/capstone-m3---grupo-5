@@ -46,10 +46,6 @@ export const Routes = () => {
         <ProposalsCookers />
       </Route>
 
-      <Route path="/all-proposals">
-        <IndexAllProposals />
-      </Route>
-
       <Route path="/new-diet">
         <>Nova dieta</>
       </Route>
