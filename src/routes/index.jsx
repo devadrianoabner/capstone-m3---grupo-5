@@ -11,6 +11,7 @@ import { DashBoardClient } from "../pages/dashboardClient";
 import { CookAcceptedProposals } from "../pages/cookAcceptedProposals";
 import { ProposalsCookers } from "../pages/proposalsCookers";
 import { Home } from "../pages/home";
+import { UnderConstruction } from "../pages/pageUnderConstruction";
 
 export const Routes = () => {
   return (
@@ -72,6 +73,10 @@ export const Routes = () => {
 
       <Route path="/cook-accepted-proposals">
         <CookAcceptedProposals />
+      </Route>
+
+      <Route path="/under-construction">
+        <UnderConstruction />
       </Route>
     </Switch>
   );

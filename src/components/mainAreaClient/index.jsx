@@ -18,6 +18,7 @@ const MainAreaClient = () => {
             title="Seja bem vindo a sua Dashboard!"
             decpripTion="Aqui é seu painel administrativo, você poderá solicitar novas dietas, receber propostas de nossos cozinheiros e aceitar propostas!"
             img={BannerImg}
+            display={["none", "flex", "flex"]}
           />
         </Box>
         <Box h={["45vh", "45vh", "50vh"]}>
