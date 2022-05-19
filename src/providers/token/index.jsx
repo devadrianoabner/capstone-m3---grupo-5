@@ -1,5 +1,5 @@
 // fazer os imports
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 // criar o context
 export const TokenContext = createContext();
@@ -10,17 +10,16 @@ export const TokenProvider = ({ children }) => {
     JSON.parse(localStorage.getItem("@HDR:token")) || ""
   );
 
-  /*
   const [authenticated, setAuthenticated] = useState(false);
-  
+
   useEffect(() => {
-    if (token) {
-      return setAuthenticated(true);
-    }
+    setAuthenticated(token);
   }, [token]);
-*/
+
   return (
-    <TokenContext.Provider value={{ token, setToken }}>
+    <TokenContext.Provider
+      value={{ token, setToken, authenticated, setAuthenticated }}
+    >
       {children}
     </TokenContext.Provider>
   );

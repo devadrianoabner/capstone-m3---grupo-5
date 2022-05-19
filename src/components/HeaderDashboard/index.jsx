@@ -68,7 +68,7 @@ export const Header = ({ onOpen }) => {
         <Box p="8px">
           <ConfigurationButton />
         </Box>
-        <Box p="8px">
+        <Box p="8px" display={["none", "block"]}>
           <Button
             bgColor="#fff0"
             w={[5, 6]}

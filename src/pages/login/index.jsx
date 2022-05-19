@@ -25,6 +25,7 @@ import { useToken } from "../../providers/token";
 import { useUser } from "../../providers/user";
 import api from "../../services";
 import { AiFillHome } from "react-icons/ai";
+import { Redirect } from "react-router-dom";
 
 const Login = () => {
   // MUDEI O NOME POIS ESTAVA SIGNUP oO
@@ -49,6 +50,12 @@ const Login = () => {
 
   const { setToken } = useToken();
   const { setUser } = useUser();
+
+  const { authenticated } = useToken();
+
+  if (authenticated) {
+    return <Redirect to="/admin" />;
+  }
 
   const onSubmitFunction = ({ email, password }) => {
     const user = {
