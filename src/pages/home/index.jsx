@@ -14,7 +14,7 @@ export const Home = () => {
       align="center"
       direction="column"
       justify="flex-start"
-      bg="#fcf6e5"
+      bg="#F2F2F2 "
     >
       <HeaderDefault />
       <MainHome />

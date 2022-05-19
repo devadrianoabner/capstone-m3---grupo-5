@@ -24,6 +24,7 @@ import { useDiets } from "../../providers/diets";
 import { useToken } from "../../providers/token";
 import { useUser } from "../../providers/user";
 import api from "../../services";
+import { AiFillHome } from "react-icons/ai";
 
 const Login = () => {
   // MUDEI O NOME POIS ESTAVA SIGNUP oO
@@ -113,11 +114,28 @@ const Login = () => {
       <Box>
         <Flex
           h={["48px", "48px", "48px", "80px"]}
-          justify={["center", "center", "center", "space-between"]}
+          justify={[
+            "space-around",
+            "space-around",
+            "space-around",
+            "space-between",
+          ]}
           m={[0, 0, 0, "0px 100px"]}
           fontSize="14px"
         >
           <Logo color="#000" />
+          <Flex
+            display={["flex", "flex", "flex", "none"]}
+            alignItems={"center"}
+            justifyContent={"flex-end"}
+            w="50%"
+          >
+            <AiFillHome
+              onClick={() => {
+                return history.push("/");
+              }}
+            />
+          </Flex>
           <Flex
             display={["none", "none", "none", "flex"]}
             justify="center"
@@ -125,10 +143,10 @@ const Login = () => {
             gap="40px"
             grow="1"
           >
-            <Link to="/login">Home</Link>
-            <Link to="/quemsomos">Quem Somos</Link>
-            <Link to="/nossaequipe">Nossa Equipe</Link>
-            <Link to="/contato">Contato</Link>
+            <Link to="/">Home</Link>
+            <Link to="/">Quem Somos</Link>
+            <Link to="/">Nossa Equipe</Link>
+            <Link to="/">Contato</Link>
 
             <Flex
               w="100px"

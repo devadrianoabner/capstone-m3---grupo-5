@@ -1,4 +1,5 @@
 import { Flex, Image, Heading, Text, Button } from "@chakra-ui/react";
+import { useHistory } from "react-router-dom";
 
 export const BannerHome = ({
   bg,
@@ -7,7 +8,9 @@ export const BannerHome = ({
   img,
   textButton,
   bgColorButton,
+  Link,
 }) => {
+  const history = useHistory();
   return (
     <>
       <Flex w={"100%"} h="100%" mb="50px" align={"center"}>
@@ -26,7 +29,7 @@ export const BannerHome = ({
             <Heading
               color="#12120E"
               fontWeight="900"
-              fontSize={["12px", "17px", "22px", "27px"]}
+              fontSize={["15px", "17px", "22px", "27px"]}
               w={["155px", "180px", "220px", "270px", "380px"]}
               mt={["5px", "20px", "50px"]}
             >
@@ -42,7 +45,16 @@ export const BannerHome = ({
             >
               {decpripTion}
             </Text>
-            <Button bg={bgColorButton} maxW="170px" >
+            <Button
+              onClick={() => history.push("/register")}
+              bg={bgColorButton}
+              maxW="170px"
+              border={"2px solid black"}
+              _hover={{
+                background: "#000000",
+                color: "#fff",
+              }}
+            >
               {textButton}
             </Button>
           </Flex>

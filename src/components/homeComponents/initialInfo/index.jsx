@@ -5,7 +5,13 @@ import LogoImage from "../../../assets/img/home/logoImg.svg";
 export const InitialInfo = () => {
   return (
     <>
-      <Flex mt="60px" width="90%" justify={"space-between"} align="center">
+      <Flex
+        mt="60px"
+        width="90%"
+        justify={"space-between"}
+        direction={["column", "column", "column", "row", "row"]}
+        align="center"
+      >
         <Flex direction={"column"} gap="20px">
           <Flex gap="10px" maxW="400px">
             <Text fontSize={"30px"} maxW="400px">
@@ -13,20 +19,26 @@ export const InitialInfo = () => {
             </Text>
             <Image src={LogoImage} maxW="50px" />
           </Flex>
+
           <Flex direction={"column"} gap="30px">
             <Text maxW="500px">
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum."
+              Mudar alimentação, comer algo saboroso, se manter saudável e em
+              forma, às vezes é um desafio imenso. Fazer uma preparação dessas
+              pode parecer impossível com tantas coisas acontecendo na nossa
+              vida. Por conta disso a Hora do Rango conta com centenas de
+              cozinheiros que podem quebrar esse galho para você. Além de
+              receber toda uma programação alimentar já preparada, você ainda
+              garante qualidade e sabor nas suas refeições. A gente sabe da
+              importância do seu tempo e também do seu paladar, chega de comer
+              comida rápida sem gosto e sem valor nutritivo!
             </Text>
-            <Button maxW={"200px"}>Fazer Cadastro</Button>
           </Flex>
         </Flex>
-        <Image src={InitialInfoImage} maxW="640px" />
+        <Image
+          src={InitialInfoImage}
+          w={["70%", "70%", "70%", "440px", "550px"]}
+          mt={["30px", "30px", "30px", "0px", "0px"]}
+        />
       </Flex>
     </>
   );
