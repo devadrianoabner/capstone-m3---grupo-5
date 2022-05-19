@@ -9,6 +9,7 @@ import {
   useDisclosure,
   Input,
   Box,
+  useToast,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { useDiets } from "../../../providers/diets";
@@ -41,6 +42,8 @@ export const FinishConfirmationModal = ({ dietId, clientId }) => {
     resolver: yupResolver(schema),
   });
 
+  const toast = useToast();
+
   const insertAddress = ({ address }) => {
     modifyDiet({ finished: true, address: address }, dietId);
     sendNotification(
@@ -51,6 +54,14 @@ export const FinishConfirmationModal = ({ dietId, clientId }) => {
       },
       clientId
     );
+    toast({
+      title: "Dieta finalizada!",
+      description: "Você finalizou uma dieta!",
+      status: "success",
+      duration: 5000,
+      isClosable: true,
+    });
+
     onClose();
   };
 
