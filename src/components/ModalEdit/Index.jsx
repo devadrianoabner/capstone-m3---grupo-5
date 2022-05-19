@@ -47,7 +47,6 @@ const ModalEdit = ({ dietId, description }) => {
       status: "success",
       isClosable: true,
     });
-    console.log(data);
     modifyDiet(data, dietId);
     onClose();
   };

@@ -36,8 +36,6 @@ export const ProposalCard = ({ proposal, proposals, onClose }) => {
       .catch((e) => console.log(e));
   }, []);
 
-  console.log(cook);
-
   const toast = useToast();
 
   const acceptedOffer = () => {

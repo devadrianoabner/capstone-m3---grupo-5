@@ -41,7 +41,6 @@ const CardProposal = ({ diet }) => {
     }
   }, [status]);
 
-  console.log(client.name);
   return (
     <Center maxW={"350px"} w={"100%"} minH="100%" py={"8px"} minW="250px">
       <VStack

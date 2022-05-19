@@ -9,7 +9,6 @@ import { CardAcceptedDiet } from "../cardAcceptedDiet";
 export const MainAllProposalsCook = () => {
   const { diets } = useDiets();
   const { user } = useUser();
-  console.log(user);
 
   return (
     <Box w="100%">
