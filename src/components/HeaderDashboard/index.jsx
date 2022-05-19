@@ -61,7 +61,7 @@ export const Header = ({ onOpen }) => {
           />
         </Flex>
       </Flex>
-      <Flex mr={["10px", "20px"]} gap="8px">
+      <Flex mr={["10px", "20px"]} direction="row">
         <Box mr="15px">
           <NotificationButton />
         </Box>

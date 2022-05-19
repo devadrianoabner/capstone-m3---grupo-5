@@ -20,6 +20,7 @@ export const ModalLogoutIcon = ({ children, baseColor }) => {
   const history = useHistory();
   return (
     <>
+
       <Box onClick={onOpen}>{children}</Box>
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
@@ -39,10 +40,10 @@ export const ModalLogoutIcon = ({ children, baseColor }) => {
             <ModalFooter>
               <Button
                 _hover={{
-                  background: "#1d5c81",
+                  background: "#056305",
                 }}
                 color="#fff"
-                bg="#2D7EAD 
+                bg="green 
                 
                 "
                 mr={3}

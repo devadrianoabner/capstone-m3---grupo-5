@@ -20,7 +20,7 @@ export const CardProposalCookers = ({ diet }) => {
       <VStack
         borderRadius="8px"
         w={["70%", "100%"]}
-        h={["100%", "auto"]}
+        h={"100%"}
         direction={{ base: "column", md: "row" }}
         bg={("white", "#D9D9D9")}
       >
@@ -29,12 +29,12 @@ export const CardProposalCookers = ({ diet }) => {
           borderBottom={"1px"}
           spacing={"5"}
           py={"3"}
-          justifyContent={"space-between"}
+          justifyContent={"center"}
         >
           <Avatar
             borderRadius={"50%"}
-            maxW={"50px"}
-            maxH={"50px"}
+            maxW={"40px"}
+            maxH={"40px"}
             w={"80%"}
             name={client.name}
             bgColor={"#D8E9BC"}
@@ -42,18 +42,24 @@ export const CardProposalCookers = ({ diet }) => {
           />
 
           <Text fontSize={"20px"} fontFamily={"body"}>
-            Dieta {client.name} - id {dietId}
+            {client.name} - {dietId}
           </Text>
         </HStack>
         <VStack justifyContent="center" alignItems="center">
           <Text color={"black"} fontWeight={"bold"} fontSize={"13px"}>
             Descrição da dieta:
           </Text>
-          <Text textAlign={"center"} color={"black"} fontSize={"13px"}>
+          <Text
+            pl="15px"
+            pr="15px"
+            textAlign={"center"}
+            color={"black"}
+            fontSize={"13px"}
+          >
             {description}
           </Text>
 
-          <HStack py={"4"} w={"80%"} alignItems={"center"}>
+          <HStack py={"4"} w={"80%"} justifyContent={"center"}>
             <ModalProposals
               description={description}
               dietId={dietId}

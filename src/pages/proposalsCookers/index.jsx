@@ -22,7 +22,7 @@ export const ProposalsCookers = () => {
 
   return (
     <Box>
-      <Box h="10vh">
+      <Box h="12vh">
         <Header onOpen={onOpen} />
       </Box>
       <Box>
@@ -35,41 +35,40 @@ export const ProposalsCookers = () => {
             />
           </Box>
           <Box
-            w={["100vw", "100vw", "100vw", "100vw", "80vw", "85vw"]}
+            w={["100vw", "100vw", "100vw", "100vw", "80vw", "80vw"]}
             ml={["10px", "10px", "15px", "25px", "37px"]}
             mr={["10px", "10px", "15px", "25px", "37px"]}
           >
-            <Center w={["100%"]} h={["auto"]} m="0px 50px">
-              <VStack w={["90%", "auto"]}>
-                <VStack alignItems={"flex-start"} w={"100%"}>
-                  <Heading spacing={"8px"} w={"100%"} fontSize={"30px"}>
-                    Dietas disponíveis
-                  </Heading>
-                  <Text
-                    w={"100%"}
-                    fontFamily={"Inter"}
-                    fontSize={["12px", "16px"]}
-                  >
-                    Aqui você encontra as suas dietas que outros clientes
-                    inseriram para você fazer propostas!
-                  </Text>
+            <Box h="100%" overflowY="scroll">
+              <Flex>
+                <VStack w="100%">
+                  <VStack alignItems={"flex-start"} w={"100%"}>
+                    <Heading spacing={"8px"} w={"100%"} fontSize={"30px"}>
+                      Dietas disponíveis
+                    </Heading>
+                    <Text
+                      w={"100%"}
+                      fontFamily={"Inter"}
+                      fontSize={["12px", "16px"]}
+                    >
+                      Aqui você encontra as suas dietas que outros clientes
+                      inseriram para você fazer propostas!
+                    </Text>
+                  </VStack>
+                  <SimpleGrid columns={[1, 2, 3, 4]} spacing={[3, 5, 8]}>
+                    {diets
+                      .filter((diet) => !diet.status)
+                      .map((diet) => (
+                        <CardProposalCookers diet={diet} />
+                      ))}
+                    {/* retirei esse codigo :.filter((dieta) => dieta.clientId === user.id)
+                     */}
+                  </SimpleGrid>
                 </VStack>
-                <SimpleGrid columns={[1, 2, 3]} spacing={[3, 5, 8]}>
-                  {diets
-                    .filter((diet) => !diet.status)
-                    .map((diet) => (
-                      <CardProposalCookers diet={diet} />
-                    ))}
-                  {/* retirei esse codigo :.filter((dieta) => dieta.clientId === user.id)
-                   */}
-                </SimpleGrid>
-              </VStack>
-            </Center>
+              </Flex>
+            </Box>
           </Box>
         </Flex>
-      </Box>
-      <Box>
-        <Footer />
       </Box>
     </Box>
   );

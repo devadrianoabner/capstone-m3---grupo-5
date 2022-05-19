@@ -1,5 +1,5 @@
 import { Textarea } from "../textarea";
-import { useToast } from "@chakra-ui/react";
+import { Box, useToast } from "@chakra-ui/react";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
@@ -107,19 +107,14 @@ const ModalProposals = ({ dietId, description, clientId }) => {
               justifyContent={"center"}
               alignItems={"center"}
               flexWrap={"wrap"}
+              flexDirection="column"
             >
               <Text color={"black"} fontSize={"13px"} mb={"1.5"}>
                 Plano Alimentar
               </Text>
-              <Textarea
-                bg={"#FFFF"}
-                isDisabled
-                placeholder={description}
-                register={register}
-                fontSize={"sm"}
-                mb={"2"}
-                w={"85%"}
-              />
+              <Box w="250px" h="100px" overflowY={"auto"}>
+                <Text>{description}</Text>
+              </Box>
               <Input
                 bg={"#fff"}
                 label="Mensagem"
