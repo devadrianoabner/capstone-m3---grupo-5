@@ -64,10 +64,11 @@ export const CardProposalCookers = ({ diet }) => {
             textAlign={"center"}
             color={"black"}
             fontSize={"13px"}
+            flexGrow="2"
           >
             {description}
           </Text>
-          <Box bgColor="#000" h="1px" w="100px" />
+          <Box bgColor="#000" h="1px" w="120px" />
           <Box mt="20px">
             <Text fontSize="12px">Restrição de dieta:</Text>
             <Text fontSize="12px" fontWeight="bold">
