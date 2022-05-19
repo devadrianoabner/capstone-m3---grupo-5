@@ -9,7 +9,7 @@ import Adriano from "../../../assets/img/adriano.jfif";
 export const Team = () => {
   return (
     <Flex justify={"center"} align="center" direction={"column"}>
-      <Box>
+      <Box id="#quemsomos">
         <Text w="100%" align="center" justify={"center"} fontSize="40px">
           Nossa equipe
         </Text>

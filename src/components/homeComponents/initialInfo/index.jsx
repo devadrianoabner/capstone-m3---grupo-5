@@ -1,10 +1,11 @@
-import { Button, Flex, Image, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Image, Text } from "@chakra-ui/react";
 import InitialInfoImage from "../../../assets/img/home/initialInfoImage.svg";
 import LogoImage from "../../../assets/img/home/logoImg.svg";
 
 export const InitialInfo = () => {
   return (
     <>
+      <Box id="quemsomos"></Box>
       <Flex
         mt="60px"
         width="90%"

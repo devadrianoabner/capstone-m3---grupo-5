@@ -3,6 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import { Logo } from "../../components/Logo";
 import { BsArrowRight } from "react-icons/bs";
 import { AiOutlineUser } from "react-icons/ai";
+import { HashLink } from "react-router-hash-link";
 
 export const HeaderDefault = () => {
   const history = useHistory();
@@ -38,10 +39,16 @@ export const HeaderDefault = () => {
         grow="1"
       >
         <Link to="/">Home</Link>
-        <Link to="/">Quem Somos</Link>
-        <Link to="/">Nossa Equipe</Link>
-        <Link to="/">Contato</Link>
-
+        <HashLink to="#quemsomos" smooth>
+          Quem Somos
+        </HashLink>
+        <HashLink to="#nossaequipe" smooth>
+          Nossa Equipe
+        </HashLink>
+        <HashLink to="#contato" smooth>
+          Contato
+        </HashLink>
+        
         <Flex
           ml="50px"
           w="100px"
