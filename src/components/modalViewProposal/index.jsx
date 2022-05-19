@@ -83,7 +83,7 @@ const ModalViewProposal = ({ dietId }) => {
             flexDirection="column"
           >
             <Flex
-              bgColor={"#f5eaaf"}
+              bgColor={"#ffffff"}
               p={"10px"}
               isCentered
               display={"flex"}
@@ -93,9 +93,6 @@ const ModalViewProposal = ({ dietId }) => {
               borderRadius="8px"
               m="8px"
             >
-              <Text fontSize="15px">
-                Aqui vai aparecer o nome do cozinheiro e uma breve descrição!
-              </Text>
             </Flex>
             <Text fontSize="15px" fontWeight="bold">
               Você tem {proposals.length} proposta
