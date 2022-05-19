@@ -75,7 +75,7 @@ const Login = () => {
           case "Prestador":
             return history.push("/admin");
 
-          case "Cliente": //usamos cliente e não usuário
+          case "Usuário": //usamos cliente e não usuário
             return history.push("/dashboard");
 
           default:

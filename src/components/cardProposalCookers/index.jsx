@@ -37,6 +37,8 @@ export const CardProposalCookers = ({ diet }) => {
             maxH={"40px"}
             w={"80%"}
             name={client.name}
+            bgColor={"#D8E9BC"}
+            src={client.avatarUrl}
           />
 
           <Text fontSize={"20px"} fontFamily={"body"}>

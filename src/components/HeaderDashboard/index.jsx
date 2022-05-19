@@ -3,11 +3,11 @@ import { Logo } from "../Logo";
 
 import { Icon, Button } from "@chakra-ui/react";
 import { AiOutlineSearch } from "react-icons/ai";
-import { BsFillGearFill } from "react-icons/bs";
 import { BiLogOut } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { ModalLogoutIcon } from "../modalLougoutIcon";
 import { NotificationButton } from "../notificationButton";
+import { ConfigurationButton } from "./configurationButton";
 
 export const Header = ({ onOpen }) => {
   return (
@@ -66,17 +66,19 @@ export const Header = ({ onOpen }) => {
           <NotificationButton />
         </Box>
         <Box p="8px">
-          <Icon as={BsFillGearFill} w={[5, 6]} h={[5, 6]} />
+          <ConfigurationButton />
         </Box>
         <Box p="8px">
-          <ModalLogoutIcon>
-            <Icon
-              as={BiLogOut}
-              w={[5, 6]}
-              h={[5, 6]}
-              display={["none", "flex", "flex", "flex"]}
-            />
-          </ModalLogoutIcon>
+          <Button
+            bgColor="#fff0"
+            w={[5, 6]}
+            h={[5, 6]}
+            _hover={{ background: "#fff0" }}
+          >
+            <ModalLogoutIcon>
+              <Icon as={BiLogOut} w={[5, 6]} h={[5, 6]} />
+            </ModalLogoutIcon>
+          </Button>
         </Box>
       </Flex>
     </Flex>
