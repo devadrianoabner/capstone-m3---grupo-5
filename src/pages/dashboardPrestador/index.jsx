@@ -6,10 +6,12 @@ import { Footer } from "../../components/Footer";
 import { Flex, Box, useDisclosure, Button, Text } from "@chakra-ui/react";
 
 import { useUser } from "../../providers/user/index";
+import { useDiets } from "../../providers/diets";
 
 export const DashboardPrestador = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { user, setUser } = useUser();
+  const { user } = useUser();
+  const { diets } = useDiets();
   return (
     <Box>
       <Box h="12vh">
@@ -33,8 +35,17 @@ export const DashboardPrestador = () => {
             mr={["10px", "10px", "15px", "25px", "37px"]}
           >
             <MainAreaCooker
-              concluidos={user.qntAccepted}
-              faturamento={user.revenue}
+              concluidos={diets.reduce((acc, val) => {
+                return val.finished && val.cookId === user.id ? acc + 1 : acc;
+              }, 0)}
+              faturamento={diets
+                .reduce((acc, val) => {
+                  return val.finished && val.cookId === user.id
+                    ? acc + val.price
+                    : acc;
+                }, 0)
+                .toFixed(2)
+                .replace(".", ",")}
             />
           </Box>
         </Flex>
