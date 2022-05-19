@@ -44,22 +44,6 @@ export const Header = ({ onOpen }) => {
         >
           <Logo color="#000" />
         </Flex>
-        <Flex
-          w={["200px", "200px", "230px", "300px"]}
-          h="36px"
-          align="center"
-          border="1px solid #625710"
-          borderRadius="54px"
-          p="15px"
-          ml={{ md: "50px", lg: "70px" }}
-        >
-          <Icon as={AiOutlineSearch} />
-          <Input
-            placeholder="Pesquise para filtrar"
-            border="none"
-            focusBorderColor="none"
-          />
-        </Flex>
       </Flex>
       <Flex mr={["10px", "20px"]} direction="row">
         <Box mr="15px">

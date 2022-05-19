@@ -86,12 +86,7 @@ export const AsideDashboard = ({
           </Box>
 
           <List mr="15px" spacing={4} mt="10px">
-            <ListItem
-              w="100%"
-              _hover={{
-                background: "#847b45",
-              }}
-            >
+            <ListItem w="100%">
               <Link to={link1}>
                 <Flex align="center">
                   <Image src={icon1} />
@@ -110,12 +105,7 @@ export const AsideDashboard = ({
               </Link>
             </ListItem>
 
-            <ListItem
-              w="100%"
-              _hover={{
-                background: "#847b45",
-              }}
-            >
+            <ListItem w="100%">
               <Link to={link2}>
                 <Flex align="center">
                   <Image src={icon2} />
@@ -134,12 +124,7 @@ export const AsideDashboard = ({
               </Link>
             </ListItem>
 
-            <ListItem
-              w="100%"
-              _hover={{
-                background: "#847b45",
-              }}
-            >
+            <ListItem w="100%">
               <Link to={link3}>
                 <Flex align="center">
                   <Image mt="5px" src={icon3} />
@@ -158,12 +143,7 @@ export const AsideDashboard = ({
               </Link>
             </ListItem>
 
-            <ListItem
-              w="100%"
-              _hover={{
-                background: "#847b45",
-              }}
-            >
+            <ListItem w="100%">
               <Link to={link4}>
                 <Flex align="center">
                   <Image src={icon4} />
@@ -182,12 +162,7 @@ export const AsideDashboard = ({
               </Link>
             </ListItem>
 
-            <ListItem
-              w="100%"
-              _hover={{
-                background: "#847b45",
-              }}
-            >
+            <ListItem w="100%">
               <Link to={link5}>
                 <Flex align="center">
                   <Image src={icon5} />

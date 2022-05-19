@@ -20,12 +20,12 @@ import imgLoginPng2 from "../../assets/img/imgLoginPng2.png";
 import { Footer } from "../../components/Footer";
 import { InputDiv } from "../../components/InputDiv";
 import { Logo } from "../../components/Logo";
-import { useDiets } from "../../providers/diets";
 import { useToken } from "../../providers/token";
 import { useUser } from "../../providers/user";
 import api from "../../services";
 import { AiFillHome } from "react-icons/ai";
 import { Redirect } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 const Login = () => {
   // MUDEI O NOME POIS ESTAVA SIGNUP oO
@@ -151,9 +151,21 @@ const Login = () => {
             grow="1"
           >
             <Link to="/login">Home</Link>
-            <Link to="/under-construction">Quem Somos</Link>
-            <Link to="/nossaequipe">Nossa Equipe</Link>
-            <Link to="/contato">Contato</Link>
+            <Link to="/">
+              <HashLink to="/#quemsomos" smooth>
+                Nossa Equipe
+              </HashLink>
+            </Link>
+            <Link to="/">
+              <HashLink to="/#nossaequipe" smooth>
+                Nossa Equipe
+              </HashLink>
+            </Link>
+            <Link to="/">
+              <HashLink to="/#contato" smooth>
+                Contato
+              </HashLink>
+            </Link>
 
             <Flex
               w="100px"

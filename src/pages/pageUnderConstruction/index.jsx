@@ -7,7 +7,7 @@ export const UnderConstruction = () => {
   const history = useHistory();
 
   return (
-    <Flex direction={"column"} h="100vh">
+    <Flex direction={"column"} h="100vh" maxH="100%">
       <Flex>
         <HeaderDefault />
       </Flex>
@@ -18,6 +18,7 @@ export const UnderConstruction = () => {
         direction={"column"}
         align={"center"}
         gap="10px"
+        h="100%"
       >
         <Flex
           align={"center"}
