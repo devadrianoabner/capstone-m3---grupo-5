@@ -13,10 +13,13 @@ import {
 } from "@chakra-ui/react";
 
 import { useHistory } from "react-router-dom";
+import { useToken } from "../../providers/token";
 
 export const ModalLogout = ({ children, baseColor }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const history = useHistory();
+
+  const { setToken } = useToken();
   return (
     <>
       <Button
@@ -58,6 +61,7 @@ export const ModalLogout = ({ children, baseColor }) => {
               "
                 mr={3}
                 onClick={() => {
+                  setToken(false);
                   localStorage.clear();
                   history.push("/login");
                 }}

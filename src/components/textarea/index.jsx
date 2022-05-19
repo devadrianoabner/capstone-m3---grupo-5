@@ -14,6 +14,8 @@ export const Textarea = ({
   description,
   ...rest
 }) => {
+  const [value, setValue] = useState(description);
+
   return (
     <FormControl w={"85%"}>
       <FormLabel textAlign={"center"} color={"black"} fontSize={"13px"}>
@@ -25,6 +27,10 @@ export const Textarea = ({
         name={name}
         border={"transparent"}
         bgColor={"white"}
+        value={value}
+        onChange={(e) => {
+          setValue(e.target.value);
+        }}
       />
       <FormHelperText
         fontSize={"11px"}

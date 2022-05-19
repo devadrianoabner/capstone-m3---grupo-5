@@ -22,7 +22,7 @@ import { useDiets } from "../../providers/diets";
 import { useUser } from "../../providers/user";
 import { InputMask } from "../inputMask";
 
-const ModalProposals = ({ dietId, description, clientId }) => {
+const ModalProposals = ({ dietId, description, clientId, meal }) => {
   const { postProposals } = useDiets();
   const { user } = useUser();
 
@@ -115,6 +115,11 @@ const ModalProposals = ({ dietId, description, clientId }) => {
               <Box w="250px" h="100px" overflowY={"auto"}>
                 <Text>{description}</Text>
               </Box>
+              <Text fontSize="12px">Restrição de dieta:</Text>
+              <Text fontSize="12px" fontWeight="bold">
+                {meal}
+              </Text>
+
               <Input
                 bg={"#fff"}
                 label="Mensagem"

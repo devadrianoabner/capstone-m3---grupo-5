@@ -17,6 +17,7 @@ const CardProposal = ({ diet }) => {
     edit,
     finished,
     address,
+    meal,
   } = diet;
 
   const { removeDiet } = useDiets();
@@ -81,6 +82,14 @@ const CardProposal = ({ diet }) => {
             {description}
           </Text>
         </VStack>
+        <Box bgColor="#000" h="1px" w="120px" />
+
+        <Box mt="20px">
+          <Text fontSize="12px">Restrição de dieta:</Text>
+          <Text fontSize="12px" fontWeight="bold">
+            {meal}
+          </Text>
+        </Box>
         {!status ? (
           <HStack py={"4"} w={"80%"} justify={"center"}>
             {edit ? (
