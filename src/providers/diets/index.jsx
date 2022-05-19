@@ -11,11 +11,9 @@ export const DietsContext = createContext();
 export const DietsProvider = ({ children }) => {
   const [diets, setDiets] = useState([]);
   const { token } = useToken();
-  const { user } = useUser();
+  const { user, refreshUser } = useUser();
 
-  const refreshDiet = (
-    token = JSON.parse(localStorage.getItem("@HDR:token"))
-  ) => {
+  const refreshDiet = () => {
     api
       .get("diets", {
         headers: { Authorization: `Bearer ${token}` },
@@ -27,6 +25,10 @@ export const DietsProvider = ({ children }) => {
   useEffect(() => {
     refreshDiet();
   }, [token]);
+
+  useEffect(() => {
+    refreshUser();
+  }, [diets]);
 
   const removeDiet = (dietId) => {
     api
@@ -55,16 +57,12 @@ export const DietsProvider = ({ children }) => {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
-        console.log(res);
         refreshDiet();
       })
       .catch((err) => console.log(err));
   };
 
   const modifyDiet = (data, dietId) => {
-    console.log(data);
-    console.log(dietId);
-    console.log(token);
     api
       .patch(`diets/${dietId}`, data, {
         headers: { Authorization: `Bearer ${token}` },
@@ -94,12 +92,15 @@ export const DietsProvider = ({ children }) => {
   };
 
   const postProposals = (data, dietId, cookId, clientId) => {
+    let { message, price } = data;
+    price = Number(price.replace("R$ ", "").replace(",", "."));
     const newProposal = {
-      ...data,
       clientId: clientId,
+      message,
+      price,
       status: false,
-      dietId: dietId,
-      cookId: cookId,
+      dietId,
+      cookId,
     };
     api
       .post("proposals", newProposal, {

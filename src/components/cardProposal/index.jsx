@@ -64,9 +64,6 @@ const CardProposal = ({ diet }) => {
             maxH={"50px"}
             w={"80%"}
             name={client.name}
-            src={
-              "https://images.unsplash.com/photo-1520810627419-35e362c5dc07?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
-            }
           />
 
           <Text fontSize={"20px"} fontFamily={"body"}>
@@ -93,7 +90,7 @@ const CardProposal = ({ diet }) => {
         ) : !finished ? (
           <Box w="90%" pb="8px">
             <Text fontWeight="bold">
-              Você escolheu já um cozinheiro para essa dieta!
+              Você escolheu um cozinheiro para essa dieta!
             </Text>
             <Text>Cozinheiro: {cook.name}</Text>
             <Text fontWeight="bold">

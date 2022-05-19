@@ -55,9 +55,11 @@ export const ProposalsCookers = () => {
                   </Text>
                 </VStack>
                 <SimpleGrid columns={[1, 2, 3]} spacing={[3, 5, 8]}>
-                  {diets.map((diet) => (
-                    <CardProposalCookers diet={diet} />
-                  ))}
+                  {diets
+                    .filter((diet) => !diet.status)
+                    .map((diet) => (
+                      <CardProposalCookers diet={diet} />
+                    ))}
                   {/* retirei esse codigo :.filter((dieta) => dieta.clientId === user.id)
                    */}
                 </SimpleGrid>

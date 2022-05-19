@@ -1,4 +1,4 @@
-import { Center, VStack, Image, Text, HStack } from "@chakra-ui/react";
+import { Center, VStack, Image, Text, HStack, Avatar } from "@chakra-ui/react";
 import ModalProposals from "../modalProposals";
 import { useEffect, useState } from "react";
 import api from "../../services";
@@ -31,14 +31,12 @@ export const CardProposalCookers = ({ diet }) => {
           py={"3"}
           justifyContent={"space-between"}
         >
-          <Image
+          <Avatar
             borderRadius={"50%"}
             maxW={"50px"}
             maxH={"50px"}
             w={"80%"}
-            src={
-              "https://images.unsplash.com/photo-1520810627419-35e362c5dc07?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
-            }
+            name={client.name}
           />
 
           <Text fontSize={"20px"} fontFamily={"body"}>

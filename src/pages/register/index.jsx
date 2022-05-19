@@ -12,7 +12,6 @@ import {
   Text,
   useToast,
   VStack,
- 
 } from "@chakra-ui/react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
@@ -74,6 +73,7 @@ const Signup = () => {
       password,
       type,
       qntAccepted: 0,
+      notifications: [],
     };
     if (type === "Prestador") {
       user.qntRejected = 0;

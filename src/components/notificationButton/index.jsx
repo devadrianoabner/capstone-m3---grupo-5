@@ -8,6 +8,7 @@ import {
   MenuOptionGroup,
   MenuDivider,
   Button,
+  Box,
 } from "@chakra-ui/react";
 
 import { Icon } from "@chakra-ui/react";
@@ -18,7 +19,7 @@ import { useUser } from "../../providers/user";
 import api from "../../services";
 
 export const NotificationButton = () => {
-  const { user, setUser } = useUser();
+  const { user, setUser, refreshUser } = useUser();
   const { token } = useToken();
 
   const notifySeen = () => {
@@ -33,25 +34,21 @@ export const NotificationButton = () => {
         headers: { Authorization: `Bearer ${token}` },
       }
     );
+    refreshUser();
   };
 
   return (
     <Menu>
       {user.notifications.some((notif) => !notif.seen) ? (
-        <MenuButton
-          bgColor={"red"}
-          as={Button}
-          rightIcon={<Icon as={AiOutlineBell} />}
-          onClick={notifySeen}
-        ></MenuButton>
+        <MenuButton bgColor={"red"} as={Button} onClick={notifySeen}>
+          <Icon as={AiOutlineBell} />
+        </MenuButton>
       ) : (
-        <MenuButton
-          as={Button}
-          rightIcon={<Icon as={AiOutlineBell} />}
-        ></MenuButton>
+        <MenuButton as={Button}>
+          <Icon as={AiOutlineBell} />
+        </MenuButton>
       )}
-
-      <MenuList>
+      <MenuList overflowY="scroll" maxH="300px">
         {user.notifications.map((notif) => {
           return !notif.seen ? (
             <MenuItem bgColor={"#f56539cf"}>{notif.message}</MenuItem>
