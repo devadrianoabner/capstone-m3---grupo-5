@@ -61,7 +61,7 @@ export const Header = ({ onOpen }) => {
           />
         </Flex>
       </Flex>
-      <Flex mr={["10px", "20px"]} gap="8px">
+      <Flex mr={["10px", "20px"]} direction="row">
         <Box mr="15px">
           <NotificationButton />
         </Box>
@@ -70,7 +70,12 @@ export const Header = ({ onOpen }) => {
         </Box>
         <Box p="8px">
           <ModalLogoutIcon>
-            <Icon as={BiLogOut} w={[5, 6]} h={[5, 6]} />
+            <Icon
+              as={BiLogOut}
+              w={[5, 6]}
+              h={[5, 6]}
+              display={["none", "flex", "flex", "flex"]}
+            />
           </ModalLogoutIcon>
         </Box>
       </Flex>
