@@ -12,7 +12,6 @@ import {
   Text,
   useToast,
   VStack,
- 
 } from "@chakra-ui/react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
@@ -131,10 +130,10 @@ const Signup = () => {
           <Link to="/login">Home</Link>
           <Link to="/quemsomos">Quem Somos</Link>
           <Link to="/nossaequipe">Nossa Equipe</Link>
-          <Link to="/cozinheiros">Ver Cozinheiros</Link>
           <Link to="/contato">Contato</Link>
           <Flex
             w="100px"
+            ml="50px"
             h="30px"
             border="2px solid #FFDD00"
             borderRadius="5px"
@@ -171,9 +170,9 @@ const Signup = () => {
           mt="300px"
         />
         <VStack
-          w={["500px"]}
+          w={["465px"]}
           minW={["250px"]}
-          maxH={["700px"]}
+          h="auto"
           bgColor="#FFF"
           p={["5px", "5px", "5px", "20px 20px 40px 20px"]}
           m={[0, 0, 0, "20px 40px"]}
@@ -270,13 +269,13 @@ const Signup = () => {
               Cadastrar
             </Button>
           </Box>
-          <Text fontSize="10px" pt="8px">
+          <Text fontSize="12px" pt="8px">
             Já conta? Clique{" "}
             <Link to="/login">
-              <Text color="tertiary" display="inline">
+              <Text fontWeight="700" color="#ffd902" display="inline">
                 aqui
               </Text>
-            </Link>
+            </Link>{" "}
             para acessar sua conta
           </Text>
         </VStack>

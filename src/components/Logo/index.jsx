@@ -1,5 +1,5 @@
 import { Flex, Image, Text } from "@chakra-ui/react";
-import logoImg from "../../assets/img/img-logo.png";
+import logoImg from "../../assets/img/logo.svg";
 
 export const Logo = ({ color = "white", ...rest }) => {
   return (
@@ -9,7 +9,7 @@ export const Logo = ({ color = "white", ...rest }) => {
           fontFamily="logo"
           minW="60px"
           color={color}
-          fontSize={["12px", "16px"]}
+          fontSize={["12px", "20px"]}
         >
           Hora do
         </Text>
@@ -17,7 +17,7 @@ export const Logo = ({ color = "white", ...rest }) => {
           fontFamily="logo"
           color="primary"
           ml={["0px", "7px"]}
-          fontSize={["12px", "16px"]}
+          fontSize={["12px", "20px"]}
         >
           {/* ALTERAÇÃO PARA AJUSTE DA LOGO (ESPAÇO)*/}
           rango
