@@ -6,7 +6,6 @@ import { IndexAllProposals } from "../components/indexAllProposals";
 
 import Login from "../pages/login";
 import Signup from "../pages/register";
-import { Diets } from "../pages/diets";
 import { DashBoardClient } from "../pages/dashboardClient";
 import { CookAcceptedProposals } from "../pages/cookAcceptedProposals";
 import { ProposalsCookers } from "../pages/proposalsCookers";
@@ -37,10 +36,6 @@ export const Routes = () => {
 
       <Route path="/admin">
         <DashboardPrestador />
-      </Route>
-
-      <Route path="/diets">
-        <Diets />
       </Route>
 
       <Route path="/proposals-clients">
