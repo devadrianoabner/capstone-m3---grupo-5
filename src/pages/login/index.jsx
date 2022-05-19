@@ -117,7 +117,7 @@ const Login = () => {
             grow="1"
           >
             <Link to="/login">Home</Link>
-            <Link to="/quemsomos">Quem Somos</Link>
+            <Link to="/under-construction">Quem Somos</Link>
             <Link to="/nossaequipe">Nossa Equipe</Link>
             <Link to="/contato">Contato</Link>
 

@@ -27,7 +27,7 @@ export const HeaderDefault = () => {
         <Link to="/login">Home</Link>
         <Link to="/quemsomos">Quem Somos</Link>
         <Link to="/nossaequipe">Nossa Equipe</Link>
-        <Link to="/cozinheiros">Ver Cozinheiros</Link>
+        <Link to="/under-construction">Ver Cozinheiros</Link>
         <Link to="/contato">Contato</Link>
 
         <Flex

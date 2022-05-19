@@ -11,8 +11,8 @@ export const MainHome = () => {
     <>
       <BannerHome
         bg="#DECD5B"
-        title="Lorem ipsum"
-        decpripTion="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,sunt in culpa qui officia deserunt mollit anim id est laborum."
+        title="Hora do rango?"
+        decpripTion="Já imaginou se toda vez que batesse aquela fome de algo gostoso você abrisse a sua geladeira e tivesse aquele rango deliciinha te esperando? As vezes a gente não tem disposição e tempo para cozinhar,  sem falar que nem sempre conseguimos fazer algo bom com os recursos que temos, então a Hora do rango chegou para servir refeições de acordo com a sua vontade. Ta esperando o que para pedir? "
         textButton="Fazer Cadastro"
         bgColorButton="#eeeeee"
         img={ImgBannerHome}

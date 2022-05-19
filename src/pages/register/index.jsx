@@ -132,9 +132,9 @@ const Signup = () => {
           grow="1"
         >
           <Link to="/login">Home</Link>
-          <Link to="/quemsomos">Quem Somos</Link>
+          <Link to="/under-construction">Quem Somos</Link>
           <Link to="/nossaequipe">Nossa Equipe</Link>
-          <Link to="/contato">Contato</Link>
+          <Link to="/under-construction">Contato</Link>
           <Flex
             w="100px"
             ml="50px"

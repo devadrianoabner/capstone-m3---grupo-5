@@ -42,7 +42,7 @@ export const BannerHome = ({
             >
               {decpripTion}
             </Text>
-            <Button bg={bgColorButton} maxW="170px" >
+            <Button bg={bgColorButton} maxW="170px">
               {textButton}
             </Button>
           </Flex>

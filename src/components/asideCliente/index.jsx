@@ -30,6 +30,8 @@ export const AsideCliente = ({ isOpen, onOpen, onClose, user }) => {
       onClose={onClose}
       link1="/dashboard"
       link2="/proposals-clients"
+      link3="/under-construction"
+      link4="/under-construction"
     />
   );
 };
