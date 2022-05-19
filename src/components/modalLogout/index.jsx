@@ -50,10 +50,10 @@ export const ModalLogout = ({ children, baseColor }) => {
             <ModalFooter>
               <Button
                 _hover={{
-                  background: "#1d5c81",
+                  background: "#056305",
                 }}
                 color="#fff"
-                bg="#2D7EAD 
+                bg="green 
               
               "
                 mr={3}

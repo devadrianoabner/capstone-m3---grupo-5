@@ -22,6 +22,7 @@ export const ModalLogoutIcon = ({ children, baseColor }) => {
       <Button
         bg="#fff0"
         onClick={onOpen}
+        display={["none", "flex", "flex", "flex"]}
         w={[5, 6]}
         h={[5, 6]}
         _hover={{ background: "#fff0" }}
@@ -46,10 +47,10 @@ export const ModalLogoutIcon = ({ children, baseColor }) => {
             <ModalFooter>
               <Button
                 _hover={{
-                  background: "#1d5c81",
+                  background: "#056305",
                 }}
                 color="#fff"
-                bg="#2D7EAD 
+                bg="green 
                 
                 "
                 mr={3}
