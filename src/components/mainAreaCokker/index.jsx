@@ -65,6 +65,7 @@ export const MainAreaCooker = ({ faturamento, concluidos }) => {
                 decpripTion="Veja as dietas que estão disponíveis para propostas!"
                 buttonText="Fazer propostas"
                 buttonColor="#706B4C"
+                linkBtn={"/proposals-cookers"}
                 img={imagem4}
               />
             </Box>

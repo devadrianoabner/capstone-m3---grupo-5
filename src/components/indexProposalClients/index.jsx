@@ -1,11 +1,20 @@
 import { MainAreaProposal } from "../mainAreaProposal";
 import { Header } from "../../components/HeaderDashboard";
 import { AsideCliente } from "../asideCliente";
-
 import { Flex, Box, useDisclosure } from "@chakra-ui/react";
+import { useHistory } from "react-router-dom";
+//import { useContext } from "react";
+//import { UserContext } from "../../providers/user/index";
+import { useUser } from "../../providers/user/index";
 
 export const IndexProposalClients = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { user } = useUser();
+  const history = useHistory();
+
+  if (user.type === "Prestador") {
+    return history.push("/admin");
+  }
 
   return (
     <Box>

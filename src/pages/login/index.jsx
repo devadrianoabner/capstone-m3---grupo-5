@@ -12,7 +12,7 @@ import {
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { BsArrowRight } from "react-icons/bs";
-import { Link, Redirect, useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import * as yup from "yup";
 import transparentImg from "../../assets/img/backgroundRegisterPNGTransparent.png";
 import imgLoginPng1 from "../../assets/img/imgLoginPng1.png";
@@ -71,6 +71,15 @@ const Login = () => {
         setToken(accessToken);
         setUser(user);
 
+        /*if (authenticated) {
+          user.type = "Prestador";
+          return <Redirect to="/admin" />;
+        }
+        if (authenticated) {
+          user.type = "Usuário";
+          return <Redirect to="/dashboard" />;
+        }
+*/
         switch (user.type) {
           case "Prestador":
             return history.push("/admin");

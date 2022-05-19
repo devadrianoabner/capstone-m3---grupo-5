@@ -10,6 +10,15 @@ export const TokenProvider = ({ children }) => {
     JSON.parse(localStorage.getItem("@HDR:token")) || ""
   );
 
+  /*
+  const [authenticated, setAuthenticated] = useState(false);
+  
+  useEffect(() => {
+    if (token) {
+      return setAuthenticated(true);
+    }
+  }, [token]);
+*/
   return (
     <TokenContext.Provider value={{ token, setToken }}>
       {children}

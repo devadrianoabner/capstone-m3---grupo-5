@@ -2,11 +2,18 @@ import { MainAllProposals } from "../mainAllProposals";
 import { Header } from "../HeaderDashboard";
 import { AsideCozinheiro } from "../asideCozinheiro";
 import { Footer } from "../../components/Footer";
-
 import { Flex, Box, useDisclosure } from "@chakra-ui/react";
+import { useHistory } from "react-router-dom";
+import { useUser } from "../../providers/user/index";
 
 export const IndexAllProposals = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { user } = useUser();
+  const history = useHistory();
+
+  if (user.type === "Usuário") {
+    return history.push("/dashboard");
+  }
 
   return (
     <Box>

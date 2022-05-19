@@ -1,13 +1,18 @@
 import { Box, Flex, useDisclosure } from "@chakra-ui/react";
-
 import { MainAllProposalsCook } from "../../components/cookerAcceptedProposals/mainAllProposalsCook";
 import { Header } from "../../components/HeaderDashboard";
 import { useUser } from "../../providers/user";
-
 import { AsideCozinheiro } from "../../components/asideCozinheiro";
+import { useHistory } from "react-router-dom";
 
 export const CookAcceptedProposals = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { user } = useUser();
+  const history = useHistory();
+
+  if (user.type === "Usuário") {
+    return history.push("/dashboard");
+  }
 
   return (
     <Box>

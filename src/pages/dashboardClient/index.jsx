@@ -3,13 +3,18 @@ import { Header } from "../../components/HeaderDashboard";
 import { AsideCliente } from "../../components/asideCliente";
 import MainAreaClient from "../../components/mainAreaClient";
 import { Flex, Box, useDisclosure } from "@chakra-ui/react";
-
-import { useContext } from "react";
-import { UserContext } from "../../providers/user/index";
-
+import { useHistory } from "react-router-dom";
+//import { useContext } from "react";
+//import { UserContext } from "../../providers/user/index";
+import { useUser } from "../../providers/user/index";
 export const DashBoardClient = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { user } = useContext(UserContext);
+  const { user } = useUser();
+  const history = useHistory();
+
+  if (user.type === "Prestador") {
+    return history.push("/admin");
+  }
 
   return (
     <Box>

@@ -1,4 +1,13 @@
-import { Flex, Image, Heading, Text, Button, Box } from "@chakra-ui/react";
+import {
+  Flex,
+  Image,
+  Heading,
+  Text,
+  Button,
+  Box,
+  HStack,
+  VStack,
+} from "@chakra-ui/react";
 import { Redirect, Link } from "react-router-dom";
 //import { useState } from "react";
 import ModalDiet from "../ModalDiet";
@@ -14,7 +23,7 @@ export const CardDashboard = ({
 }) => {
   return (
     <>
-      <Flex w="100%" h="100%">
+      <Flex w="100%" h={["125px", "auto"]}>
         <Flex
           bg={bg}
           justify={["space-between", "space-between"]}
@@ -26,10 +35,13 @@ export const CardDashboard = ({
           borderRadius="10px"
           pos="relative"
           alignItems="flex-start"
-          pt="20px"
-          pb="20px"
+          py={["10px", "20px"]}
         >
-          <div>
+          <VStack
+            alignItems={"flex-start"}
+            h={"100%"}
+            justifyContent={"space-between"}
+          >
             <Heading
               color="#12120E"
               fontWeight="800"
@@ -41,7 +53,7 @@ export const CardDashboard = ({
             <Text
               color="#12120E"
               mt="3px"
-              pb={["25px", "20px", "15px", "10px"]}
+              pb={["2px", "20px", "15px", "10px"]}
               w={["100px", "120px", "180px", "250px"]}
               fontSize={["8px", "10px", "12px"]}
               fontWeight="500"
@@ -63,7 +75,7 @@ export const CardDashboard = ({
             ) : (
               <ModalDiet>Fazer pedido</ModalDiet>
             )}
-          </div>
+          </VStack>
           <Image
             src={img}
             alt="um card"

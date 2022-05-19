@@ -2,9 +2,8 @@ import { Header } from "../../components/HeaderDashboard";
 import { MainAreaCooker } from "../../components/mainAreaCokker";
 import { AsideCozinheiro } from "../../components/asideCozinheiro";
 import { Footer } from "../../components/Footer";
-
+import { useHistory } from "react-router-dom";
 import { Flex, Box, useDisclosure, Button, Text } from "@chakra-ui/react";
-
 import { useUser } from "../../providers/user/index";
 import { useDiets } from "../../providers/diets";
 
@@ -12,6 +11,13 @@ export const DashboardPrestador = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { user } = useUser();
   const { diets } = useDiets();
+
+  const history = useHistory();
+
+  if (user.type === "Usuário") {
+    return history.push("/dashboard"); // USAR REDIRECT
+  }
+
   return (
     <Box>
       <Box h="12vh">
