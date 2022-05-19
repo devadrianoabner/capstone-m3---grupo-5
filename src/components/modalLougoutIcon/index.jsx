@@ -10,6 +10,7 @@ import {
   Button,
   Flex,
   Text,
+  Box,
 } from "@chakra-ui/react";
 
 import { useHistory } from "react-router-dom";
@@ -19,15 +20,7 @@ export const ModalLogoutIcon = ({ children, baseColor }) => {
   const history = useHistory();
   return (
     <>
-      <Button
-        bg="#fff0"
-        onClick={onOpen}
-        w={[5, 6]}
-        h={[5, 6]}
-        _hover={{ background: "#fff0" }}
-      >
-        {children}
-      </Button>
+      <Box onClick={onOpen}>{children}</Box>
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>

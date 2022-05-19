@@ -46,7 +46,7 @@ export const NotificationButton = () => {
         </MenuButton>
       ) : (
         <MenuButton as={Button}>
-          <Icon as={AiOutlineBell} />
+          <Icon as={AiOutlineBell} w={5} h={5} />
         </MenuButton>
       )}
       <MenuList overflowY="scroll" maxH="300px">

@@ -72,7 +72,14 @@ export const AsideDashboard = ({
           </Box>
 
           <Box borderBottom="2px" borderColor={baseColor} pb="13px">
-            <Avatar boxSize="82px" mt="22px" name={user.name} size={"xl"} />
+            <Avatar
+              boxSize="82px"
+              mt="22px"
+              name={user.name}
+              size={"xl"}
+              bgColor={"#D8E9BC"}
+              src={user.avatarUrl}
+            />
             <Text fontSize="25px" fontWeight="600" mt="15px" color={baseColor}>
               {user.name}
             </Text>
@@ -221,7 +228,14 @@ export const AsideDashboard = ({
 
           <DrawerBody>
             <Box borderBottom="2px" borderColor={baseColor} pb="13px">
-              <Avatar boxSize="82px" mt="22px" name={user.name} size={"xl"} />
+              <Avatar
+                boxSize="82px"
+                mt="22px"
+                name={user.name}
+                size={"xl"}
+                bgColor={"#D8E9BC"}
+                src={user.avatarUrl}
+              />
               <Text
                 fontSize="27px"
                 fontWeight="600"

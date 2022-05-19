@@ -64,6 +64,8 @@ const CardProposal = ({ diet }) => {
             maxH={"50px"}
             w={"80%"}
             name={client.name}
+            bgColor={"#D8E9BC"}
+            src={client.avatarUrl}
           />
 
           <Text fontSize={"20px"} fontFamily={"body"}>

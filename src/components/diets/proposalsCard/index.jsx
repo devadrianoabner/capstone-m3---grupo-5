@@ -133,7 +133,7 @@ export const ProposalCard = ({ proposal, proposals, onClose }) => {
       borderRadius="15px"
     >
       <Flex m="1" minW="125px" direction="column" align="center">
-        <Avatar name={cook.name} />
+        <Avatar name={cook.name} bgColor={"#D8E9BC"} src={cook.avatarUrl} />
         <Box>
           <Icon as={AiFillStar} color="#FFC727" size="30px" />
           <Icon as={AiFillStar} color="#FFC727" size="30px" />
