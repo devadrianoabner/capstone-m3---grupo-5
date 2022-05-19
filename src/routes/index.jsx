@@ -10,6 +10,7 @@ import { Diets } from "../pages/diets";
 import { DashBoardClient } from "../pages/dashboardClient";
 import { CookAcceptedProposals } from "../pages/cookAcceptedProposals";
 import { ProposalsCookers } from "../pages/proposalsCookers";
+import { Home } from "../pages/home";
 
 export const Routes = () => {
   return (
@@ -17,6 +18,9 @@ export const Routes = () => {
       {/* <Route exact path="/">
         <Home authenticated={authenticated} />
       </Route> */}
+      <Route exact path="/">
+        <Home />
+      </Route>
 
       <Route path="/register">
         <Signup />
