@@ -113,6 +113,7 @@ export const ProposalCard = ({ proposal, proposals, onClose }) => {
       {
         message: `${client.name} aceitou a sua proposta`,
         seen: false,
+        url: "/cook-accepted-proposals",
       },
       cookId
     );

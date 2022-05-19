@@ -122,6 +122,7 @@ export const DietsProvider = ({ children }) => {
               {
                 message: `${user.name} enviou uma proposta para você`,
                 seen: false,
+                url: "/proposals-clients",
               },
               clientId
             );
@@ -166,6 +167,7 @@ export const DietsProvider = ({ children }) => {
           {
             message: `${user.name} cancelou sua dieta`,
             seen: false,
+            url: "/proposals-clients",
           },
           clientId
         );

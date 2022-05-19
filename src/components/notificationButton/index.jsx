@@ -13,6 +13,7 @@ import {
 
 import { Icon } from "@chakra-ui/react";
 import { AiOutlineBell } from "react-icons/ai";
+import { Link } from "react-router-dom";
 import { useToken } from "../../providers/token";
 
 import { useUser } from "../../providers/user";
@@ -51,9 +52,13 @@ export const NotificationButton = () => {
       <MenuList overflowY="scroll" maxH="300px">
         {user.notifications.map((notif) => {
           return !notif.seen ? (
-            <MenuItem bgColor={"#f56539cf"}>{notif.message}</MenuItem>
+            <MenuItem bgColor={"#f56539cf"}>
+              <Link to={notif.url}>{notif.message}</Link>
+            </MenuItem>
           ) : (
-            <MenuItem>{notif.message}</MenuItem>
+            <MenuItem>
+              <Link to={notif.url}>{notif.message}</Link>
+            </MenuItem>
           );
         })}
       </MenuList>

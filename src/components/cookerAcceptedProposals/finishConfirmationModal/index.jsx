@@ -47,6 +47,7 @@ export const FinishConfirmationModal = ({ dietId, clientId }) => {
       {
         message: `${user.name} finalizou sua dieta`,
         seen: false,
+        url: "/proposals-clients",
       },
       clientId
     );
