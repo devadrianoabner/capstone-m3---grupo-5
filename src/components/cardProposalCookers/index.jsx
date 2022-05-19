@@ -1,10 +1,18 @@
-import { Center, VStack, Image, Text, HStack, Avatar } from "@chakra-ui/react";
+import {
+  Center,
+  VStack,
+  Image,
+  Text,
+  HStack,
+  Avatar,
+  Box,
+} from "@chakra-ui/react";
 import ModalProposals from "../modalProposals";
 import { useEffect, useState } from "react";
 import api from "../../services";
 
 export const CardProposalCookers = ({ diet }) => {
-  const { description, id: dietId, clientId, price, status } = diet;
+  const { description, id: dietId, clientId, price, status, meal } = diet;
 
   const [client, setClient] = useState({});
 
@@ -23,6 +31,7 @@ export const CardProposalCookers = ({ diet }) => {
         h={"100%"}
         direction={{ base: "column", md: "row" }}
         bg={("white", "#D9D9D9")}
+        justify="space-between"
       >
         <HStack
           w={"80%"}
@@ -45,7 +54,7 @@ export const CardProposalCookers = ({ diet }) => {
             {client.name} - {dietId}
           </Text>
         </HStack>
-        <VStack justifyContent="center" alignItems="center">
+        <VStack justifyContent="space-between" alignItems="center" flexGrow="2">
           <Text color={"black"} fontWeight={"bold"} fontSize={"13px"}>
             Descrição da dieta:
           </Text>
@@ -58,17 +67,24 @@ export const CardProposalCookers = ({ diet }) => {
           >
             {description}
           </Text>
-
-          <HStack py={"4"} w={"80%"} justifyContent={"center"}>
-            <ModalProposals
-              description={description}
-              dietId={dietId}
-              clientId={clientId}
-            >
-              Fazer propostas
-            </ModalProposals>
-          </HStack>
+          <Box bgColor="#000" h="1px" w="100px" />
+          <Box mt="20px">
+            <Text fontSize="12px">Restrição de dieta:</Text>
+            <Text fontSize="12px" fontWeight="bold">
+              {meal}
+            </Text>
+          </Box>
         </VStack>
+        <HStack py={"4"} w={"80%"} justifyContent={"center"}>
+          <ModalProposals
+            description={description}
+            dietId={dietId}
+            clientId={clientId}
+            meal={meal}
+          >
+            Fazer propostas
+          </ModalProposals>
+        </HStack>
       </VStack>
     </Center>
   );

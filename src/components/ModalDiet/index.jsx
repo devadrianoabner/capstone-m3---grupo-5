@@ -31,6 +31,7 @@ const ModalDiet = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm({
     resolver: yupResolver(formSchema),
   });
@@ -46,8 +47,8 @@ const ModalDiet = () => {
       duration: 5000,
       isClosable: true,
     });
-    console.log(data);
     addDiet(data);
+    reset();
     onClose();
   };
   return (
@@ -72,7 +73,7 @@ const ModalDiet = () => {
         textAlign={"center"}
       >
         <ModalOverlay borderRadius={"8px"} />
-        <form w={"95%"} id="new-form" onSubmit={handleSubmit(handlePostDiet)}>
+        <form w={"95%"} onSubmit={handleSubmit(handlePostDiet)}>
           <ModalContent maxW={"350px"} borderRadius={"8px"} bgColor={"#D9D9D9"}>
             <ModalHeader
               color={"black"}
@@ -123,7 +124,6 @@ const ModalDiet = () => {
             >
               <Button
                 alignContent={"center"}
-                form="new-form"
                 bg="#A69C5D"
                 color={"black"}
                 type="submit"
