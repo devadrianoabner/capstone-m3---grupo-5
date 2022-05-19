@@ -150,11 +150,18 @@ const Signup = () => {
           gap="40px"
           grow="1"
         >
+<<<<<<< HEAD
           <Link to="/">Home</Link>
           <Link to="/">Quem Somos</Link>
           <Link to="/">Nossa Equipe</Link>
           <Link to="/">Contato</Link>
 
+=======
+          <Link to="/login">Home</Link>
+          <Link to="/under-construction">Quem Somos</Link>
+          <Link to="/nossaequipe">Nossa Equipe</Link>
+          <Link to="/under-construction">Contato</Link>
+>>>>>>> origin/feqature/bugFixLayouts
           <Flex
             w="100px"
             ml="50px"

@@ -3,13 +3,12 @@ import { Flex, Image, Heading, Text, Box } from "@chakra-ui/react";
 export const BannerClient = ({ bg, title, decpripTion, img }) => {
   return (
     <>
-      <Flex w={"100%"} h="100%" px="1">
+      <Flex w={"100%"} h="100%">
         <Flex
-          p="0px"
           bg={bg}
           justify={["space-between"]}
           align={["center", "flex-start"]}
-          px={["1", "10"]}
+          p="20px"
           w="100%"
           h="100%"
           mx="auto"
@@ -46,6 +45,8 @@ export const BannerClient = ({ bg, title, decpripTion, img }) => {
                 src={img}
                 alt="um card"
                 w={["350px", "350px", "350px", "300px"]}
+                display={["none", "flex", "flex"]}
+                transform="translateY(25px)"
               />
             </Flex>
           </Box>

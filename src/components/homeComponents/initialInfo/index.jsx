@@ -15,7 +15,7 @@ export const InitialInfo = () => {
         <Flex direction={"column"} gap="20px">
           <Flex gap="10px" maxW="400px">
             <Text fontSize={"30px"} maxW="400px">
-              Hora do Rango
+              Tempo para cozinhar?
             </Text>
             <Image src={LogoImage} maxW="50px" />
           </Flex>

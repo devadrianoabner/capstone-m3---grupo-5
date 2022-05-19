@@ -143,10 +143,10 @@ const Login = () => {
             gap="40px"
             grow="1"
           >
-            <Link to="/">Home</Link>
-            <Link to="/">Quem Somos</Link>
-            <Link to="/">Nossa Equipe</Link>
-            <Link to="/">Contato</Link>
+            <Link to="/login">Home</Link>
+            <Link to="/under-construction">Quem Somos</Link>
+            <Link to="/nossaequipe">Nossa Equipe</Link>
+            <Link to="/contato">Contato</Link>
 
             <Flex
               w="100px"

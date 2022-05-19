@@ -68,6 +68,7 @@ const MainAreaClient = () => {
                 buttonText="Suporte"
                 buttonColor="#706B4C"
                 img={RequestImg}
+                linkBtn="/under-construction"
               />
             </Box>
 
@@ -79,6 +80,7 @@ const MainAreaClient = () => {
                 buttonText="Ver sugestões"
                 buttonColor="#666363"
                 img={VewRequestImg}
+                linkBtn="/under-construction"
               />
             </Box>
           </Flex>

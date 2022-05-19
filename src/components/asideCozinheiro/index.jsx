@@ -32,6 +32,8 @@ export const AsideCozinheiro = ({ isOpen, onOpen, onClose, user }) => {
       link1="/admin"
       link2="/proposals-cookers"
       link3="/cook-accepted-proposals"
+      link4="/under-construction"
+      link5="/under-construction"
     />
   );
 };

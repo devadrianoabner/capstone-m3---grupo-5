@@ -3,13 +3,12 @@ import { Flex, Image, Heading, Text, Box } from "@chakra-ui/react";
 const Banner = ({ bg, title, decpripTion, img }) => {
   return (
     <>
-      <Flex w={"100%"} h="100%" px="1">
+      <Flex w={"100%"} h="100%">
         <Flex
-          p="0px"
+          p="10px"
           bg={bg}
           justify={["space-between"]}
           align={["center", "flex-start"]}
-          px={["1", "10"]}
           w="100%"
           h="100%"
           mx="auto"
@@ -46,6 +45,8 @@ const Banner = ({ bg, title, decpripTion, img }) => {
                 src={img}
                 alt="um card"
                 w={["350px", "350px", "350px", "380px"]}
+                display={["none", "flex", "flex"]}
+                transform="translateY(30px)"
               />
             </Flex>
           </Box>

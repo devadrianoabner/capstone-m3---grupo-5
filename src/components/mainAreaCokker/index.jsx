@@ -78,6 +78,7 @@ export const MainAreaCooker = ({ faturamento, concluidos }) => {
                 buttonText="Acessar"
                 buttonColor="#666363"
                 img={imagem5}
+                linkBtn="/under-construction"
               />
             </Box>
           </Flex>
