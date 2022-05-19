@@ -14,13 +14,16 @@ import {
 } from "@chakra-ui/react";
 
 import { useHistory } from "react-router-dom";
+import { useToken } from "../../providers/token";
 
 export const ModalLogoutIcon = ({ children, baseColor }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const history = useHistory();
+
+  const { setAuthenticated } = useToken();
+
   return (
     <>
-
       <Box onClick={onOpen}>{children}</Box>
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
@@ -49,6 +52,7 @@ export const ModalLogoutIcon = ({ children, baseColor }) => {
                 mr={3}
                 onClick={() => {
                   localStorage.clear();
+                  setAuthenticated(false);
                   history.push("/login");
                 }}
               >

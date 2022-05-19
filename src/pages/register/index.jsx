@@ -64,10 +64,10 @@ const Signup = () => {
   const history = useHistory();
   const toast = useToast();
 
-  const { token } = useToken();
+  const { authenticated } = useToken();
 
-  if (token) {
-    return <Redirect to="/login" />;
+  if (authenticated) {
+    return <Redirect to="/admin" />;
   }
 
   const onSubmitFunction = ({ name, email, password, type }) => {
