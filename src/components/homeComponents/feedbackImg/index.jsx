@@ -6,10 +6,20 @@ import { Flex, Image, Text } from "@chakra-ui/react";
 
 export const FeedBackImg = () => {
   return (
-    <Flex align="center" justify="center" gap="100px" m="30px 0">
+    <Flex
+      align="center"
+      justify="center"
+      gap={["20px", "40px", "80px", "100px"]}
+      m="30px 0"
+      flexWrap={"wrap"}
+    >
       <Flex direction="column" align="center" gap="10px">
-        <Image src={Star} alt="estrela amarela de cinco pontas" />
-        <Text>Qualidade</Text>
+        <Image
+          src={Star}
+          w={["50%", "60%", "80%", "100%"]}
+          alt="estrela amarela de cinco pontas"
+        />
+        <Text fontWeight={"700"}>Qualidade</Text>
       </Flex>
 
       <Flex direction="column" align="center" gap="10px">
@@ -17,8 +27,9 @@ export const FeedBackImg = () => {
           src={Like}
           alt="estrela amarela de cinco pontas"
           transform="translateY(-10px)"
+          w={["50%", "60%", "80%", "100%"]}
         />
-        <Text>Satisfação</Text>
+        <Text fontWeight={"700"}>Satisfação</Text>
       </Flex>
 
       <Flex direction="column" align="center" gap="10px">
@@ -26,8 +37,9 @@ export const FeedBackImg = () => {
           src={Phone}
           alt="estrela amarela de cinco pontas"
           transform="translateY(-10px)"
+          w={["50%", "60%", "80%", "100%"]}
         />
-        <Text>Facilidade</Text>
+        <Text fontWeight={"700"}>Facilidade</Text>
       </Flex>
 
       <Flex direction="column" align="center" gap="10px">
@@ -35,8 +47,9 @@ export const FeedBackImg = () => {
           src={Agree}
           alt="estrela amarela de cinco pontas"
           transform="translateY(10px)"
+          w={["50%", "60%", "80%", "100%"]}
         />
-        <Text>Confiança</Text>
+        <Text fontWeight={"700"}>Confiança</Text>
       </Flex>
     </Flex>
   );

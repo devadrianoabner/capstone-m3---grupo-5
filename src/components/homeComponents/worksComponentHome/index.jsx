@@ -1,4 +1,4 @@
-import { Flex, Image, Text } from "@chakra-ui/react";
+import { Flex, Image, Text, Box } from "@chakra-ui/react";
 import NewAccount from "../../../assets/img/home/avatarCreateAccount.svg";
 import Food from "../../../assets/img/home/imgFood.svg";
 import Agree from "../../../assets/img/home/imgAgreement2.svg";
@@ -12,11 +12,11 @@ export const WorksHome = () => {
       align={"center"}
       justify="center"
       direction={"column"}
-      gap="100px"
+      mb="100px"
     >
       <Text fontSize={"50px"}>Como Funciona?</Text>
 
-      <Flex align={"center"} justify="center" gap="10px">
+      <Flex mt="25px" align={"center"} justify="center" gap="10px" w="100vw">
         <Flex align={"center"} justify="center" direction={"column"} gap="25px">
           <Flex
             border={"3px solid #FFC727"}
@@ -25,10 +25,11 @@ export const WorksHome = () => {
             align="center"
             p={"20px"}
           >
-            <Image src={NewAccount} w="100%" />
+            <Image src={NewAccount} w="100%" maxW="45px" />
           </Flex>
-
-          <Text>Crie sua conta</Text>
+          <Text align={"center"} justify="center" fontWeight={"700"}>
+            Crie sua conta
+          </Text>
         </Flex>
 
         <Flex
@@ -38,6 +39,7 @@ export const WorksHome = () => {
           bg="#000"
           borderRadius={"10px"}
           mb="50px"
+          display={["none", "none", "none", "flex", "flex", "flex"]}
         />
 
         <Flex align={"center"} justify="center" direction={"column"} gap="25px">
@@ -46,12 +48,14 @@ export const WorksHome = () => {
             borderRadius="100%"
             justify={"center"}
             align="center"
-            p={"10px"}
+            p={"20px"}
           >
-            <Image src={Food} w="100%" />
+            <Image src={Food} w="100%" maxW="45px" />
           </Flex>
 
-          <Text>Personalize sua dieta</Text>
+          <Text align={"center"} justify="center" fontWeight={"700"}>
+            Personalize sua dieta
+          </Text>
         </Flex>
 
         <Flex
@@ -61,6 +65,7 @@ export const WorksHome = () => {
           bg="#000"
           borderRadius={"10px"}
           mb="50px"
+          display={["none", "none", "none", "flex", "flex"]}
         />
 
         <Flex align={"center"} justify="center" direction={"column"} gap="25px">
@@ -69,13 +74,13 @@ export const WorksHome = () => {
             borderRadius="100%"
             justify={"center"}
             align="center"
-            p={"30px 20px"}
+            p={"20px"}
           >
-            <Image src={Agree} maxW="75px" />
+            <Image src={Agree} w="100%" maxW="45px" />
           </Flex>
 
-          <Text align={"center"} justify="center">
-            Escolha a melhor <br /> proposta
+          <Text align={"center"} justify="center" fontWeight={"700"}>
+            Escolha a melhor proposta
           </Text>
         </Flex>
       </Flex>

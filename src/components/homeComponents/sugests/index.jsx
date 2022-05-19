@@ -10,13 +10,13 @@ export const Sugests = () => {
         maxW="500px"
         maxH="500px"
         h="500px"
-        w={"500px"}
+        w={["300px", "400px", "500px", "500px", "500px"]}
         direction="column"
         justify={"center"}
         align="flex-start"
         gap="20px"
         p="30px"
-        bgColor="#e7e7e7"
+        bgColor="#DDDDDD"
       >
         <Text fontSize={"25px"}>
           Tem alguma sugestão <br />
@@ -30,7 +30,7 @@ export const Sugests = () => {
           gap="5px"
         >
           <Text fontSize={"10px"}>Nome</Text>
-          <Input />
+          <Input bg="#AEADAD" placeholder="Seu nome" />
         </Flex>
 
         <Flex
@@ -40,7 +40,7 @@ export const Sugests = () => {
           gap="5px"
         >
           <Text fontSize={"10px"}>Email</Text>
-          <Input />
+          <Input bg="#AEADAD" placeholder="Seu e-mail" />
         </Flex>
 
         <Flex
@@ -50,19 +50,20 @@ export const Sugests = () => {
           gap="5px"
         >
           <Text>Sugestão:</Text>
-          <Textarea />
+          <Textarea bg="#AEADAD" placeholder="Escreva aqui sua sugestão!" />
         </Flex>
         <Button bg="#BFB14E">Enviar</Button>
       </Flex>
       <Flex
         bgImage={Camada}
-        bgColor="#fff7c4"
+        bgColor="#DECD5B"
         maxW="500px"
         maxH="500px"
         h="500px"
+        display={["none", "none", "none", "flex", "flex"]}
       >
         <Image src={Email1} w="50%" transform="translateY(150px)" />
-        <Image src={Email2} w="50%" transform="translateY(-170px)" />
+        <Image src={Email2} w="50%" transform="translateY(-120px)" />
       </Flex>
     </Flex>
   );

@@ -2,6 +2,7 @@ import { Flex, Icon, Text } from "@chakra-ui/react";
 import { Link, useHistory } from "react-router-dom";
 import { Logo } from "../../components/Logo";
 import { BsArrowRight } from "react-icons/bs";
+import { AiOutlineUser } from "react-icons/ai";
 
 export const HeaderDefault = () => {
   const history = useHistory();
@@ -9,7 +10,7 @@ export const HeaderDefault = () => {
   return (
     <Flex
       h={["48px", "48px", "48px", "80px"]}
-      justify={["center", "center", "center", "space-between"]}
+      justify={"space-between"}
       m={[0, 0, 0, "0px 100px"]}
       fontSize="14px"
       bg={"#fff"}
@@ -18,19 +19,31 @@ export const HeaderDefault = () => {
     >
       <Logo color="#000" />
       <Flex
+        display={["flex", "flex", "flex", "none"]}
+        alignItems={"center"}
+        justifyContent={"flex-end"}
+        w="50%"
+      >
+        <AiOutlineUser
+          onClick={() => {
+            return history.push("/login");
+          }}
+        />
+      </Flex>
+      <Flex
         display={["none", "none", "none", "flex"]}
         justify="center"
         align="center"
         gap="40px"
         grow="1"
       >
-        <Link to="/login">Home</Link>
-        <Link to="/quemsomos">Quem Somos</Link>
-        <Link to="/nossaequipe">Nossa Equipe</Link>
-        <Link to="/cozinheiros">Ver Cozinheiros</Link>
-        <Link to="/contato">Contato</Link>
+        <Link to="/">Home</Link>
+        <Link to="/">Quem Somos</Link>
+        <Link to="/">Nossa Equipe</Link>
+        <Link to="/">Contato</Link>
 
         <Flex
+          ml="50px"
           w="100px"
           h="30px"
           border="2px solid #FFDD00"
@@ -38,12 +51,12 @@ export const HeaderDefault = () => {
           align="center"
           _hover={{ cursor: "pointer" }}
           onClick={() => {
-            history.push("/register");
+            history.push("/login");
           }}
         >
           <Icon as={BsArrowRight} color="tertiary" ml="8px" />
           <Text color="tertiary" display="inline" ml="8px">
-            Registrar
+            Login
           </Text>
         </Flex>
       </Flex>

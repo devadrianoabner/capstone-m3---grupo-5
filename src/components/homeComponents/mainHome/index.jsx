@@ -14,7 +14,7 @@ export const MainHome = () => {
         title="Lorem ipsum"
         decpripTion="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,sunt in culpa qui officia deserunt mollit anim id est laborum."
         textButton="Fazer Cadastro"
-        bgColorButton="#eeeeee"
+        bgColorButton="#0000"
         img={ImgBannerHome}
       />
       <FeedBackImg />
