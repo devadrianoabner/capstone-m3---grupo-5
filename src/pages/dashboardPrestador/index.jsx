@@ -6,16 +6,23 @@ import { useHistory } from "react-router-dom";
 import { Flex, Box, useDisclosure, Button, Text } from "@chakra-ui/react";
 import { useUser } from "../../providers/user/index";
 import { useDiets } from "../../providers/diets";
+import { Redirect } from "react-router-dom";
+import { useToken } from "../../providers/token";
 
 export const DashboardPrestador = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { user } = useUser();
   const { diets } = useDiets();
+  const { authenticated } = useToken();
 
   const history = useHistory();
 
   if (user.type === "Usuário") {
     return history.push("/dashboard"); // USAR REDIRECT
+  }
+
+  if (!authenticated) {
+    return <Redirect to="/login" />;
   }
 
   return (

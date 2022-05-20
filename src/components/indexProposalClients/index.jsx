@@ -6,14 +6,21 @@ import { useHistory } from "react-router-dom";
 //import { useContext } from "react";
 //import { UserContext } from "../../providers/user/index";
 import { useUser } from "../../providers/user/index";
+import { Redirect } from "react-router-dom";
+import { useToken } from "../../providers/token";
 
 export const IndexProposalClients = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { user } = useUser();
   const history = useHistory();
+  const { authenticated } = useToken();
 
   if (user.type === "Prestador") {
     return history.push("/admin");
+  }
+
+  if (!authenticated) {
+    return <Redirect to="/login" />;
   }
 
   return (
