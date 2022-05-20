@@ -12,10 +12,9 @@ export const HeaderDefault = () => {
     <Flex
       h={["48px", "48px", "48px", "80px"]}
       justify={"space-between"}
-      m={[0, 0, 0, "0px 100px"]}
       fontSize="14px"
       bg={"#fff"}
-      w="100vw"
+      w="98vw"
       p="0 20px"
     >
       <Logo color="#000" />
@@ -48,7 +47,7 @@ export const HeaderDefault = () => {
         <HashLink to="#contato" smooth>
           Contato
         </HashLink>
-        
+
         <Flex
           ml="50px"
           w="100px"
