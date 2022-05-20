@@ -16,7 +16,7 @@ export const WorksHome = () => {
     >
       <Text fontSize={"50px"}>Como Funciona?</Text>
 
-      <Flex mt="25px" align={"center"} justify="center" gap="10px" w="100vw">
+      <Flex mt="25px" align={"center"} justify="center" gap="10px" w="98vw">
         <Flex align={"center"} justify="center" direction={"column"} gap="25px">
           <Flex
             border={"3px solid #FFC727"}

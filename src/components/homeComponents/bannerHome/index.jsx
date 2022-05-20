@@ -59,7 +59,7 @@ export const BannerHome = ({
             </Button>
           </Flex>
           <Flex maxW="400px">
-            <Image src={img} alt="um card" w="100%" m="10px" />
+            <Image src={img} alt="um card" w="100%" />
           </Flex>
         </Flex>
       </Flex>
