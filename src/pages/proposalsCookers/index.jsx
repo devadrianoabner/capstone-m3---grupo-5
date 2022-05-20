@@ -16,16 +16,23 @@ import { CardProposalCookers } from "../../components/cardProposalCookers";
 import { useDiets } from "../../providers/diets";
 import { useHistory } from "react-router-dom";
 import { useUser } from "../../providers/user/index";
+import { Redirect } from "react-router-dom";
+import { useToken } from "../../providers/token";
 
 export const ProposalsCookers = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const { diets } = useDiets();
   const { user } = useUser();
+  const { authenticated } = useToken();
   const history = useHistory();
 
   if (user.type === "Usuário") {
     return history.push("/dashboard");
+  }
+
+  if (!authenticated) {
+    return <Redirect to="/login" />;
   }
 
   return (

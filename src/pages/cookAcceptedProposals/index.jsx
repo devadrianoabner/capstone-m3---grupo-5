@@ -4,11 +4,18 @@ import { Header } from "../../components/HeaderDashboard";
 import { useUser } from "../../providers/user";
 import { AsideCozinheiro } from "../../components/asideCozinheiro";
 import { useHistory } from "react-router-dom";
+import { useToken } from "../../providers/token";
+import { Redirect } from "react-router-dom";
 
 export const CookAcceptedProposals = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { user } = useUser();
+  const { authenticated } = useToken();
   const history = useHistory();
+
+  if (!authenticated) {
+    return <Redirect to="/login" />;
+  }
 
   if (user.type === "Usuário") {
     return history.push("/dashboard");
