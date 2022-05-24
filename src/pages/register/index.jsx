@@ -28,6 +28,7 @@ import { InputDiv } from "../../components/InputDiv";
 import { Logo } from "../../components/Logo";
 import { useToken } from "../../providers/token";
 import api from "../../services";
+import { HashLink } from "react-router-hash-link";
 
 const Signup = () => {
   const schema = yup.object().shape({
@@ -151,10 +152,21 @@ const Signup = () => {
           grow="1"
         >
           <Link to="/">Home</Link>
-          <Link to="/">Quem Somos</Link>
-          <Link to="/">Nossa Equipe</Link>
-          <Link to="/">Contato</Link>
-
+          <Link to="/">
+            <HashLink to="/#quemsomos" smooth>
+              Nossa Equipe
+            </HashLink>
+          </Link>
+          <Link to="/">
+            <HashLink to="/#nossaequipe" smooth>
+              Nossa Equipe
+            </HashLink>
+          </Link>
+          <Link to="/">
+            <HashLink to="/#contato" smooth>
+              Contato
+            </HashLink>
+          </Link>
           <Flex
             w="100px"
             ml="50px"
