@@ -131,6 +131,7 @@ export const DietsProvider = ({ children }) => {
           .catch((err) => console.log(err));
       })
       .catch((err) => console.log(err));
+    refreshDiet();
   };
 
   const sendNotification = (notif, id) => {
