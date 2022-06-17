@@ -11,13 +11,13 @@ Aplicação que conecta cozinheiros e clientes.
 
 - [X] Cadastro / login usuários e cozinheiros
 - [X] Consulta de dietas e realização de proposta pelo cozinheiro
-- [X] Visualização de todas as propostas realizadas e aceitação de um pelo clienete
+- [X] Visualização de todas as propostas realizadas e aceitação de uma pelo cliente
 - [X] Conexão do cliente com cozinheiro
 - [X] Utilização de API básica para suportar requisições
 
 ## 🎨 Layout
 
-[Link do deploy](https://www.figma.com/file/4aFvtlzGTtGxZ7WiSODXRa/Hora-do-rango?node-id=1%3A7/)
+[Link do figma](https://www.figma.com/file/4aFvtlzGTtGxZ7WiSODXRa/Hora-do-rango?node-id=1%3A7/)
 
 
 ## ✨ Tecnologias
